@@ -1,0 +1,204 @@
+{
+  "scope": "Local preview mobile-menu layering and Escape close",
+  "checks": [
+    {
+      "route": "index",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 2,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 390,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 820,
+      "headerZ": "3",
+      "open": true,
+      "buttonPoints": 0,
+      "leaks": [],
+      "overflow": false,
+      "closes": true,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

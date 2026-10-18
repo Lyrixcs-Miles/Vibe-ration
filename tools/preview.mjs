@@ -104,9 +104,10 @@ async function renderSection(id,config,ctx) {
   if(id==='deals') section.settings.collection={...collection,title:'Weekly finds',products:products.slice(4),products_count:4,all_products_count:4};
   if(id==='arrivals') section.settings.collection={...collection,title:'Fresh discoveries',products:products.slice(0,4),products_count:4,all_products_count:4};
   engine.options.globals = {...ctx,section};
-  return `<div id="shopify-section-${id}" class="shopify-section ${schema.class??''}">${await engine.parseAndRender(prepare(source),{...ctx,section})}</div>`;
+  const groupClass=ctx.preview_section_group?`shopify-section-group-${ctx.preview_section_group}-group`:'';
+  return `<div id="shopify-section-${id}" class="shopify-section ${groupClass} ${schema.class??''}">${await engine.parseAndRender(prepare(source),{...ctx,section})}</div>`;
 }
-async function renderGroup(file,ctx){const group=JSON.parse(read(file));let html='';for(const id of group.order) html+=await renderSection(id,group.sections[id],ctx);return html;}
+async function renderGroup(file,ctx){const group=JSON.parse(read(file));let html='';for(const id of group.order) html+=await renderSection(id,group.sections[id],{...ctx,preview_section_group:group.type});return html;}
 const pages=[['index','index'],['collection','collection'],['product','product'],['cart','cart'],['about','page.about'],['help','page.help'],['contact','page.contact'],['404','404'],['search','search']];
 const paletteCss=Object.entries(data.color_schemes).map(([id,{settings:s}])=>{
   const rgb=hex=>hex.replace('#','').match(/../g).map(x=>parseInt(x,16)).join(',');

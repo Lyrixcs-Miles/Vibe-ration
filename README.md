@@ -23,6 +23,7 @@ The generated `preview` directory is beside the repository. For browser checks w
 
 ```powershell
 node tools/check-design.mjs
+node tools/check-menu-layering.mjs
 shopify.cmd theme check --path .
 ```
 

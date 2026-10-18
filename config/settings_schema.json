@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "15.5.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_name": "Vibe-ration",
+    "theme_version": "1.0.0",
+    "theme_author": "Lyrixcs Miles",
+    "theme_documentation_url": "https://github.com/Lyrixcs-Miles/Vibe-ration",
+    "theme_support_url": "https://github.com/Lyrixcs-Miles/Vibe-ration/issues"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -1449,6 +1449,36 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      }
+    ]
+  },
+  {
+    "name": "Vibe-ration design",
+    "settings": [
+      {
+        "type": "color",
+        "id": "vr_accent",
+        "label": "Accent",
+        "default": "#c8415f"
+      },
+      {
+        "type": "color",
+        "id": "vr_accent_hover",
+        "label": "Accent hover",
+        "default": "#a82f4b"
+      },
+      {
+        "type": "checkbox",
+        "id": "vr_age_gate",
+        "label": "Require age confirmation",
+        "default": true,
+        "info": "Session-only confirmation. Confirm category requirements before launch. If not required, remove the gate snippet, render call, script and styles as documented."
+      },
+      {
+        "type": "text",
+        "id": "vr_wordmark",
+        "label": "Provisional wordmark",
+        "default": "Vibe-ration"
       }
     ]
   }

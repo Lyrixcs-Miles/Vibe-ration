@@ -1,0 +1,61 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { chromium } from 'playwright-core';
+
+const reports = path.join(import.meta.dirname, 'validation');
+fs.mkdirSync(reports, {recursive:true});
+const browser = await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+const context = await browser.newContext();
+await context.addInitScript(()=>sessionStorage.setItem('vr-age-confirmed','yes'));
+const page = await context.newPage();
+const errors=[];
+page.on('pageerror',error=>errors.push(error.message));
+const checks=[];
+for(const route of ['index','collection','product','cart','about','help','contact','404','search']) {
+  for(const width of [360,390,768,820,1024,1440]) {
+    await page.setViewportSize({width,height:1000});
+    await page.goto(`http://127.0.0.1:4173/${route}.html`,{waitUntil:'networkidle'});
+    const result = await page.evaluate(()=>({viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('main h1').length,bodyH1:document.querySelectorAll('h1').length,brokenImages:[...document.images].filter(img=>img.complete&&img.naturalWidth===0).map(img=>img.src),overflow:[...document.querySelectorAll('main *')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&(r.right>innerWidth+1||r.left < -1)&&getComputedStyle(el).position!=='absolute';}).slice(0,12).map(el=>({tag:el.tagName,class:el.className}))}));
+    checks.push({route,width,...result,pass:result.documentWidth===width&&result.h1===1&&result.brokenImages.length===0});
+    if([360,768,1440].includes(width)) await page.screenshot({path:path.join(reports,`${route}-${width}.png`),fullPage:true});
+  }
+}
+await page.goto('http://127.0.0.1:4173/help.html');
+const question=page.locator('.vr-faq summary').first();
+await question.focus();
+await page.keyboard.press('Enter');
+const faqKeyboard=await page.locator('.vr-faq details').first().evaluate(el=>el.open);
+await page.goto('http://127.0.0.1:4173/');
+await page.setViewportSize({width:390,height:844});
+const mobileSummary=page.locator('#Details-menu-drawer-container > summary');
+await mobileSummary.click();
+await page.waitForTimeout(400);
+const mobileMenu=await page.locator('#Details-menu-drawer-container').evaluate(el=>el.open);
+await page.keyboard.press('Escape');
+await page.waitForTimeout(450);
+const mobileMenuCloses=await page.locator('#Details-menu-drawer-container').evaluate(el=>!el.open);
+const gateContext=await browser.newContext();
+const gatePage=await gateContext.newPage();
+await gatePage.goto('http://127.0.0.1:4173/');
+const gateOpens=await gatePage.locator('.vr-age-gate').evaluate(el=>el.open);
+await gatePage.keyboard.press('Escape');
+const gateResistsEscape=await gatePage.locator('.vr-age-gate').evaluate(el=>el.open);
+await gatePage.getByRole('button',{name:'Yes, I am 18+'}).click();
+await gatePage.reload();
+const gateSession=await gatePage.locator('.vr-age-gate').evaluate(el=>!el.open);
+const freshContext=await browser.newContext();
+const freshPage=await freshContext.newPage();
+await freshPage.goto('http://127.0.0.1:4173/');
+const gateFreshSession=await freshPage.locator('.vr-age-gate').evaluate(el=>el.open);
+await page.evaluate(()=>{const timer=document.createElement('vr-countdown');timer.dataset.end=new Date(Date.now()+2500).toISOString().replace(/\.\d{3}Z$/,'Z');timer.innerHTML=['days','hours','minutes','seconds'].map(unit=>`<span data-unit="${unit}"></span>`).join('');document.body.append(timer);});
+const countdownShows=await page.locator('vr-countdown').last().evaluate(el=>!el.hidden);
+await page.waitForTimeout(3000);
+const countdownExpires=await page.locator('vr-countdown').last().evaluate(el=>el.hidden);
+await page.evaluate(()=>{const timer=document.createElement('vr-countdown');timer.dataset.end='2027-12-01T23:59:00';timer.innerHTML=['days','hours','minutes','seconds'].map(unit=>`<span data-unit="${unit}"></span>`).join('');document.body.append(timer);});
+const countdownRequiresTimezone=await page.locator('vr-countdown').last().evaluate(el=>el.hidden);
+const interactions={faqKeyboard,mobileMenu,mobileMenuCloses,gateOpens,gateResistsEscape,gateSession,gateFreshSession,countdownShows,countdownExpires,countdownRequiresTimezone};
+const report={checkedAt:new Date().toISOString(),scope:'Actual Liquid theme rendered with local fixtures; commerce integration is deferred.',checks,interactions,errors:[...new Set(errors)],pass:checks.every(c=>c.pass)&&Object.values(interactions).every(Boolean)&&errors.length===0};
+fs.writeFileSync(path.join(reports,'design-checks.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify({pass:report.pass,total:checks.length,failed:checks.filter(c=>!c.pass),interactions,errors:report.errors},null,2));
+await browser.close();
+if(!report.pass) process.exitCode=1;

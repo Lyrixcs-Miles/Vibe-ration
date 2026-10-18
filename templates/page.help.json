@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "intro": {
+      "type": "vr-page-intro",
+      "settings": {
+        "eyebrow": "Here to help",
+        "heading": "Let’s make it simple.",
+        "text": "<p>Order questions, delivery details, or something else? Start here.</p>",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "faq": {
+      "type": "vr-faq",
+      "blocks": {
+        "group0": {
+          "type": "group",
+          "settings": {
+            "title": "Orders"
+          }
+        },
+        "question0": {
+          "type": "question",
+          "settings": {
+            "question": "Where can I find my order details?",
+            "answer": "<p>Your order confirmation contains your order details. Include your order number when contacting us about an order.</p>"
+          }
+        },
+        "question1": {
+          "type": "question",
+          "settings": {
+            "question": "Can I change or cancel my order?",
+            "answer": "<p>Please contact us with your order number and the change you need. Available options depend on the status of the order.</p>"
+          }
+        },
+        "group2": {
+          "type": "group",
+          "settings": {
+            "title": "Delivery"
+          }
+        },
+        "question2": {
+          "type": "question",
+          "settings": {
+            "question": "Where can I find delivery information?",
+            "answer": "<p>Delivery options and costs are shown at checkout. Please check our shipping policy for the available service information.</p>"
+          }
+        },
+        "question3": {
+          "type": "question",
+          "settings": {
+            "question": "How will my order be packaged?",
+            "answer": "<p>Please contact us before ordering if you have specific packaging requirements. Packaging details will be confirmed before launch.</p>"
+          }
+        },
+        "group4": {
+          "type": "group",
+          "settings": {
+            "title": "Returns"
+          }
+        },
+        "question4": {
+          "type": "question",
+          "settings": {
+            "question": "How do returns work?",
+            "answer": "<p>Please read our refund policy before ordering. Contact us with your order number if you need help with an item.</p>"
+          }
+        },
+        "group5": {
+          "type": "group",
+          "settings": {
+            "title": "Payments"
+          }
+        },
+        "question5": {
+          "type": "question",
+          "settings": {
+            "question": "Which payment methods can I use?",
+            "answer": "<p>The payment options available for your order are shown at checkout. Payment-provider setup will be completed before launch.</p>"
+          }
+        },
+        "group6": {
+          "type": "group",
+          "settings": {
+            "title": "Privacy"
+          }
+        },
+        "question6": {
+          "type": "question",
+          "settings": {
+            "question": "How is my information used?",
+            "answer": "<p>Read our privacy policy for details about the information collected when you shop with us.</p>"
+          }
+        },
+        "question7": {
+          "type": "question",
+          "settings": {
+            "question": "How can I ask a privacy question?",
+            "answer": "<p>Use the contact form below to ask about your personal information. Please do not include payment-card details in your message.</p>"
+          }
+        },
+        "group8": {
+          "type": "group",
+          "settings": {
+            "title": "Contact"
+          }
+        },
+        "question8": {
+          "type": "question",
+          "settings": {
+            "question": "How can I get in touch?",
+            "answer": "<p>Send your question using the contact form below. Include an order number if your question concerns an existing order.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "group0",
+        "question0",
+        "question1",
+        "group2",
+        "question2",
+        "question3",
+        "group4",
+        "question4",
+        "group5",
+        "question5",
+        "group6",
+        "question6",
+        "question7",
+        "group8",
+        "question8"
+      ],
+      "settings": {
+        "eyebrow": "Here to help",
+        "heading": "Your questions, answered.",
+        "color_scheme": "scheme-1"
+      }
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Still have a question?",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "faq",
+    "contact"
+  ]
+}

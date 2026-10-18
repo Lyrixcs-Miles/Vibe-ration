@@ -1,99 +1,55 @@
-# Dawn
+# Vibe-ration on Dawn
 
-[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/.github/CONTRIBUTING.md)
+A local Shopify theme based on Dawn 15.5.0, following the v2 design reference: cream and stone surfaces, plum buttons, a rose accent, Georgia headings and system body text.
 
-[Getting started](#getting-started) |
-[Staying up to date with Dawn changes](#staying-up-to-date-with-dawn-changes) |
-[Developer tools](#developer-tools) |
-[Contributing](#contributing) |
-[Code of conduct](#code-of-conduct) |
-[Theme Store submission](#theme-store-submission) |
-[License](#license)
+The homepage, product, collection, cart, About, Help, Contact, search and 404 designs are implemented. Shopify commerce remains native. The wordmark, category labels and editorial copy are provisional; product photography and real catalogue content are still required.
 
-Dawn represents a HTML-first, JavaScript-only-as-needed approach to theme development. It's Shopify's first source available theme with performance, flexibility, and [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store) built-in and acts as a reference for building Shopify themes.
+## Review the design locally
 
-* **Web-native in its purest form:** Themes run on the [evergreen web](https://www.w3.org/2001/tag/doc/evergreen-web/). We leverage the latest web browsers to their fullest, while maintaining support for the older ones through progressive enhancement—not polyfills.
-* **Lean, fast, and reliable:** Functionality and design defaults to “no” until it meets this requirement. Code ships on quality. Themes must be built with purpose. They shouldn’t support each and every feature in Shopify.
-* **Server-rendered:** HTML must be rendered by Shopify servers using Liquid. Business logic and platform primitives such as translations and money formatting don’t belong on the client. Async and on-demand rendering of parts of the page is OK, but we do it sparingly as a progressive enhancement.
-* **Functional, not pixel-perfect:** The Web doesn’t require each page to be rendered pixel-perfect by each browser engine. Using semantic markup, progressive enhancement, and clever design, we ensure that themes remain functional regardless of the browser.
+From this repository root:
 
-You can find a more detailed version of our theme code principles in the [contribution guide](https://github.com/Shopify/dawn/blob/main/.github/CONTRIBUTING.md#theme-code-principles).
-
-## Getting started
-We recommend using Dawn as a starting point for theme development. [Learn more on Shopify.dev](https://shopify.dev/themes/getting-started/create).
-
-> If you're building a theme for the Shopify Theme Store, then you can use Dawn as a starting point. However, the theme that you submit needs to be [substantively different from Dawn](https://shopify.dev/themes/store/requirements#uniqueness) so that it provides added value for merchants. Learn about the [ways that you can use Dawn](https://shopify.dev/themes/tools/dawn#ways-to-use-dawn).
-
-Please note that the main branch may include code for features not yet released. The "stable" version of Dawn is available in the theme store.
-
-## Staying up to date with Dawn changes
-
-Say you're building a new theme off Dawn but you still want to be able to pull in the latest changes, you can add a remote `upstream` pointing to this Dawn repository.
-
-1. Navigate to your local theme folder.
-2. Verify the list of remotes and validate that you have both an `origin` and `upstream`:
-```sh
-git remote -v
-```
-3. If you don't see an `upstream`, you can add one that points to Shopify's Dawn repository:
-```sh
-git remote add upstream https://github.com/Shopify/dawn.git
-```
-4. Pull in the latest Dawn changes into your repository:
-```sh
-git fetch upstream
-git pull upstream main
+```powershell
+npm.cmd ci --prefix tools
+node tools/preview.mjs --serve
 ```
 
-## Developer tools
+Open http://127.0.0.1:4173. On first entry, confirm the age gate. Local pages use sample products and prices solely to review the layout. The preview is generated from the actual Liquid sections and snippets, using LiquidJS and explicit Shopify fixtures. It is not a connected storefront. Forms and checkout cannot submit purchases.
 
-There are a number of really useful tools that the Shopify Themes team uses during development. Dawn is already set up to work with these tools.
+The generated `preview` directory is beside the repository. For browser checks while the preview server is running:
 
-### Shopify CLI
-
-[Shopify CLI](https://github.com/Shopify/shopify-cli) helps you build Shopify themes faster and is used to automate and enhance your local development workflow. It comes bundled with a suite of commands for developing Shopify themes—everything from working with themes on a Shopify store (e.g. creating, publishing, deleting themes) or launching a development server for local theme development.
-
-You can follow this [quick start guide for theme developers](https://shopify.dev/docs/themes/tools/cli) to get started.
-
-### Theme Check
-
-We recommend using [Theme Check](https://github.com/shopify/theme-check) as a way to validate and lint your Shopify themes.
-
-We've added Theme Check to Dawn's [list of VS Code extensions](/.vscode/extensions.json) so if you're using Visual Studio Code as your code editor of choice, you'll be prompted to install the [Theme Check VS Code](https://marketplace.visualstudio.com/items?itemName=Shopify.theme-check-vscode) extension upon opening VS Code after you've forked and cloned Dawn.
-
-You can also run it from a terminal with the following Shopify CLI command:
-
-```bash
-shopify theme check
+```powershell
+node tools/check-design.mjs
+shopify.cmd theme check --path .
 ```
 
-### Continuous Integration
+The browser script uses installed Microsoft Edge. Reports and screenshots are in `tools/validation/`; the renderer's limitations are recorded in `tools/preview-render.json`. Run all layout checks again on a Shopify preview after connection.
 
-Dawn uses [GitHub Actions](https://github.com/features/actions) to maintain the quality of the theme. [This is a starting point](https://github.com/Shopify/dawn/blob/main/.github/workflows/ci.yml) and what we suggest to use in order to ensure you're building better themes. Feel free to build off of it!
+## Design controls
 
-#### Shopify/lighthouse-ci-action
+- **Theme settings → Vibe-ration design:** provisional wordmark, accent colours, age confirmation.
+- **Homepage:** VR Hero, VR Categories, VR Weekly deals, Dawn Featured collection, VR Trust row, Dawn Newsletter, Dawn Rich text and VR FAQ.
+- **Product cards:** Dawn's native card, with 4:5 media, availability, sale percentage or New/Best seller tags, and native quick add. Products with options use Dawn's selection modal.
+- **Other pages:** assign `page.about`, `page.help` and `page.contact` to their respective Admin pages.
+- **Images:** use section image pickers and product media. Neutral Photo placeholders remain until real images exist.
+- **Navigation:** native Dawn header/footer menus. Populate `main-menu` and `footer` in Admin.
 
-We love fast websites! Which is why we created [Shopify/lighthouse-ci-action](https://github.com/Shopify/lighthouse-ci-action). This runs a series of [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) audits for the home, product and collections pages on a store to ensure code that gets added doesn't degrade storefront performance over time.
+The newsletter currently promises updates, without an unconfigured discount. Trust copy avoids unconfirmed shipping, returns or packaging claims.
 
-#### Shopify/theme-check-action
+## Age confirmation and promotions
 
-Dawn runs [Theme Check](#Theme-Check) on every commit via [Shopify/theme-check-action](https://github.com/Shopify/theme-check-action).
+Age confirmation is enabled provisionally because it appears in the supplied mockups. It uses a native modal dialog, keyboard focus containment and `sessionStorage`; a separate tab/session may ask again. Storage failure asks again on the next page. The theme editor skips the modal. No crawler-specific bypass is included. This is a client-side confirmation, not age verification.
 
-## Contributing
+Confirm whether the actual product category needs this before launch. If unnecessary, remove `snippets/vr-age-gate.liquid`, its conditional render in `layout/theme.liquid`, `VrAgeGate` from `assets/vr-design.js`, the `.vr-age-gate*` styles, the `vr_age_gate` schema/data entries and `vr.age_gate` locale entries. Turning off the setting alone is only a preview control.
 
-Want to make commerce better for everyone by contributing to Dawn? We'd love your help! Please read our [contributing guide](https://github.com/Shopify/dawn/blob/main/.github/CONTRIBUTING.md) to learn about our development process, how to propose bug fixes and improvements, and how to build for Dawn.
+The deals timer is blank by default. Set a complete ISO 8601 timestamp with a timezone, such as `2026-12-04T23:59:00+02:00`. It hides when expired or invalid and does not automatically repeat. Schedule the actual discount/price changes separately in Shopify to match the same endpoint.
 
-## Code of conduct
+## Connect the store after design review
 
-All developers who wish to contribute through code or issues, please first read our [Code of Conduct](https://github.com/Shopify/dawn/blob/main/.github/CODE_OF_CONDUCT.md).
+1. Supply the correct `.myshopify.com` address. Verify the store identity before writes.
+2. Configure the catalogue, collection pickers, menus, pages and policy links. Replace provisional brand/story/category content and add real photographs. See `docs/STORE-HANDOFF.md`.
+3. Preview with `shopify.cmd theme dev --store <store>.myshopify.com --path .`.
+4. Repeat mobile/tablet checks and test native cart, variants, quick add, filters, search, forms and an end-to-end test checkout.
+5. Push a new unpublished theme with `shopify.cmd theme push --store <store>.myshopify.com --path . --unpublished`. Record the returned theme ID and use it explicitly thereafter.
+6. Review on a real phone and in the theme editor. Publish only when instructed after review.
 
-## Theme Store submission
-
-The [Shopify Theme Store](https://themes.shopify.com/) is the place where Shopify merchants find the themes that they'll use to showcase and support their business. As a theme partner, you can create themes for the Shopify Theme Store and reach an international audience of an ever-growing number of entrepreneurs.
-
-Ensure that you follow the list of [theme store requirements](https://shopify.dev/themes/store/requirements) if you're interested in becoming a [Shopify Theme Partner](https://themes.shopify.com/services/themes/guidelines) and building themes for the Shopify platform.
-
-## License
-
-Copyright (c) 2021-present Shopify Inc. See [LICENSE](/LICENSE.md) for further details.
+Repository: https://github.com/Lyrixcs-Miles/Vibe-ration — branch `build-on-dawn`. Theme directories are at repository root for Shopify's GitHub integration. `tools/`, `docs/` and `design-reference/` are supporting material, not storefront theme directories. GitHub integration can synchronise editor changes back to the branch: pull and inspect changes before local editing/pushing. Do not connect this branch to a published theme during development.

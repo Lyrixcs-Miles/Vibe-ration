@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help | Your Store Name (Draft)</title>
+<style>
+  :root { --plum:#2e1a33; --accent:#c8415f; --cream:#faf7f4; --stone:#efe9e3; --line:#e4dcd4; --ink:#241d26; --muted:#6f6671; --white:#fff; --serif:Georgia,"Times New Roman",serif; --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:var(--sans); color:var(--ink); background:var(--cream); line-height:1.55; }
+  a { color:inherit; text-decoration:none; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px; }
+  .announce { background:var(--plum); color:var(--cream); text-align:center; font-size:13px; padding:9px 16px; }
+  header.site { position:sticky; top:0; z-index:20; background:var(--white); border-bottom:1px solid var(--line); }
+  .bar { display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .logo { font-family:var(--serif); font-size:24px; color:var(--plum); }
+  .logo em { font-style:normal; color:var(--accent); }
+  .nav { display:none; gap:26px; font-size:14px; }
+  .nav a:hover { color:var(--accent); }
+  .cart { border:1px solid var(--plum); padding:7px 14px; border-radius:2px; font-size:14px; }
+  @media (min-width:860px) { .nav { display:flex; } }
+
+  .hero { background:var(--stone); padding:56px 0; }
+  .eyebrow { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  h1 { font-family:var(--serif); font-weight:normal; font-size:clamp(32px,5vw,46px); color:var(--plum); line-height:1.15; margin-bottom:14px; }
+  .hero p { color:var(--muted); max-width:560px; }
+  .search { margin-top:22px; max-width:560px; display:flex; }
+  .search input { flex:1; padding:14px; border:1px solid var(--line); background:var(--white); font:inherit; font-size:15px; min-height:48px; }
+  .search button { padding:0 22px; background:var(--plum); color:var(--white); border:1px solid var(--plum); font-size:13px; letter-spacing:.08em; text-transform:uppercase; min-height:48px; }
+
+  .topics { display:grid; gap:14px; padding:48px 0; grid-template-columns:1fr; }
+  @media (min-width:640px) { .topics { grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:960px) { .topics { grid-template-columns:repeat(3,1fr); } }
+  .topic { background:var(--white); border:1px solid var(--line); padding:24px; display:block; }
+  .topic:hover { border-color:var(--accent); }
+  .topic h2 { font-family:var(--serif); font-weight:normal; font-size:22px; color:var(--plum); margin-bottom:6px; }
+  .topic p { font-size:14px; color:var(--muted); }
+
+  .faq { padding-bottom:56px; max-width:760px; }
+  .faq h3 { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:28px 0 6px; font-weight:600; }
+  details { border-bottom:1px solid var(--line); padding:14px 0; }
+  summary { cursor:pointer; font-size:16px; color:var(--plum); list-style:none; display:flex; justify-content:space-between; gap:12px; }
+  summary::after { content:"+"; color:var(--accent); font-size:20px; line-height:1; }
+  details[open] summary::after { content:"–"; }
+  details p { color:var(--muted); margin-top:10px; font-size:15px; }
+
+  .contact { background:var(--plum); color:var(--cream); padding:48px 0; text-align:center; }
+  .contact h2 { font-family:var(--serif); font-weight:normal; font-size:28px; margin-bottom:10px; }
+  .contact p { color:#cfc3cf; font-size:15px; margin-bottom:20px; }
+  .btn { display:inline-block; padding:14px 26px; background:var(--accent); color:var(--white); font-size:14px; letter-spacing:.08em; text-transform:uppercase; min-height:48px; }
+
+  footer { background:var(--white); border-top:1px solid var(--line); padding:32px 0; font-size:13px; color:var(--muted); text-align:center; }
+  footer a:hover { color:var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="announce">Free delivery over R000 (placeholder) &nbsp;·&nbsp; Discreet packaging on every order</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a href="store-v2.html" class="logo">Your<em>Store</em></a>
+    <nav class="nav" aria-label="Main">
+      <a href="store-v2.html#deals">Deals</a>
+      <a href="collection.html">Shop</a>
+      <a href="store-v2.html#new">New</a>
+      <a href="help.html" aria-current="page">Help</a>
+    </nav>
+    <a href="#" class="cart">Cart (0)</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Help centre</p>
+      <h1>How can we help you?</h1>
+      <p>Find answers about orders, delivery, returns and privacy. If you cannot find what you need, contact us.</p>
+      <form class="search" role="search" onsubmit="event.preventDefault()">
+        <label for="q" style="position:absolute;left:-9999px">Search help</label>
+        <input id="q" type="search" placeholder="Search for an answer">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="topics">
+        <a href="#orders" class="topic"><h2>Orders</h2><p>Tracking, changes and cancellations</p></a>
+        <a href="#delivery" class="topic"><h2>Delivery</h2><p>Packaging, timings and areas we cover</p></a>
+        <a href="#returns" class="topic"><h2>Returns and refunds</h2><p>How to return an item and what to expect</p></a>
+        <a href="#payments" class="topic"><h2>Payments</h2><p>Accepted methods and secure checkout</p></a>
+        <a href="#privacy" class="topic"><h2>Privacy</h2><p>How we handle your personal information</p></a>
+        <a href="#contact" class="topic"><h2>Contact us</h2><p>Mon to Fri, 9am to 5pm</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap faq">
+    <h3 id="orders">Orders</h3>
+    <details><summary>How do I track my order?</summary><p>Placeholder. Explain tracking once you have a courier.</p></details>
+    <details><summary>Can I change or cancel my order?</summary><p>Placeholder. State your cut-off time.</p></details>
+
+    <h3 id="delivery">Delivery</h3>
+    <details><summary>How is my order packaged?</summary><p>Placeholder. Describe your discreet packaging.</p></details>
+    <details><summary>How long does delivery take?</summary><p>Placeholder. Give realistic timeframes per area.</p></details>
+
+    <h3 id="returns">Returns and refunds</h3>
+    <details><summary>What is your return policy?</summary><p>Placeholder. Check against the Consumer Protection Act before publishing.</p></details>
+
+    <h3 id="payments">Payments</h3>
+    <details><summary>Which payment methods do you accept?</summary><p>Placeholder. Add once a payment provider is connected.</p></details>
+
+    <h3 id="privacy">Privacy</h3>
+    <details><summary>How do you protect my personal information?</summary><p>Placeholder. Link to a POPIA-compliant privacy policy.</p></details>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Still need help?</h2>
+      <p>Send us a message and we will reply within one working day (placeholder).</p>
+      <a class="btn" href="mailto:hello@example.com">Email us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Your Store Name (placeholder). Draft only. Not for live use. &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Privacy policy</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,3 +1,7 @@
+ignore:
+  - tools/**
+  - docs/**
+  - design-reference/**
 MatchingTranslations:
   enabled: false
 TemplateLength:

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product name | Your Store Name (Draft)</title>
+<style>
+  :root { --plum:#2e1a33; --accent:#c8415f; --accent-dark:#a82f4b; --cream:#faf7f4; --stone:#efe9e3; --line:#e4dcd4; --ink:#241d26; --muted:#6f6671; --white:#fff; --serif:Georgia,"Times New Roman",serif; --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:var(--sans); color:var(--ink); background:var(--cream); line-height:1.55; }
+  a { color:inherit; text-decoration:none; }
+  button { font:inherit; cursor:pointer; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px; }
+  .announce { background:var(--plum); color:var(--cream); text-align:center; font-size:13px; padding:9px 16px; }
+  header.site { position:sticky; top:0; z-index:20; background:var(--white); border-bottom:1px solid var(--line); }
+  .bar { display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .logo { font-family:var(--serif); font-size:24px; color:var(--plum); }
+  .logo em { font-style:normal; color:var(--accent); }
+  .nav { display:none; gap:26px; font-size:14px; }
+  .nav a:hover { color:var(--accent); }
+  .cart { border:1px solid var(--plum); padding:7px 14px; border-radius:2px; font-size:14px; }
+  @media (min-width:860px) { .nav { display:flex; } }
+
+  .crumbs { font-size:13px; color:var(--muted); padding:18px 0; }
+  .crumbs a:hover { color:var(--accent); }
+
+  .product { display:grid; gap:32px; padding-bottom:56px; }
+  @media (min-width:860px) { .product { grid-template-columns:1.1fr 1fr; gap:56px; align-items:start; } }
+
+  .gallery { display:grid; gap:12px; }
+  .main-img { aspect-ratio:4/5; background:var(--stone); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:12px; letter-spacing:.08em; text-transform:uppercase; position:relative; }
+  .thumbs { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .thumbs button { aspect-ratio:1; background:var(--stone); border:2px solid transparent; color:var(--muted); font-size:10px; letter-spacing:.06em; text-transform:uppercase; min-height:44px; }
+  .thumbs button[aria-pressed="true"] { border-color:var(--plum); }
+  .tag { position:absolute; top:12px; left:12px; background:var(--accent); color:var(--white); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:4px 8px; }
+
+  .buy h1 { font-family:var(--serif); font-weight:normal; font-size:clamp(28px,4vw,38px); color:var(--plum); line-height:1.2; margin-bottom:10px; }
+  .rating { font-size:14px; color:var(--muted); margin-bottom:18px; }
+  .price { font-size:24px; font-weight:600; color:var(--plum); margin-bottom:4px; }
+  .price s { font-size:16px; font-weight:400; color:var(--muted); margin-left:8px; }
+  .save { font-size:13px; color:var(--accent); margin-bottom:22px; }
+  .lede { color:var(--muted); font-size:16px; margin-bottom:24px; }
+
+  .field { margin-bottom:20px; }
+  .field-label { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--plum); font-weight:600; margin-bottom:8px; display:block; }
+  .options { display:flex; gap:8px; flex-wrap:wrap; }
+  .options button { min-width:56px; min-height:44px; padding:0 14px; background:var(--white); border:1px solid var(--line); color:var(--ink); font-size:14px; }
+  .options button[aria-pressed="true"] { border-color:var(--plum); box-shadow:inset 0 0 0 1px var(--plum); }
+  .options button:disabled { opacity:.4; text-decoration:line-through; cursor:not-allowed; }
+
+  .qty-row { display:flex; gap:12px; align-items:stretch; margin-bottom:12px; }
+  .qty { display:flex; border:1px solid var(--line); background:var(--white); }
+  .qty button { width:44px; min-height:48px; background:none; border:none; font-size:18px; color:var(--plum); }
+  .qty span { min-width:44px; display:flex; align-items:center; justify-content:center; font-size:15px; }
+  .add { flex:1; min-height:48px; background:var(--plum); color:var(--white); border:1px solid var(--plum); font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
+  .add:hover { background:var(--accent); border-color:var(--accent); }
+
+  .stock { font-size:14px; color:var(--muted); margin-bottom:28px; }
+  .stock strong { color:var(--plum); font-weight:600; }
+
+  .promise { border-top:1px solid var(--line); padding-top:20px; display:grid; gap:14px; font-size:14px; }
+  .promise div { display:flex; gap:12px; }
+  .promise b { color:var(--plum); font-weight:600; display:block; }
+  .promise span { color:var(--muted); }
+
+  .details { border-top:1px solid var(--line); padding:0 0 56px; }
+  .details .wrap { max-width:760px; }
+  details { border-bottom:1px solid var(--line); padding:16px 0; }
+  summary { cursor:pointer; font-size:16px; color:var(--plum); list-style:none; display:flex; justify-content:space-between; gap:12px; }
+  summary::after { content:"+"; color:var(--accent); font-size:20px; line-height:1; }
+  details[open] summary::after { content:"–"; }
+  details p, details ul { color:var(--muted); margin-top:10px; font-size:15px; padding-left:0; }
+  details ul { list-style:none; }
+  details li { padding:4px 0; }
+
+  footer { background:var(--white); border-top:1px solid var(--line); padding:32px 0; font-size:13px; color:var(--muted); text-align:center; }
+
+  .gate { position:fixed; inset:0; z-index:100; background:rgba(46,26,51,.96); display:flex; align-items:center; justify-content:center; padding:20px; }
+  .gate[hidden] { display:none; }
+  .gate-box { background:var(--cream); padding:36px 28px; max-width:420px; text-align:center; }
+  .gate-box h2 { font-family:var(--serif); font-weight:normal; font-size:28px; color:var(--plum); margin-bottom:12px; }
+  .gate-box p { color:var(--muted); font-size:15px; margin-bottom:24px; }
+  .gate-box .row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:14px 26px; border:1px solid var(--plum); background:var(--plum); color:var(--white); font-size:14px; letter-spacing:.08em; text-transform:uppercase; min-height:48px; min-width:140px; }
+  .btn.ghost { background:transparent; color:var(--plum); }
+
+  .toast { position:fixed; bottom:20px; left:50%; transform:translateX(-50%) translateY(120%); background:var(--plum); color:var(--cream); padding:12px 18px; font-size:14px; transition:transform .3s; z-index:50; }
+  .toast.show { transform:translateX(-50%) translateY(0); }
+  @media (prefers-reduced-motion:reduce) { .toast { transition:none; } }
+</style>
+</head>
+<body>
+
+<div class="announce">Free delivery over R000 (placeholder) &nbsp;·&nbsp; Discreet packaging on every order</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a href="store-v2.html" class="logo">Your<em>Store</em></a>
+    <nav class="nav" aria-label="Main">
+      <a href="store-v2.html#deals">Deals</a>
+      <a href="collection.html">Shop</a>
+      <a href="store-v2.html#new">New</a>
+      <a href="help.html">Help</a>
+    </nav>
+    <a href="#" class="cart" id="cartCount">Cart (0)</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="store-v2.html">Home</a> / <a href="collection.html">Category name</a> / <span>Product name</span></nav>
+
+  <div class="product">
+    <div class="gallery">
+      <div class="main-img" id="mainImg"><span class="tag">New</span>Photo 1</div>
+      <div class="thumbs" role="group" aria-label="Product images">
+        <button aria-pressed="true" data-label="Photo 1">1</button>
+        <button aria-pressed="false" data-label="Photo 2">2</button>
+        <button aria-pressed="false" data-label="Photo 3">3</button>
+        <button aria-pressed="false" data-label="Photo 4">4</button>
+      </div>
+    </div>
+
+    <div class="buy">
+      <h1>Product name</h1>
+      <div class="rating">Short line about the product, such as material or use case</div>
+      <div class="price" id="price">R499.00</div>
+      <div class="save">Save R150.00 this week</div>
+      <p class="lede">A two or three sentence description. Say who it is for, what it does, and one detail a shopper would not guess from the photo.</p>
+
+      <div class="field">
+        <span class="field-label" id="colourLabel">Colour</span>
+        <div class="options" role="group" aria-labelledby="colourLabel">
+          <button aria-pressed="true">Plum</button>
+          <button aria-pressed="false">Rose</button>
+          <button aria-pressed="false" disabled>Black</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label" id="sizeLabel">Size</span>
+        <div class="options" role="group" aria-labelledby="sizeLabel">
+          <button aria-pressed="false">S</button>
+          <button aria-pressed="true">M</button>
+          <button aria-pressed="false">L</button>
+        </div>
+      </div>
+
+      <div class="qty-row">
+        <div class="qty" role="group" aria-label="Quantity">
+          <button id="minus" aria-label="Decrease quantity">&minus;</button>
+          <span id="qty" aria-live="polite">1</span>
+          <button id="plus" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="add" id="addBtn">Add to cart</button>
+      </div>
+      <p class="stock"><strong>In stock.</strong> Ships in 1–2 working days. Discreet packaging.</p>
+
+      <div class="promise">
+        <div><span>&#9679;</span><div><b>Discreet delivery</b><span>Plain box, plain label.</span></div></div>
+        <div><span>&#9679;</span><div><b>7-day returns</b><span>Unopened items only. Full terms in Help.</span></div></div>
+        <div><span>&#9679;</span><div><b>Private checkout</b><span>We only collect what we need to deliver.</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="details" aria-label="Product details">
+    <div class="wrap" style="padding:0">
+      <details open>
+        <summary>Description</summary>
+        <p>Longer description of the product. Materials, dimensions, what is included, and how to use or care for it.</p>
+      </details>
+      <details>
+        <summary>Specifications</summary>
+        <ul>
+          <li>Material: placeholder</li>
+          <li>Dimensions: placeholder</li>
+          <li>Battery or power: placeholder</li>
+          <li>Waterproof: placeholder</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Delivery and returns</summary>
+        <p>Summary of delivery times and the return window. Link to the full policy in Help.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Your Store Name (placeholder). Draft only. Not for live use.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Age gate: delete this block and the gate script if the products do not need it -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-box">
+    <h2 id="gateTitle">Are you 18 or older?</h2>
+    <p>This website contains adult-oriented products. You must be 18 or older to enter.</p>
+    <div class="row">
+      <button class="btn" id="gateYes">Yes, I am 18+</button>
+      <a class="btn ghost" href="https://www.google.com">No, leave</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Thumbnail switching (demo)
+  const mainImg = document.getElementById("mainImg");
+  document.querySelectorAll(".thumbs button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".thumbs button").forEach(b => b.setAttribute("aria-pressed", "false"));
+      btn.setAttribute("aria-pressed", "true");
+      mainImg.lastChild.textContent = btn.dataset.label;
+    });
+  });
+
+  // Option selection (demo): single choice per group
+  document.querySelectorAll(".options").forEach(group => {
+    group.querySelectorAll("button:not([disabled])").forEach(btn => {
+      btn.addEventListener("click", () => {
+        group.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", "false"));
+        btn.setAttribute("aria-pressed", "true");
+      });
+    });
+  });
+
+  // Quantity and add-to-cart (demo only, no checkout)
+  let qty = 1, cart = 0;
+  const qtyEl = document.getElementById("qty");
+  document.getElementById("minus").addEventListener("click", () => { qty = Math.max(1, qty - 1); qtyEl.textContent = qty; });
+  document.getElementById("plus").addEventListener("click", () => { qty = Math.min(10, qty + 1); qtyEl.textContent = qty; });
+
+  const toast = document.getElementById("toast");
+  let timer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(timer);
+    timer = setTimeout(() => toast.classList.remove("show"), 2200);
+  }
+  document.getElementById("addBtn").addEventListener("click", () => {
+    cart += qty;
+    document.getElementById("cartCount").textContent = `Cart (${cart})`;
+    showToast(`Added ${qty} to cart (demo)`);
+  });
+
+  // Age gate
+  const gate = document.getElementById("gate");
+  let ok = false;
+  try { ok = sessionStorage.getItem("ageOk") === "1"; } catch (e) {}
+  if (ok) gate.hidden = true;
+  document.getElementById("gateYes").addEventListener("click", () => {
+    try { sessionStorage.setItem("ageOk", "1"); } catch (e) {}
+    gate.hidden = true;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% doc %}
+  Renders session-only age confirmation when the global setting is enabled.
+{% enddoc %}
+<vr-age-gate>
+  <dialog class="vr-age-gate" aria-labelledby="vr-age-title" aria-describedby="vr-age-description">
+    <h2 id="vr-age-title">{{ 'vr.age_gate.heading' | t }}</h2>
+    <p id="vr-age-description">{{ 'vr.age_gate.text' | t }}</p>
+    <div class="vr-actions"><button class="button" type="button" data-age-accept autofocus>{{ 'vr.age_gate.accept' | t }}</button><a class="button button--secondary" href="https://www.google.com">{{ 'vr.age_gate.leave' | t }}</a></div>
+  </dialog>
+  <noscript><div class="vr-age-gate-nojs"><div class="vr-age-gate"><h2>{{ 'vr.age_gate.heading' | t }}</h2><p>{{ 'vr.age_gate.required' | t }}</p><a class="button" href="https://www.google.com">{{ 'vr.age_gate.leave' | t }}</a></div></div></noscript>
+</vr-age-gate>

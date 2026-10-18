@@ -1,0 +1,712 @@
+{
+  "checkedAt": "2026-10-18T08:51:10.192Z",
+  "scope": "Actual Liquid theme rendered with local fixtures; commerce integration is deferred.",
+  "checks": [
+    {
+      "route": "index",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__inner gradient"
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__header"
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__header-inner"
+        },
+        {
+          "tag": "H2",
+          "class": "mobile-facets__heading medium-hide large-up-hide"
+        },
+        {
+          "tag": "P",
+          "class": "mobile-facets__count"
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__summary"
+        },
+        {
+          "tag": "LABEL",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "select"
+        },
+        {
+          "tag": "SELECT",
+          "class": "select__select"
+        },
+        {
+          "tag": "svg",
+          "class": {}
+        },
+        {
+          "tag": "path",
+          "class": {}
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__footer"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__inner gradient"
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__header"
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__header-inner"
+        },
+        {
+          "tag": "H2",
+          "class": "mobile-facets__heading medium-hide large-up-hide"
+        },
+        {
+          "tag": "P",
+          "class": "mobile-facets__count"
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__summary"
+        },
+        {
+          "tag": "LABEL",
+          "class": ""
+        },
+        {
+          "tag": "DIV",
+          "class": "select"
+        },
+        {
+          "tag": "SELECT",
+          "class": "select__select"
+        },
+        {
+          "tag": "svg",
+          "class": {}
+        },
+        {
+          "tag": "path",
+          "class": {}
+        },
+        {
+          "tag": "DIV",
+          "class": "mobile-facets__footer"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "collection",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "cart",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "about",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "404",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 360,
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 390,
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 768,
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 820,
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 1024,
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    },
+    {
+      "route": "search",
+      "width": 1440,
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1": 1,
+      "bodyH1": 1,
+      "brokenImages": [],
+      "overflow": [],
+      "pass": true
+    }
+  ],
+  "interactions": {
+    "faqKeyboard": true,
+    "mobileMenu": true,
+    "mobileMenuCloses": true,
+    "gateOpens": true,
+    "gateResistsEscape": true,
+    "gateSession": true,
+    "gateFreshSession": true,
+    "countdownShows": true,
+    "countdownExpires": true,
+    "countdownRequiresTimezone": true
+  },
+  "errors": [],
+  "pass": true
+}

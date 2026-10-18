@@ -217,6 +217,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
       "page": "Page",
@@ -260,10 +264,6 @@
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
-    },
-    "404": {
-      "title": "Page not found",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -274,7 +274,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -528,6 +527,38 @@
       "max_characters": "{{ max_chars }} characters max",
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
+    }
+  },
+  "vr": {
+    "general": {
+      "photo": "Photo",
+      "sample_product": "Product {{ number }}",
+      "coming_soon": "Coming soon",
+      "price_pending": "Price to be confirmed",
+      "view_collection": "Explore the collection"
+    },
+    "stock": {
+      "available": "Available",
+      "sold_out": "Sold out"
+    },
+    "badges": {
+      "new": "New",
+      "best_seller": "Best seller",
+      "discount": "−{{ amount }}%"
+    },
+    "countdown": {
+      "label": "Time remaining in this promotion",
+      "days": "Days",
+      "hours": "Hrs",
+      "minutes": "Min",
+      "seconds": "Sec"
+    },
+    "age_gate": {
+      "heading": "Are you 18 or older?",
+      "text": "This store contains adult-oriented products. You must be 18 or older to enter.",
+      "accept": "Yes, I am 18+",
+      "leave": "No, leave",
+      "required": "Please confirm your age to continue."
     }
   }
 }

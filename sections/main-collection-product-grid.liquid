@@ -43,7 +43,7 @@
   <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
     {%- paginate collection.products by section.settings.products_per_page -%}
       {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
-      {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
+      {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' and collection.all_products_count > 0 -%}
         <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
           <form class="facets-vertical-form" id="FacetSortForm">
             <div class="facet-filters sorting caption">
@@ -104,6 +104,7 @@
       <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
         {{ 'component-facets.css' | asset_url | stylesheet_tag }}
         <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+        {%- if collection.all_products_count > 0 -%}
         {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
           <aside
             aria-labelledby="verticalTitle"
@@ -120,6 +121,7 @@
             %}
           </aside>
         {%- endif -%}
+        {%- endif -%}
 
         <div
           class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -128,7 +130,16 @@
             data-cascade
           {% endif %}
         >
-          {%- if collection.products.size == 0 -%}
+          {%- if collection.all_products_count == 0 -%}
+            <div class="collection page-width" id="product-grid" data-id="{{ section.id }}">
+              <div class="title-wrapper"><h2>{{ 'vr.general.coming_soon' | t }}</h2><p>{{ 'vr.general.catalogue_preview' | t }}</p></div>
+              {%- if settings.vr_mockup_images -%}
+                <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop" role="list">
+                  {%- for i in (1..8) -%}<li class="grid__item">{% render 'vr-placeholder-card', index: i %}</li>{%- endfor -%}
+                </ul>
+              {%- endif -%}
+            </div>
+          {%- elsif collection.products.size == 0 -%}
             <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
               <div class="loading-overlay gradient"></div>
               <div class="title-wrapper center">

@@ -574,6 +574,6 @@
     </div>
   </product-component>
 {%- else -%}
-  {% assign vr_placeholder_index = forloop.index | default: 1 %}
+  {% assign vr_placeholder_index = vr_placeholder_index | default: 1 %}
   {% render 'vr-placeholder-card', index: vr_placeholder_index %}
 {%- endif -%}

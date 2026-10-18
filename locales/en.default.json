@@ -543,6 +543,7 @@
       "photo": "Photo",
       "sample_product": "Product {{ number }}",
       "coming_soon": "Coming soon",
+      "catalogue_preview": "A preview of what is to come. These mockup products are not available to purchase.",
       "price_pending": "Price to be confirmed",
       "view_collection": "Explore the collection"
     },

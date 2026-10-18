@@ -1,0 +1,87 @@
+{
+  "sections": {
+    "intro": {
+      "type": "vr-page-intro",
+      "settings": {
+        "eyebrow": "Get to know us",
+        "heading": "Comfort. Choice. You.",
+        "text": "<p>A thoughtful space for your private moments.</p>",
+        "color_scheme": "scheme-3"
+      }
+    },
+    "story": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Room to explore.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We believe choosing something for yourself should feel comfortable. Vibe-ration is a space to browse at your own pace and find what works for you.</p><p>Our story is still taking shape. We look forward to sharing more about our people and our approach.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "values": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "A considered approach.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Clear information, a welcoming experience, and room for your questions. That’s where we’re starting.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Talk to us",
+            "button_link": "shopify://pages/contact",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "story",
+    "values"
+  ]
+}

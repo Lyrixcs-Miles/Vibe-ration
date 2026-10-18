@@ -1,0 +1,60 @@
+<section class="vr-section-pad color-{{ section.settings.color_scheme }} gradient"><div class="page-width vr-faq"><div class="vr-section-head"><div>{% if section.settings.eyebrow != blank %}<p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p>{% endif %}<h2>{{ section.settings.heading | escape }}</h2></div></div>{% for block in section.blocks %}{% if block.type == 'group' %}<h3 class="vr-faq__group" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h3>{% else %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}<span class="vr-faq__toggle" aria-hidden="true"></span></summary><div class="rte">{{ block.settings.answer }}</div></details>{% endif %}{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "VR FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Here to help"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A few things you might wonder"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "group",
+      "name": "Group heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VR FAQ"
+    }
+  ]
+}
+{% endschema %}

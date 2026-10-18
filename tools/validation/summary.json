@@ -1,0 +1,38 @@
+{
+  "status": "Local design ready; store integration pending",
+  "theme": {
+    "name": "Vibe-ration",
+    "version": "1.0.0",
+    "upstream": "Dawn 15.5.0"
+  },
+  "themeCheck": {
+    "errors": 0,
+    "warnings": 8,
+    "baselineWarnings": 9,
+    "newWarnings": []
+  },
+  "browser": {
+    "pass": true,
+    "responsiveChecks": 54,
+    "interactions": {
+      "faqKeyboard": true,
+      "mobileMenu": true,
+      "mobileMenuCloses": true,
+      "gateOpens": true,
+      "gateResistsEscape": true,
+      "gateSession": true,
+      "gateFreshSession": true,
+      "countdownShows": true,
+      "countdownExpires": true,
+      "countdownRequiresTimezone": true
+    },
+    "errors": []
+  },
+  "pending": [
+    "Correct Shopify store connection",
+    "Actual catalogue, photography, brand and policy content",
+    "Theme editor and native commerce checks",
+    "Lighthouse and real phone review",
+    "Unpublished push, test checkout and publication approval"
+  ]
+}

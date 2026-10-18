@@ -1,0 +1,5 @@
+{% doc %}
+  Renders a non-purchasable design placeholder.
+  @param {number} index - Placeholder position
+{% enddoc %}
+<div class="vr-placeholder-card"><div class="vr-placeholder-card__media"><span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span></div><div class="vr-placeholder-card__info"><h3>{{ 'vr.general.sample_product' | t: number: index }}</h3><p>{{ 'vr.general.coming_soon' | t }}</p><p class="vr-placeholder-card__price">{{ 'vr.general.price_pending' | t }}</p><button class="button button--secondary" disabled>{{ 'vr.general.coming_soon' | t }}</button></div></div>

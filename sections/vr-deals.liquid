@@ -1,0 +1,80 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<section id="vr-weekly-deals" class="vr-section-pad vr-deals color-{{ section.settings.color_scheme }} gradient"><div class="page-width">
+  <div class="vr-deals__head"><div><p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="rte">{{ section.settings.text }}</div></div>
+    {% if section.settings.end_date != blank %}
+    <vr-countdown class="vr-countdown" data-end="{{ section.settings.end_date | escape }}" role="timer" aria-label="{{ 'vr.countdown.label' | t }}" hidden>
+      <span><b data-unit="days">00</b><small>{{ 'vr.countdown.days' | t }}</small></span><span><b data-unit="hours">00</b><small>{{ 'vr.countdown.hours' | t }}</small></span><span><b data-unit="minutes">00</b><small>{{ 'vr.countdown.minutes' | t }}</small></span><span><b data-unit="seconds">00</b><small>{{ 'vr.countdown.seconds' | t }}</small></span>
+    </vr-countdown>{% endif %}
+  </div>
+  <ul class="vr-product-grid list-unstyled" role="list">
+    {% for item in section.settings.collection.products limit: section.settings.products_to_show %}<li>{% render 'card-product', card_product: item, media_aspect_ratio: 'portrait', show_secondary_image: true, quick_add: 'standard', section_id: section.id %}</li>
+    {% else %}{% for i in (1..4) %}<li>{% render 'vr-placeholder-card', index: i %}</li>{% endfor %}{% endfor %}
+  </ul>
+  {% if section.settings.collection != blank %}<div class="vr-more"><a class="button button--secondary" href="{{ section.settings.collection.url }}">{{ 'vr.general.view_collection' | t }}</a></div>{% endif %}
+</div></section>
+{% schema %}
+{
+  "name": "VR Weekly deals",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Worth a closer look"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This week’s finds"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>A considered selection, refreshed regularly.</p>"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Deals collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products",
+      "min": 4,
+      "max": 12,
+      "step": 4,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "Promotion end (ISO 8601)",
+      "info": "Use an explicit timezone, e.g. 2026-12-04T23:59:00+02:00. Leave blank for no timer. Schedule the actual promotion in Shopify separately; this timer does not change prices."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "VR Weekly deals"
+    }
+  ],
+  "limit": 1,
+  "enabled_on": {
+    "templates": [
+      "index"
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+<section class="vr-section-pad color-{{ section.settings.color_scheme }} gradient"><div class="page-width">
+  <div class="vr-section-head"><div>{% if section.settings.eyebrow != blank %}<p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p>{% endif %}<h2>{{ section.settings.heading | escape }}</h2></div></div>
+  <div class="vr-categories">
+    {% for block in section.blocks %}
+      {% assign category = block.settings.collection %}
+      {% assign category_image = block.settings.image | default: category.featured_image %}
+      <a class="vr-category" href="{{ category.url | default: routes.collections_url }}" {{ block.shopify_attributes }}>
+        <div class="vr-category__media">{% if category_image != blank %}{{ category_image | image_url: width: 900 | image_tag: widths: '300, 450, 600, 900', sizes: '(min-width: 640px) 33vw, 50vw', loading: 'lazy' }}{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>
+        <div class="vr-category__copy"><h3>{{ block.settings.title | default: category.title | escape }}</h3><p>{{ block.settings.description | escape }}</p><span class="vr-category__arrow" aria-hidden="true">↗</span></div>
+      </a>
+    {% endfor %}
+  </div>
+</div></section>
+{% schema %}
+{
+  "name": "VR Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Find your favourites"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "A place to start"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "VR Categories",
+      "blocks": [
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        },
+        {
+          "type": "category"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

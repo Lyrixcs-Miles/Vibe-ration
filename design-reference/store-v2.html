@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Store Name (Draft v2)</title>
+<style>
+  :root {
+    --plum: #2e1a33;
+    --accent: #c8415f;
+    --accent-dark: #a82f4b;
+    --cream: #faf7f4;
+    --stone: #efe9e3;
+    --line: #e4dcd4;
+    --ink: #241d26;
+    --muted: #6f6671;
+    --white: #ffffff;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.55; font-size: 16px; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* Buttons */
+  .btn { display: inline-block; padding: 14px 26px; border-radius: 2px; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--plum); background: var(--plum); color: var(--white); min-height: 48px; }
+  .btn:hover { background: var(--accent); border-color: var(--accent); }
+  .btn.ghost { background: transparent; color: var(--plum); }
+  .btn.ghost:hover { background: var(--plum); color: var(--white); }
+  .btn.small { padding: 10px 14px; min-height: 40px; font-size: 13px; }
+
+  /* Announcement */
+  .announce { background: var(--plum); color: var(--cream); text-align: center; font-size: 13px; padding: 9px 16px; }
+
+  /* Header */
+  header.site { position: sticky; top: 0; z-index: 20; background: var(--white); border-bottom: 1px solid var(--line); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .logo { font-family: var(--serif); font-size: 24px; color: var(--plum); letter-spacing: .02em; }
+  .logo em { font-style: normal; color: var(--accent); }
+  .nav { display: none; gap: 26px; font-size: 14px; }
+  .nav a:hover { color: var(--accent); }
+  .tools { display: flex; gap: 16px; align-items: center; font-size: 14px; }
+  .cart { border: 1px solid var(--plum); padding: 7px 14px; border-radius: 2px; }
+  @media (min-width: 860px) { .nav { display: flex; } }
+
+  /* Hero */
+  .hero { background: var(--stone); padding: 72px 0; }
+  .hero-inner { max-width: 680px; }
+  .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .hero h1 { font-family: var(--serif); font-weight: normal; font-size: clamp(34px, 6vw, 56px); line-height: 1.1; color: var(--plum); margin-bottom: 18px; }
+  .hero p { color: var(--muted); max-width: 520px; margin-bottom: 28px; font-size: 17px; }
+
+  /* Sections */
+  section { padding: 64px 0; }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+  h2 { font-family: var(--serif); font-weight: normal; font-size: clamp(26px, 4vw, 36px); color: var(--plum); line-height: 1.2; }
+  .link { font-size: 14px; color: var(--plum); border-bottom: 1px solid var(--plum); padding-bottom: 2px; }
+  .link:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Categories */
+  .cats { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .cat { position: relative; min-height: 200px; padding: 22px; background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: flex-end; }
+  .cat .ph-img { position: absolute; inset: 0 0 auto 0; height: 60%; background: var(--stone); }
+  .cat h3 { font-family: var(--serif); font-weight: normal; font-size: 24px; color: var(--plum); position: relative; }
+  .cat span { font-size: 13px; color: var(--muted); position: relative; }
+  .cat:hover { border-color: var(--accent); }
+  @media (min-width: 640px) { .cats { grid-template-columns: repeat(3, 1fr); } }
+
+  /* Deals */
+  .deals-head { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; background: var(--white); border: 1px solid var(--line); padding: 22px; margin-bottom: 28px; }
+  .deals-head h3 { font-family: var(--serif); font-weight: normal; font-size: 22px; color: var(--plum); }
+  .deals-head p { font-size: 14px; color: var(--muted); }
+  .countdown { display: flex; gap: 10px; text-align: center; }
+  .countdown div { min-width: 60px; padding: 8px 8px; background: var(--cream); border: 1px solid var(--line); }
+  .countdown b { display: block; font-size: 22px; font-weight: 600; color: var(--plum); font-variant-numeric: tabular-nums; }
+  .countdown small { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+  /* Products */
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (min-width: 860px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+  .card { background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .img { position: relative; aspect-ratio: 4 / 5; background: var(--stone); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+  .tag { position: absolute; top: 10px; left: 10px; background: var(--accent); color: var(--white); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 4px 8px; }
+  .tag.dark { background: var(--plum); }
+  .info { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .info h4 { font-weight: 500; font-size: 15px; line-height: 1.35; }
+  .meta { font-size: 13px; color: var(--muted); }
+  .price { font-size: 15px; font-weight: 600; color: var(--plum); margin-top: auto; }
+  .price s { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: 13px; }
+  .add { margin-top: 10px; width: 100%; padding: 11px; border: 1px solid var(--plum); background: var(--white); color: var(--plum); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; min-height: 44px; }
+  .add:hover:not(:disabled) { background: var(--plum); color: var(--white); }
+  .add:disabled { opacity: .5; cursor: not-allowed; }
+  .more { text-align: center; margin-top: 36px; }
+
+  /* Trust */
+  .trust { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 36px 0; }
+  .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (min-width: 860px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+  .trust h4 { font-size: 15px; font-weight: 600; color: var(--plum); margin-bottom: 4px; }
+  .trust p { font-size: 14px; color: var(--muted); }
+
+  /* Newsletter */
+  .news { background: var(--plum); color: var(--cream); text-align: center; padding: 64px 0; }
+  .news h2 { color: var(--cream); }
+  .news p { color: #cfc3cf; font-size: 15px; margin: 12px auto 24px; max-width: 480px; }
+  .news form { display: flex; flex-direction: column; gap: 10px; max-width: 460px; margin: 0 auto; }
+  .news input { padding: 14px; border: none; font: inherit; font-size: 15px; min-height: 48px; }
+  .news .btn { background: var(--accent); border-color: var(--accent); }
+  .news .btn:hover { background: var(--accent-dark); }
+  .fine { font-size: 12px; color: #a89daa; margin-top: 14px; }
+  @media (min-width: 560px) { .news form { flex-direction: row; } .news input { flex: 1; } }
+
+  /* FAQ */
+  .faq { max-width: 760px; }
+  .faq h4 { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 28px 0 6px; }
+  details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  summary { cursor: pointer; font-size: 16px; color: var(--plum); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::after { content: "+"; color: var(--accent); font-size: 20px; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); margin-top: 10px; font-size: 15px; }
+
+  /* Footer */
+  footer { background: var(--white); border-top: 1px solid var(--line); padding: 56px 0 28px; font-size: 14px; }
+  .foot { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  @media (min-width: 760px) { .foot { grid-template-columns: 2fr 1fr 1fr; } }
+  footer h5 { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--plum); margin-bottom: 12px; font-weight: 600; }
+  footer a { display: block; color: var(--muted); margin-bottom: 8px; }
+  footer a:hover { color: var(--accent); }
+  .legal { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+
+  /* Age gate */
+  .gate { position: fixed; inset: 0; z-index: 100; background: rgba(46,26,51,.96); display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .gate[hidden] { display: none; }
+  .gate-box { background: var(--cream); padding: 36px 28px; max-width: 420px; text-align: center; }
+  .gate-box h2 { font-size: 28px; margin-bottom: 12px; }
+  .gate-box p { color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+  .gate-box .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .gate-box .btn { min-width: 140px; }
+
+  /* Toast */
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(120%); background: var(--plum); color: var(--cream); padding: 12px 18px; font-size: 14px; transition: transform .3s; z-index: 50; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .toast { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="announce">Free delivery over R000 (placeholder) &nbsp;·&nbsp; Discreet packaging on every order</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a href="#top" class="logo">Your<em>Store</em></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#deals">Deals</a>
+      <a href="#collections">Shop</a>
+      <a href="#new">New</a>
+      <a href="#about">About</a>
+      <a href="#help">Help</a>
+    </nav>
+    <div class="tools"><a href="#" class="cart" id="cartCount">Cart (0)</a></div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="padding:72px 0">
+    <div class="wrap">
+      <div class="hero-inner">
+        <p class="eyebrow">New season</p>
+        <h1>Your headline goes here</h1>
+        <p>One sentence that tells a shopper what you sell and why it is worth their time.</p>
+        <a class="btn" href="#deals">Shop this week's deals</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="collections">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Start here</p><h2>Shop by category</h2></div>
+      </div>
+      <div class="cats">
+        <a href="#" class="cat"><div class="ph-img"></div><h3>Category one</h3><span>Short description</span></a>
+        <a href="#" class="cat"><div class="ph-img"></div><h3>Category two</h3><span>Short description</span></a>
+        <a href="#" class="cat"><div class="ph-img"></div><h3>Category three</h3><span>Short description</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="deals" style="padding-top:0">
+    <div class="wrap">
+      <div class="deals-head">
+        <div>
+          <p class="eyebrow" style="margin-bottom:6px">Updated every Friday</p>
+          <h3>Weekly deals</h3>
+          <p>Ends Friday at 23:59</p>
+        </div>
+        <div class="countdown" aria-label="Time left in weekly deals">
+          <div><b id="d">00</b><small>Days</small></div>
+          <div><b id="h">00</b><small>Hrs</small></div>
+          <div><b id="m">00</b><small>Min</small></div>
+          <div><b id="s">00</b><small>Sec</small></div>
+        </div>
+      </div>
+      <div class="grid" id="dealsGrid"></div>
+    </div>
+  </section>
+
+  <section id="new" style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Just in</p><h2>New arrivals</h2></div>
+        <a href="#" class="link">View all</a>
+      </div>
+      <div class="grid" id="newGrid"></div>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="Our promise">
+    <div class="wrap trust-grid">
+      <div><h4>Discreet delivery</h4><p>Plain box, plain label, no branding on the outside.</p></div>
+      <div><h4>Free shipping</h4><p>On orders over R000 (placeholder).</p></div>
+      <div><h4>7-day returns</h4><p>Unopened items only. Full terms in Help.</p></div>
+      <div><h4>Private by design</h4><p>We only collect what we need to deliver your order.</p></div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="wrap">
+      <h2>Get 10% off your first order</h2>
+      <p>New arrivals and offers, once a week at most. Unsubscribe any time.</p>
+      <form id="signup">
+        <label for="email" class="sr" style="position:absolute;left:-9999px">Email</label>
+        <input id="email" type="email" required placeholder="Your email address" autocomplete="email">
+        <button class="btn" type="submit">Sign me up</button>
+      </form>
+      <p class="fine">By subscribing you agree to our privacy policy (placeholder link).</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="head"><div><p class="eyebrow">About</p><h2>Your Store Name</h2></div></div>
+      <div class="grid" style="grid-template-columns:1fr; gap:28px">
+        <p style="max-width:640px; color:var(--muted); font-size:17px">Replace this with two or three sentences about who you are, what you sell, and why you started. Be specific and honest. Shoppers trust a real story more than a slogan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="help" style="padding-top:0">
+    <div class="wrap faq">
+      <div class="head"><div><p class="eyebrow">Help</p><h2>Questions</h2></div></div>
+
+      <h4>Orders</h4>
+      <details><summary>How do I track my order?</summary><p>Placeholder. Explain tracking once you have a courier.</p></details>
+      <details><summary>Can I change or cancel my order?</summary><p>Placeholder. State your cut-off time.</p></details>
+
+      <h4>Delivery</h4>
+      <details><summary>How is my order packaged?</summary><p>Placeholder. Describe your discreet packaging.</p></details>
+      <details><summary>How long does delivery take?</summary><p>Placeholder. Give realistic timeframes per area.</p></details>
+
+      <h4>Returns and payment</h4>
+      <details><summary>What is your return policy?</summary><p>Placeholder. Check against the Consumer Protection Act before publishing.</p></details>
+      <details><summary>Which payment methods do you accept?</summary><p>Placeholder. Add once a payment provider is connected.</p></details>
+
+      <h4>Privacy</h4>
+      <details><summary>How do you protect my personal information?</summary><p>Placeholder. Link to a POPIA-compliant privacy policy.</p></details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="logo" style="margin-bottom:10px">Your<em>Store</em></div>
+        <p style="color:var(--muted); max-width:340px">Short placeholder description of your business. Replace before launch.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <a href="#">Weekly deals</a>
+        <a href="#">New arrivals</a>
+        <a href="#">Categories</a>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <a href="#help">Help centre</a>
+        <a href="#">Contact us</a>
+        <a href="#">Returns</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+    <div class="legal">&copy; 2026 Your Store Name (placeholder). Draft only. Not for live use.</div>
+  </div>
+</footer>
+
+<!-- Age gate. To remove it, delete this element and the gate script below. -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-box">
+    <h2 id="gateTitle">Are you 18 or older?</h2>
+    <p>This website contains adult-oriented products. You must be 18 or older to enter.</p>
+    <div class="row">
+      <button class="btn" id="gateYes">Yes, I am 18+</button>
+      <a class="btn ghost" href="https://www.google.com">No, leave</a>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  // Sample products: replace with your real catalogue
+  const deals = [
+    { name: "Product name one", price: 499, was: 649, tag: "-23%", stock: true },
+    { name: "Product name two", price: 899, was: 1099, tag: "-18%", stock: true },
+    { name: "Product name three", price: 349, was: 449, tag: "-22%", stock: true },
+    { name: "Product name four", price: 1299, was: 1499, tag: "-13%", stock: false }
+  ];
+  const fresh = [
+    { name: "Product name five", price: 599, tag: "New", stock: true },
+    { name: "Product name six", price: 449, tag: "Best seller", stock: true, dark: true },
+    { name: "Product name seven", price: 799, stock: false },
+    { name: "Product name eight", price: 999, tag: "New", stock: true }
+  ];
+
+  const fmt = n => "R" + n.toLocaleString("en-ZA", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  let cart = 0;
+
+  function card(p) {
+    const was = p.was ? `<s>${fmt(p.was)}</s>` : "";
+    const tag = p.tag ? `<span class="tag ${p.dark ? "dark" : ""}">${p.tag}</span>` : "";
+    return `<article class="card">
+      <div class="img">${tag}Photo</div>
+      <div class="info">
+        <h4>${p.name}</h4>
+        <div class="meta">${p.stock ? "In stock, ships in 1–2 days" : "Out of stock"}</div>
+        <div class="price">${fmt(p.price)}${was}</div>
+        <button class="add" ${p.stock ? "" : "disabled"} data-name="${p.name}">${p.stock ? "Add to cart" : "Sold out"}</button>
+      </div>
+    </article>`;
+  }
+  document.getElementById("dealsGrid").innerHTML = deals.map(card).join("");
+  document.getElementById("newGrid").innerHTML = fresh.map(card).join("");
+
+  // Add to cart (demo only, no checkout)
+  const toast = document.getElementById("toast");
+  let toastTimer;
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+  }
+  document.addEventListener("click", e => {
+    const btn = e.target.closest(".add");
+    if (btn && !btn.disabled) {
+      cart++;
+      document.getElementById("cartCount").textContent = `Cart (${cart})`;
+      showToast(`Added: ${btn.dataset.name}`);
+    }
+  });
+
+  // Newsletter (demo only)
+  document.getElementById("signup").addEventListener("submit", e => {
+    e.preventDefault();
+    e.target.reset();
+    showToast("Thanks. Check your inbox (demo).");
+  });
+
+  // Countdown to next Friday 23:59
+  function nextFriday() {
+    const now = new Date();
+    const add = (5 - now.getDay() + 7) % 7 || 7;
+    const d = new Date(now);
+    d.setDate(now.getDate() + add);
+    d.setHours(23, 59, 59, 0);
+    return d;
+  }
+  const target = nextFriday();
+  function tick() {
+    const diff = Math.max(0, target - new Date());
+    const pad = n => String(Math.floor(n)).padStart(2, "0");
+    document.getElementById("d").textContent = pad(diff / 86400000);
+    document.getElementById("h").textContent = pad((diff / 3600000) % 24);
+    document.getElementById("m").textContent = pad((diff / 60000) % 60);
+    document.getElementById("s").textContent = pad((diff / 1000) % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Age gate: remembered for this browser tab only
+  const gate = document.getElementById("gate");
+  let verified = false;
+  try { verified = sessionStorage.getItem("ageOk") === "1"; } catch (e) {}
+  if (verified) gate.hidden = true;
+  document.getElementById("gateYes").addEventListener("click", () => {
+    try { sessionStorage.setItem("ageOk", "1"); } catch (e) {}
+    gate.hidden = true;
+  });
+</script>
+
+</body>
+</html>

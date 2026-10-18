@@ -1,0 +1,20 @@
+{
+  "renderer": "LiquidJS with local Shopify object/filter fixtures",
+  "pages": [
+    "index",
+    "collection",
+    "product",
+    "cart",
+    "about",
+    "help",
+    "contact",
+    "404",
+    "search"
+  ],
+  "warnings": [],
+  "limitations": [
+    "Local fixtures are design samples, not store content.",
+    "Shopify forms, Ajax cart, predictive search, filters, variant updates and checkout require connected-store testing.",
+    "Native Shopify output may differ; repeat responsive checks on the connected theme."
+  ]
+}

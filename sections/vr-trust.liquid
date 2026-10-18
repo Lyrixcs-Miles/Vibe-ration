@@ -1,0 +1,44 @@
+<section class="vr-trust color-{{ section.settings.color_scheme }} gradient"><div class="page-width vr-trust__grid">{% for block in section.blocks %}<div class="vr-trust__item" {{ block.shopify_attributes }}><span class="vr-trust__mark" aria-hidden="true">{{ block.settings.symbol | escape }}</span><div><h2>{{ block.settings.heading | escape }}</h2><div class="rte">{{ block.settings.text }}</div></div></div>{% endfor %}</div></section>
+{% schema %}
+{
+  "name": "VR Trust row",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promise",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "symbol",
+          "label": "Symbol",
+          "default": "◇"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "VR Trust row"
+    }
+  ]
+}
+{% endschema %}

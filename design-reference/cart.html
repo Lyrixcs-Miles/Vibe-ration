@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your cart | Your Store Name (Draft)</title>
+<style>
+  :root { --plum:#2e1a33; --accent:#c8415f; --cream:#faf7f4; --stone:#efe9e3; --line:#e4dcd4; --ink:#241d26; --muted:#6f6671; --white:#fff; --serif:Georgia,"Times New Roman",serif; --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:var(--sans); color:var(--ink); background:var(--cream); line-height:1.55; }
+  a { color:inherit; text-decoration:none; }
+  button { font:inherit; cursor:pointer; }
+  :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 20px; }
+  .announce { background:var(--plum); color:var(--cream); text-align:center; font-size:13px; padding:9px 16px; }
+  header.site { position:sticky; top:0; z-index:20; background:var(--white); border-bottom:1px solid var(--line); }
+  .bar { display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .logo { font-family:var(--serif); font-size:24px; color:var(--plum); }
+  .logo em { font-style:normal; color:var(--accent); }
+  .nav { display:none; gap:26px; font-size:14px; }
+  .nav a:hover { color:var(--accent); }
+  .cart-link { border:1px solid var(--plum); padding:7px 14px; border-radius:2px; font-size:14px; }
+  @media (min-width:860px) { .nav { display:flex; } }
+
+  .page-head { padding:40px 0 24px; }
+  .eyebrow { font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+  h1 { font-family:var(--serif); font-weight:normal; font-size:clamp(30px,4.5vw,42px); color:var(--plum); line-height:1.15; }
+
+  /* Empty state */
+  .empty { background:var(--white); border:1px solid var(--line); padding:48px 24px; text-align:center; margin-bottom:64px; }
+  .empty h2 { font-family:var(--serif); font-weight:normal; font-size:24px; color:var(--plum); margin-bottom:8px; }
+  .empty p { color:var(--muted); font-size:15px; margin-bottom:22px; }
+  .btn { display:inline-block; padding:14px 26px; border:1px solid var(--plum); background:var(--plum); color:var(--white); font-size:14px; letter-spacing:.08em; text-transform:uppercase; min-height:48px; }
+  .btn:hover { background:var(--accent); border-color:var(--accent); }
+
+  /* Filled state */
+  .filled { display:grid; gap:28px; padding-bottom:64px; }
+  @media (min-width:860px) { .filled { grid-template-columns:1fr 340px; align-items:start; } }
+  .lines { background:var(--white); border:1px solid var(--line); }
+  .line { display:grid; grid-template-columns:96px 1fr; gap:16px; padding:18px; border-bottom:1px solid var(--line); }
+  .line:last-child { border-bottom:none; }
+  .thumb { aspect-ratio:4/5; background:var(--stone); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:10px; letter-spacing:.06em; text-transform:uppercase; }
+  .line h3 { font-size:15px; font-weight:500; color:var(--ink); margin-bottom:2px; }
+  .line .opts { font-size:13px; color:var(--muted); margin-bottom:10px; }
+  .row { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .qty { display:flex; border:1px solid var(--line); }
+  .qty button { width:40px; min-height:40px; background:none; border:none; font-size:16px; color:var(--plum); }
+  .qty span { min-width:40px; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .line-price { font-weight:600; color:var(--plum); }
+  .remove { background:none; border:none; color:var(--muted); font-size:13px; text-decoration:underline; min-height:44px; padding:0 4px; }
+  .remove:hover { color:var(--accent); }
+
+  .summary { background:var(--white); border:1px solid var(--line); padding:22px; }
+  .summary h2 { font-family:var(--serif); font-weight:normal; font-size:22px; color:var(--plum); margin-bottom:16px; }
+  .sum-row { display:flex; justify-content:space-between; font-size:15px; padding:8px 0; color:var(--ink); }
+  .sum-row.muted { color:var(--muted); font-size:14px; }
+  .sum-total { border-top:1px solid var(--line); margin-top:8px; padding-top:14px; font-weight:600; font-size:17px; color:var(--plum); }
+  .promo { display:flex; gap:8px; margin:16px 0; }
+  .promo input { flex:1; padding:12px; border:1px solid var(--line); font:inherit; font-size:14px; min-height:44px; }
+  .promo button { padding:0 16px; border:1px solid var(--plum); background:var(--white); color:var(--plum); font-size:13px; min-height:44px; }
+  .checkout { width:100%; min-height:52px; margin-top:14px; background:var(--plum); color:var(--white); border:1px solid var(--plum); font-size:14px; letter-spacing:.08em; text-transform:uppercase; }
+  .checkout:hover { background:var(--accent); border-color:var(--accent); }
+  .checkout:disabled { opacity:.5; cursor:not-allowed; }
+  .reassure { margin-top:16px; font-size:13px; color:var(--muted); display:grid; gap:6px; }
+  .reassure span::before { content:"✓  "; color:var(--accent); }
+
+  footer { background:var(--white); border-top:1px solid var(--line); padding:32px 0; font-size:13px; color:var(--muted); text-align:center; }
+
+  .gate { position:fixed; inset:0; z-index:100; background:rgba(46,26,51,.96); display:flex; align-items:center; justify-content:center; padding:20px; }
+  .gate[hidden] { display:none; }
+  .gate-box { background:var(--cream); padding:36px 28px; max-width:420px; text-align:center; }
+  .gate-box h2 { font-family:var(--serif); font-weight:normal; font-size:28px; color:var(--plum); margin-bottom:12px; }
+  .gate-box p { color:var(--muted); font-size:15px; margin-bottom:24px; }
+  .gate-box .row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .gate-box .btn { min-width:140px; }
+  .btn.ghost { background:transparent; color:var(--plum); }
+</style>
+</head>
+<body>
+
+<div class="announce">Free delivery over R000 (placeholder) &nbsp;·&nbsp; Discreet packaging on every order</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a href="store-v2.html" class="logo">Your<em>Store</em></a>
+    <nav class="nav" aria-label="Main">
+      <a href="store-v2.html#deals">Deals</a>
+      <a href="collection.html">Shop</a>
+      <a href="store-v2.html#new">New</a>
+      <a href="help.html">Help</a>
+    </nav>
+    <a href="cart.html" class="cart-link" aria-current="page">Cart (0)</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Your order</p>
+    <h1>Your cart</h1>
+  </div>
+
+  <!-- STATE A: empty cart. Shown by default. -->
+  <section class="empty" id="emptyState">
+    <h2>Your cart is empty</h2>
+    <p>Browse this week's deals or start with a category.</p>
+    <a class="btn" href="store-v2.html#deals">Shop weekly deals</a>
+  </section>
+
+  <!-- STATE B: filled cart. Hidden by default, for design review. -->
+  <div class="filled" id="filledState" hidden>
+    <div>
+      <div class="lines">
+        <div class="line">
+          <div class="thumb">Photo</div>
+          <div>
+            <h3>Product name one</h3>
+            <div class="opts">Colour: Plum · Size: M</div>
+            <div class="row">
+              <div class="qty"><button aria-label="Decrease">&minus;</button><span>1</span><button aria-label="Increase">+</button></div>
+              <span class="line-price">R499.00</span>
+            </div>
+            <div style="margin-top:8px"><button class="remove">Remove</button></div>
+          </div>
+        </div>
+        <div class="line">
+          <div class="thumb">Photo</div>
+          <div>
+            <h3>Product name two</h3>
+            <div class="opts">Colour: Rose</div>
+            <div class="row">
+              <div class="qty"><button aria-label="Decrease">&minus;</button><span>2</span><button aria-label="Increase">+</button></div>
+              <span class="line-price">R1798.00</span>
+            </div>
+            <div style="margin-top:8px"><button class="remove">Remove</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="summary" aria-label="Order summary">
+      <h2>Summary</h2>
+      <div class="sum-row"><span>Subtotal</span><span>R2297.00</span></div>
+      <div class="sum-row muted"><span>Delivery</span><span>Calculated at checkout</span></div>
+      <div class="promo">
+        <label for="promo" style="position:absolute;left:-9999px">Promo code</label>
+        <input id="promo" type="text" placeholder="Promo code">
+        <button type="button">Apply</button>
+      </div>
+      <div class="sum-row sum-total"><span>Estimated total</span><span>R2297.00</span></div>
+      <button class="checkout" disabled title="Checkout not connected yet">Checkout</button>
+      <div class="reassure">
+        <span>Discreet packaging</span>
+        <span>7-day returns on unopened items</span>
+        <span>Private checkout</span>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Your Store Name (placeholder). Draft only. Not for live use.</p>
+</footer>
+
+<!-- Age gate: delete this block and the gate script if the products do not need it -->
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-box">
+    <h2 id="gateTitle">Are you 18 or older?</h2>
+    <p>This website contains adult-oriented products. You must be 18 or older to enter.</p>
+    <div class="row">
+      <button class="btn" id="gateYes">Yes, I am 18+</button>
+      <a class="btn ghost" href="https://www.google.com">No, leave</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Design review switch: add ?filled to the URL to see the filled state
+  if (location.search.includes("filled")) {
+    document.getElementById("emptyState").hidden = true;
+    document.getElementById("filledState").hidden = false;
+  }
+
+  // Age gate
+  const gate = document.getElementById("gate");
+  let ok = false;
+  try { ok = sessionStorage.getItem("ageOk") === "1"; } catch (e) {}
+  if (ok) gate.hidden = true;
+  document.getElementById("gateYes").addEventListener("click", () => {
+    try { sessionStorage.setItem("ageOk", "1"); } catch (e) {}
+    gate.hidden = true;
+  });
+</script>
+</body>
+</html>

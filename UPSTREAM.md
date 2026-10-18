@@ -9,4 +9,6 @@
 
 Custom sections, snippets and assets use `vr-`. Native edits are limited to global design tokens and assets, header wordmark/heading semantics, product-card presentation and placeholders, cart empty-state heading semantics, and JSON section/template configuration. Product forms, variant pickers, media galleries, search, filters, quick add, cart logic and checkout remain Dawn/Shopify features.
 
+The secondary-page redesign also adds contextual breadcrumbs to native product/collection/cart sections, an order-summary heading to the cart footer and a custom 404 presentation. Native form and commerce logic remains intact. `vr-pages.css` scopes page layouts using body template classes.
+
 The clean `vibe-dawn` checkout beside this repository is a local reference, not the deployable theme. Compare upgrades against the pinned commit; do not assume a future Dawn release can be copied over custom work.

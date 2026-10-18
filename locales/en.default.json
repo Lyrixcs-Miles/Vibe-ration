@@ -559,6 +559,22 @@
       "accept": "Yes, I am 18+",
       "leave": "No, leave",
       "required": "Please confirm your age to continue."
+    },
+    "pages": {
+      "breadcrumbs": "Breadcrumbs",
+      "home": "Home",
+      "shop": "Shop all",
+      "collection_eyebrow": "Make room for something good",
+      "collection_count": "{{ count }} considered finds",
+      "summary": "Your order",
+      "help_topics": "Explore help topics",
+      "error_number": "404",
+      "error_eyebrow": "A little off course",
+      "error_heading": "This page slipped away.",
+      "error_text": "The link may have changed, or the page may no longer be here. Let’s find you something good.",
+      "error_shop": "Back to the collection",
+      "error_help": "Visit the help centre",
+      "contact_note": "Please do not include payment-card details in your message."
     }
   }
 }

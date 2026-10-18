@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-18T08:51:10.192Z",
+  "checkedAt": "2026-10-18T09:01:44.991Z",
   "scope": "Actual Liquid theme rendered with local fixtures; commerce integration is deferred.",
   "checks": [
     {
@@ -98,20 +98,16 @@
           "class": "mobile-facets__count"
         },
         {
-          "tag": "DIV",
-          "class": "mobile-facets__summary"
+          "tag": "SUMMARY",
+          "class": "mobile-facets__summary focus-inset"
         },
         {
-          "tag": "LABEL",
+          "tag": "SPAN",
           "class": ""
         },
         {
-          "tag": "DIV",
-          "class": "select"
-        },
-        {
-          "tag": "SELECT",
-          "class": "select__select"
+          "tag": "SPAN",
+          "class": "mobile-facets__arrow"
         },
         {
           "tag": "svg",
@@ -122,8 +118,12 @@
           "class": {}
         },
         {
-          "tag": "DIV",
-          "class": "mobile-facets__footer"
+          "tag": "BUTTON",
+          "class": "mobile-facets__close-button link link--text focus-inset"
+        },
+        {
+          "tag": "svg",
+          "class": {}
         }
       ],
       "pass": true
@@ -158,20 +158,16 @@
           "class": "mobile-facets__count"
         },
         {
-          "tag": "DIV",
-          "class": "mobile-facets__summary"
+          "tag": "SUMMARY",
+          "class": "mobile-facets__summary focus-inset"
         },
         {
-          "tag": "LABEL",
+          "tag": "SPAN",
           "class": ""
         },
         {
-          "tag": "DIV",
-          "class": "select"
-        },
-        {
-          "tag": "SELECT",
-          "class": "select__select"
+          "tag": "SPAN",
+          "class": "mobile-facets__arrow"
         },
         {
           "tag": "svg",
@@ -182,8 +178,12 @@
           "class": {}
         },
         {
-          "tag": "DIV",
-          "class": "mobile-facets__footer"
+          "tag": "BUTTON",
+          "class": "mobile-facets__close-button link link--text focus-inset"
+        },
+        {
+          "tag": "svg",
+          "class": {}
         }
       ],
       "pass": true
@@ -697,6 +697,10 @@
   ],
   "interactions": {
     "faqKeyboard": true,
+    "helpTopics": true,
+    "cartNoteContained": true,
+    "contactFields": true,
+    "productDisclosureKeyboard": true,
     "mobileMenu": true,
     "mobileMenuCloses": true,
     "gateOpens": true,

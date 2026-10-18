@@ -5,7 +5,7 @@
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-3"
       }
     },
     "product-grid": {
@@ -21,16 +21,28 @@
         "show_rating": false,
         "quick_add": "standard",
         "enable_filtering": true,
-        "filter_type": "horizontal",
+        "filter_type": "vertical",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 32,
         "padding_bottom": 64
       }
+    },
+    "help": {
+      "type": "vr-callout",
+      "settings": {
+        "eyebrow": "At your own pace",
+        "heading": "Find your kind of good.",
+        "text": "<p>Not sure where to start? We’re here for your questions.</p>",
+        "button_label": "A little guidance",
+        "button_link": "shopify://pages/help",
+        "color_scheme": "scheme-3"
+      }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "help"
   ]
 }

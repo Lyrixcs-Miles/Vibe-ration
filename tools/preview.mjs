@@ -75,6 +75,10 @@ const context={settings:{...data},shop:{name:'Vibe-ration',url:'http://localhost
 
 context.settings.type_body_font = {family:'system-ui',fallback_families:'sans-serif',style:'normal',weight:400,'system?':true};
 context.settings.type_header_font = {family:'Georgia',fallback_families:'serif',style:'normal',weight:400,'system?':true};
+context.pages = Object.fromEntries(['about','help','contact'].map(name=>[name,{url:`/${name}.html`,title:name}]));
+context.recommendations.products_count = context.recommendations.products.length;
+for (const product of products) product.object_type = 'product';
+collection.filters = [{type:'list',label:'Availability',param_name:'filter.v.availability',active_values:[],values:[{label:'In stock',value:'1',count:7,param_name:'filter.v.availability',active:false,url_to_add:'/collection.html?filter.v.availability=1'},{label:'Out of stock',value:'0',count:1,param_name:'filter.v.availability',active:false,url_to_add:'/collection.html?filter.v.availability=0'}],url_to_remove:'/collection.html'}];
 
 function resourceSettings(schema,values={}) {
   const result={};
@@ -109,7 +113,7 @@ const paletteCss=Object.entries(data.color_schemes).map(([id,{settings:s}])=>{
 
 for(const [name,file] of pages){
   const template=JSON.parse(read(`templates/${file}.json`));
-  const ctx={...context,template:{name:file.split('.')[0]},request:{...context.request,page_type:file.split('.')[0],path:name==='index'?'/':`/${name}.html`},page:{title:name[0].toUpperCase()+name.slice(1),content:''}};
+  const ctx={...context,template:{name:file.split('.')[0],suffix:file.split('.')[1]??''},request:{...context.request,page_type:file.split('.')[0],path:name==='index'?'/':`/${name}.html`},page:{title:name[0].toUpperCase()+name.slice(1),content:''}};
   let content='';
   for(const id of template.order) content+=await renderSection(id,template.sections[id],ctx);
   let layout=prepare(read('layout/theme.liquid'));

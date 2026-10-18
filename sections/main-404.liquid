@@ -1,23 +1,4 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
-    }
-  }
-</style>
-
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
-</div>
+<div class="page-width vr-error"><p class="vr-error__number" aria-hidden="true">{{ 'vr.pages.error_number' | t }}</p><p class="vr-eyebrow vr-eyebrow--quiet">{{ 'vr.pages.error_eyebrow' | t }}</p><h1>{{ 'vr.pages.error_heading' | t }}</h1><p class="vr-lead">{{ 'vr.pages.error_text' | t }}</p><div class="vr-actions"><a class="button" href="{{ routes.all_products_collection_url }}">{{ 'vr.pages.error_shop' | t }}</a><a class="button button--secondary" href="{{ pages['help'].url | default: routes.root_url }}">{{ 'vr.pages.error_help' | t }}</a></div></div>
+{% schema %}
+{"name":"VR 404 page","tag":"section","settings":[],"enabled_on":{"templates":["404"]}}
+{% endschema %}

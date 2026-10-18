@@ -1,8 +1,8 @@
 {
-  "status": "Local design ready; store integration pending",
+  "status": "Secondary-page redesign ready locally; store integration pending",
   "theme": {
     "name": "Vibe-ration",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "upstream": "Dawn 15.5.0"
   },
   "themeCheck": {
@@ -14,8 +14,13 @@
   "browser": {
     "pass": true,
     "responsiveChecks": 54,
+    "interactionChecks": 14,
     "interactions": {
       "faqKeyboard": true,
+      "helpTopics": true,
+      "cartNoteContained": true,
+      "contactFields": true,
+      "productDisclosureKeyboard": true,
       "mobileMenu": true,
       "mobileMenuCloses": true,
       "gateOpens": true,

@@ -4,6 +4,8 @@ A local Shopify theme based on Dawn 15.5.0, following the v2 design reference: c
 
 The homepage, product, collection, cart, About, Help, Contact, search and 404 designs are implemented. Shopify commerce remains native. The wordmark, category labels and editorial copy are provisional; product photography and real catalogue content are still required.
 
+The secondary pages now have distinct layouts: an editorial About page with values, topic navigation in Help, guidance beside the Contact form, collection filters in a desktop sidebar, a product details panel with native disclosures, a separate cart order summary, and redesigned search and 404 pages. These styles live in `assets/vr-pages.css` and load outside the homepage. New editorial, values, contact-details and page-callout sections are editable in the theme editor.
+
 ## Review the design locally
 
 From this repository root:

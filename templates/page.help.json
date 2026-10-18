@@ -3,9 +3,9 @@
     "intro": {
       "type": "vr-page-intro",
       "settings": {
-        "eyebrow": "Here to help",
-        "heading": "Let’s make it simple.",
-        "text": "<p>Order questions, delivery details, or something else? Start here.</p>",
+        "eyebrow": "A little guidance",
+        "heading": "A good place to start.",
+        "text": "<p>From your first question to your next order. Find the details you need, all in one place.</p>",
         "color_scheme": "scheme-3"
       }
     },
@@ -132,13 +132,14 @@
       "settings": {
         "eyebrow": "Here to help",
         "heading": "Your questions, answered.",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "show_topics": true
       }
     },
     "contact": {
       "type": "contact-form",
       "settings": {
-        "heading": "Still have a question?",
+        "heading": "Need a hand?",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
         "padding_top": 48,

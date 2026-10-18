@@ -1,0 +1,13 @@
+<section class="vr-values color-{{ section.settings.color_scheme }} gradient"><div class="page-width">
+  <div class="vr-values__head"><p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape }}</h2></div>
+  <div class="vr-values__grid">{% for block in section.blocks %}<div class="vr-values__item" {{ block.shopify_attributes }}><span class="vr-values__number" aria-hidden="true">{{ forloop.index | prepend: '0' }}</span><h3>{{ block.settings.heading | escape }}</h3><div class="rte">{{ block.settings.text }}</div></div>{% endfor %}</div>
+</div></section>
+{% schema %}
+{
+  "name":"VR Values",
+  "settings":[{"type":"text","id":"eyebrow","label":"Eyebrow"},{"type":"text","id":"heading","label":"Heading","default":"The things that matter."},{"type":"color_scheme","id":"color_scheme","label":"Colour scheme","default":"scheme-2"}],
+  "blocks":[{"type":"value","name":"Value","settings":[{"type":"text","id":"heading","label":"Heading"},{"type":"richtext","id":"text","label":"Text"}]}],
+  "max_blocks":4,
+  "presets":[{"name":"VR Values"}]
+}
+{% endschema %}

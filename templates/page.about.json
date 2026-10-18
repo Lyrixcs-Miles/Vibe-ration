@@ -3,85 +3,75 @@
     "intro": {
       "type": "vr-page-intro",
       "settings": {
-        "eyebrow": "Get to know us",
-        "heading": "Comfort. Choice. You.",
-        "text": "<p>A thoughtful space for your private moments.</p>",
+        "eyebrow": "The Vibe-ration approach",
+        "heading": "Good things begin with you.",
+        "text": "<p>A little curiosity. A little confidence. A space to discover what feels right for you.</p>",
         "color_scheme": "scheme-3"
       }
     },
     "story": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Room to explore.",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We believe choosing something for yourself should feel comfortable. Vibe-ration is a space to browse at your own pace and find what works for you.</p><p>Our story is still taking shape. We look forward to sharing more about our people and our approach.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+      "type": "vr-editorial",
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "eyebrow": "A more considered kind of store",
+        "heading": "Less pressure. More possibility.",
+        "text": "<p>Choosing something for yourself should feel comfortable. We’re making room for that: a welcoming place to browse, ask questions and explore at your own pace.</p><p>From everyday care to a moment of discovery, it starts with what matters to you.</p>",
+        "button_label": "Find your next favourite",
+        "button_link": "shopify://collections/all",
+        "color_scheme": "scheme-1"
       }
     },
     "values": {
-      "type": "rich-text",
+      "type": "vr-values",
+      "settings": {
+        "eyebrow": "Our starting point",
+        "heading": "Thoughtful, in the little things.",
+        "color_scheme": "scheme-2"
+      },
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "choice": {
+          "type": "value",
           "settings": {
-            "heading": "A considered approach.",
-            "heading_size": "h1"
+            "heading": "Your choice.",
+            "text": "<p>No one-size-fits-all approach. Take your time and make room for your own preferences.</p>"
           }
         },
-        "text": {
-          "type": "text",
+        "clarity": {
+          "type": "value",
           "settings": {
-            "text": "<p>Clear information, a welcoming experience, and room for your questions. That’s where we’re starting.</p>"
+            "heading": "A little clarity.",
+            "text": "<p>Useful information, straightforward details and space for your questions.</p>"
           }
         },
-        "button": {
-          "type": "button",
+        "comfort": {
+          "type": "value",
           "settings": {
-            "button_label": "Talk to us",
-            "button_link": "shopify://pages/contact",
-            "button_style_secondary": true
+            "heading": "Room to feel good.",
+            "text": "<p>A warm, welcoming experience. Because the way you shop should feel comfortable too.</p>"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+        "choice",
+        "clarity",
+        "comfort"
+      ]
+    },
+    "callout": {
+      "type": "vr-callout",
       "settings": {
-        "desktop_content_position": "left",
-        "content_alignment": "left",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "eyebrow": "At your own pace",
+        "heading": "Curious about something?",
+        "text": "<p>We’re here for the questions, big or small.</p>",
+        "button_label": "Let’s talk",
+        "button_link": "shopify://pages/contact",
+        "color_scheme": "scheme-3"
       }
     }
   },
   "order": [
     "intro",
     "story",
-    "values"
+    "values",
+    "callout"
   ]
 }

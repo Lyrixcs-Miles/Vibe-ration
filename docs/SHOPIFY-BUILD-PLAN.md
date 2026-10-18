@@ -17,6 +17,7 @@ The user authorised local design/build work first and will connect the correct S
 - Promotion timers require an explicit timezone and matching Shopify promotion scheduling. No repeating or invented deadline. No unconfigured newsletter discount or shipping claims.
 - Local design previews and browser checks use actual Liquid with sample Shopify fixtures. They do not validate checkout, Ajax cart or other store-backed features. See `LiveTheme/docs/STORE-HANDOFF.md` for the connected test pass.
 - Local implementation is complete: all nine page types render from Liquid, 54 responsive checks and 10 interaction checks pass, and Theme Check has zero errors with eight inherited Dawn warnings. Shopify validator reports are saved under `LiveTheme/tools/validation/`.
+- Secondary-page redesign completed locally in v1.1.0: editorial About, Help topic navigation, two-column Contact, product details/disclosures, collection sidebar filters, separate cart summary, search and 404 layouts. The homepage retains its existing design. Updated evidence: 54 responsive checks and 14 interaction checks pass.
 - GitHub setup and local build can proceed before store access. All Admin setup, unpublished store preview, real-device checks, Lighthouse and test checkout remain deferred until connection. No publication is authorised at this stage.
 
 ## 1. How Paws & Play was done (the pattern to repeat)

@@ -1,4 +1,8 @@
-<section class="vr-section-pad color-{{ section.settings.color_scheme }} gradient"><div class="page-width vr-faq"><div class="vr-section-head"><div>{% if section.settings.eyebrow != blank %}<p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p>{% endif %}<h2>{{ section.settings.heading | escape }}</h2></div></div>{% for block in section.blocks %}{% if block.type == 'group' %}<h3 class="vr-faq__group" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h3>{% else %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}<span class="vr-faq__toggle" aria-hidden="true"></span></summary><div class="rte">{{ block.settings.answer }}</div></details>{% endif %}{% endfor %}</div></section>
+<section class="vr-section-pad color-{{ section.settings.color_scheme }} gradient"><div class="page-width vr-faq">
+<div class="vr-section-head"><div>{% if section.settings.eyebrow != blank %}<p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p>{% endif %}<h2>{{ section.settings.heading | escape }}</h2></div></div>
+<div class="vr-faq-layout">{% if section.settings.show_topics %}<nav class="vr-faq-nav" aria-label="{{ 'vr.pages.help_topics' | t }}"><h3>{{ 'vr.pages.help_topics' | t }}</h3><ul>{% for block in section.blocks %}{% if block.type == 'group' %}<li><a href="#vr-faq-{{ section.id }}-{{ block.id }}">{{ block.settings.title | escape }} <span aria-hidden="true">&#8599;</span></a></li>{% endif %}{% endfor %}</ul></nav>{% endif %}
+<div class="vr-faq-questions">{% for block in section.blocks %}{% if block.type == 'group' %}<h3 id="vr-faq-{{ section.id }}-{{ block.id }}" class="vr-faq__group" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h3>{% else %}<details {{ block.shopify_attributes }}><summary>{{ block.settings.question | escape }}<span class="vr-faq__toggle" aria-hidden="true"></span></summary><div class="rte">{{ block.settings.answer }}</div></details>{% endif %}{% endfor %}</div></div>
+</div></section>
 {% schema %}
 {
   "name": "VR FAQ",
@@ -20,6 +24,12 @@
       "id": "color_scheme",
       "label": "Colour scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_topics",
+      "label": "Show topic navigation",
+      "default": false
     }
   ],
   "blocks": [

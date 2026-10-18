@@ -1,4 +1,4 @@
-<section class="vr-page-intro color-{{ section.settings.color_scheme }} gradient"><div class="page-width"><p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p><h1>{{ section.settings.heading | default: page.title | escape }}</h1><div class="rte vr-lead">{{ section.settings.text }}</div></div></section>
+<section class="vr-page-intro color-{{ section.settings.color_scheme }} gradient"><div class="page-width">{% assign vr_page_title = section.settings.heading | default: page.title %}{% render 'vr-breadcrumbs', title: vr_page_title %}<p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p><h1>{{ section.settings.heading | default: page.title | escape }}</h1><div class="rte vr-lead">{{ section.settings.text }}</div></div></section>
 {% schema %}
 {
   "name": "VR Page introduction",

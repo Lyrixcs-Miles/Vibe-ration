@@ -51,5 +51,18 @@
       1440
     ],
     "errors": []
+  },
+  "pageAudit": {
+    "pass": true,
+    "pages": 9,
+    "internalLinks": 7,
+    "scrolledMenuChecks": 8,
+    "previewFormChecks": 4,
+    "previewFormsPass": true,
+    "menuChecks": 18,
+    "menuPass": true,
+    "overlayChecks": 26,
+    "overlaysPass": true,
+    "overlayErrors": []
   }
 }

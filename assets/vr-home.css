@@ -1,0 +1,110 @@
+.vr-template-index .vr-hero { padding: 56px 0 64px; border-bottom: 1px solid var(--vr-line); }
+.vr-template-index .vr-hero__grid { gap: 40px; }
+.vr-template-index .vr-hero__copy { max-width: 540px; }
+.vr-template-index .vr-hero .vr-eyebrow { margin-bottom: 26px; }
+.vr-template-index .vr-hero h1 { font-size: clamp(46px,6vw,76px); letter-spacing: -.055em; line-height: 1.04; margin: 0 0 28px; }
+.vr-hero__emphasis { display: block; font-style: italic; font-weight: 400; }
+.vr-template-index .vr-hero .vr-lead { max-width: 410px; font-size: 17px; line-height: 1.7; }
+.vr-template-index .vr-hero .vr-lead p { margin-bottom: 28px; }
+.vr-template-index .vr-hero .vr-actions { align-items: center; gap: 14px; }
+.vr-template-index .vr-hero .button--secondary { background: transparent; }
+.vr-template-index .vr-hero .button--secondary:hover { background: var(--vr-plum); }
+.vr-hero__note { margin: 24px 0 0; color: var(--vr-muted); font-size: 12px; }
+.vr-hero__visual { padding: 12px; background: var(--vr-cream); border: 1px solid #dfd5ce; min-width: 0; }
+.vr-template-index .vr-hero__media { aspect-ratio: 1.1; display: grid; place-items: center; background: #e5ddd5; overflow: hidden; }
+.vr-hero__caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 8px 6px; font: 18px/1.4 var(--font-heading-family); color: var(--vr-plum); }
+.vr-template-index .vr-trust { padding: 28px 0; border-top: 0; }
+.vr-template-index .vr-trust__grid { gap: 24px; }
+.vr-template-index .vr-trust__item { gap: 14px; }
+.vr-template-index .vr-trust__mark { color: var(--vr-plum); font-size: 24px; }
+.vr-template-index .vr-section-pad { padding: 72px 0; }
+.vr-template-index .vr-section-head { align-items: end; margin-bottom: 32px; }
+.vr-template-index .vr-section-head h2 { font-size: clamp(30px,3.4vw,42px); }
+.vr-categories__intro { max-width: 320px; color: var(--vr-muted); font-size: 14px; line-height: 1.7; margin: 0; }
+.vr-template-index .vr-category { background: transparent; border: 0; }
+.vr-template-index .vr-category__media { aspect-ratio: 1.5; border: 1px solid var(--vr-line); }
+.vr-template-index .vr-category__copy { padding: 22px 32px 0 0; }
+.vr-category__number { display: block; font: 13px var(--font-heading-family); color: var(--vr-muted); margin-bottom: 12px; }
+.vr-template-index .vr-category h3 { font-size: clamp(24px,2.5vw,30px); margin-bottom: 10px; }
+.vr-template-index .vr-category p { font-size: 14px; line-height: 1.5; }
+.vr-template-index .vr-category__arrow { top: 55px; right: 4px; width: 28px; height: 28px; border: 1px solid var(--vr-line); border-radius: 50%; display: grid; place-items: center; font-size: 16px; }
+.vr-template-index .vr-category:hover .vr-category__arrow { background: var(--vr-plum); color: white; border-color: var(--vr-plum); }
+.vr-template-index .collection__title { margin-bottom: 32px; }
+.vr-template-index .collection__title .title { font-size: clamp(30px,3.4vw,42px); }
+.vr-template-index .collection__description { max-width: 550px; color: var(--vr-muted); font-size: 15px; }
+.vr-template-index .collection__view-all { margin-top: 32px; }
+.vr-template-index .product-card-wrapper .card { height: 100%; }
+.vr-template-index .vr-editorial { padding: 72px 0; }
+.vr-template-index .vr-editorial__grid { display: grid; gap: 32px; align-items: center; }
+.vr-template-index .vr-editorial__media { aspect-ratio: 1.2; background: #e5ddd5; display: grid; place-items: center; min-width: 0; overflow: hidden; }
+.vr-template-index .vr-editorial__media img { width: 100%; height: 100%; object-fit: cover; }
+.vr-template-index .vr-editorial__copy { max-width: 450px; min-width: 0; }
+.vr-template-index .vr-editorial__copy h2 { font-size: clamp(32px,3.7vw,48px); line-height: 1.14; margin: 0 0 24px; }
+.vr-template-index .vr-editorial__copy .rte { color: var(--vr-muted); font-size: 16px; line-height: 1.75; }
+.vr-template-index .vr-text-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 32px; min-height: 44px; margin-top: 18px; color: var(--vr-plum); border-bottom: 1px solid var(--vr-plum); text-decoration: none; font-size: 14px; }
+.vr-template-index .vr-text-link:hover { color: var(--vr-accent); border-color: currentColor; }
+.vr-template-index .vr-deals__head { border: 0; padding: 0 0 28px; }
+.vr-template-index .vr-deals__head h2 { font-size: clamp(30px,3.4vw,42px); }
+.vr-template-index .vr-deals__head .rte { max-width: 500px; font-size: 15px; }
+.vr-template-index .vr-deals .vr-more { margin-top: 32px; }
+.vr-template-index .vr-faq { max-width: 1180px; }
+.vr-template-index .vr-faq .vr-section-head { margin-bottom: 24px; align-items: start; }
+.vr-template-index .vr-faq h2 { max-width: 350px; }
+.vr-template-index .vr-faq details { background: transparent; }
+.vr-template-index .vr-faq summary { font-size: 15px; min-height: 72px; }
+.vr-template-index .vr-faq details:first-child { border-top: 1px solid var(--vr-line); }
+.vr-template-index .newsletter { text-align: left; }
+.vr-template-index .newsletter__wrapper { padding: 56px max(20px,calc((100% - 1140px) / 2)); display: grid; gap: 20px; }
+.vr-template-index .newsletter__wrapper h2 { max-width: 500px; font-size: clamp(30px,3.4vw,42px); line-height: 1.2; margin: 0; }
+.vr-template-index .newsletter__wrapper > * + * { margin: 0; }
+.vr-template-index .newsletter__subheading { max-width: 450px; font-size: 15px; margin: 0; }
+.vr-template-index .newsletter__subheading p { margin: 0; }
+.vr-template-index .newsletter-form { width: 100%; margin: 0; max-width: none; }
+.vr-template-index .newsletter-form__field-wrapper { max-width: none; width: 100%; }
+.vr-template-index .newsletter .field__input { min-height: 54px; }
+.vr-template-index .newsletter .newsletter-form__button { min-width: 54px; min-height: 54px; }
+@media(min-width:750px) {
+  .vr-template-index .vr-faq { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+  .vr-template-index .vr-faq .vr-section-head { margin-bottom: 0; }
+  .vr-template-index .newsletter__wrapper { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); column-gap: 64px; }
+  .vr-template-index .newsletter__wrapper h2 { grid-column: 1; grid-row: 1; }
+  .vr-template-index .newsletter__subheading { grid-column: 1; grid-row: 2; }
+  .vr-template-index .newsletter__wrapper > div:last-child { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+}
+@media(min-width:990px) {
+  .vr-template-index .vr-hero__grid { grid-template-columns: 1.05fr 1fr; gap: 72px; }
+  .vr-template-index .vr-editorial__grid { grid-template-columns: 1fr 1fr; gap: 88px; }
+  .vr-template-index .vr-editorial__grid--reverse .vr-editorial__media { order: 2; }
+}
+@media(min-width:640px) and (max-width:989px) {
+  .vr-template-index .vr-hero__grid { grid-template-columns: 1.1fr 1fr; gap: 32px; }
+  .vr-template-index .vr-hero h1 { font-size: 52px; }
+  .vr-template-index .vr-hero .vr-actions { align-items: stretch; flex-direction: column; }
+  .vr-template-index .vr-hero .button { width: 100%; padding-inline: 16px; }
+  .vr-hero__caption { font-size: 16px; }
+}
+@media(max-width:639px) {
+  .vr-template-index .vr-hero { padding: 40px 0; }
+  .vr-template-index .vr-hero__grid { gap: 32px; }
+  .vr-template-index .vr-hero h1 { font-size: clamp(44px,12vw,58px); }
+  .vr-template-index .vr-hero .vr-eyebrow { margin-bottom: 20px; font-size: 11px; }
+  .vr-template-index .vr-hero .vr-lead { font-size: 16px; }
+  .vr-template-index .vr-hero .vr-actions { flex-direction: column; align-items: stretch; }
+  .vr-template-index .vr-hero .button { width: 100%; }
+  .vr-hero__note { margin-top: 20px; }
+  .vr-template-index .vr-hero__media { aspect-ratio: 1.5; }
+  .vr-hero__caption { padding: 14px 4px 4px; font-size: 17px; }
+  .vr-template-index .vr-section-pad { padding: 48px 0; }
+  .vr-template-index .vr-section-head { flex-direction: column; align-items: stretch; gap: 18px; margin-bottom: 24px; }
+  .vr-categories__intro { max-width: none; }
+  .vr-template-index .vr-category__media { aspect-ratio: 1; }
+  .vr-template-index .vr-category__copy { padding: 18px 24px 0 0; }
+  .vr-template-index .vr-category h3 { font-size: 23px; }
+  .vr-template-index .vr-category p { font-size: 13px; }
+  .vr-template-index .vr-category__arrow { width: 22px; height: 22px; top: 48px; right: 0; font-size: 13px; }
+  .vr-template-index .vr-categories { row-gap: 28px; }
+  .vr-template-index .vr-trust { padding: 28px 0; }
+  .vr-template-index .vr-editorial { padding: 48px 0; }
+  .vr-template-index .vr-editorial__grid { gap: 28px; }
+  .vr-template-index .newsletter__wrapper { padding-block: 44px; gap: 24px; }
+}

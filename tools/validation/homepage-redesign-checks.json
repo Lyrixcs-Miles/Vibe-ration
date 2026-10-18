@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-10-18T09:08:04.567Z",
+  "scope": "Homepage redesign rendered with local fixtures",
+  "checks": [
+    {
+      "viewport": 360,
+      "documentWidth": 360,
+      "h1Count": 1,
+      "headingFits": true,
+      "categoryCount": 3,
+      "mobileHeadingFits": true,
+      "primaryLink": "/collection.html",
+      "storyLink": "/about.html",
+      "distinctProducts": true,
+      "newsletter": true,
+      "pass": true
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "h1Count": 1,
+      "headingFits": true,
+      "categoryCount": 3,
+      "mobileHeadingFits": true,
+      "primaryLink": "/collection.html",
+      "storyLink": "/about.html",
+      "distinctProducts": true,
+      "newsletter": true,
+      "pass": true
+    },
+    {
+      "viewport": 768,
+      "documentWidth": 768,
+      "h1Count": 1,
+      "headingFits": true,
+      "categoryCount": 3,
+      "mobileHeadingFits": true,
+      "primaryLink": "/collection.html",
+      "storyLink": "/about.html",
+      "distinctProducts": true,
+      "newsletter": true,
+      "pass": true
+    },
+    {
+      "viewport": 820,
+      "documentWidth": 820,
+      "h1Count": 1,
+      "headingFits": true,
+      "categoryCount": 3,
+      "mobileHeadingFits": true,
+      "primaryLink": "/collection.html",
+      "storyLink": "/about.html",
+      "distinctProducts": true,
+      "newsletter": true,
+      "pass": true
+    },
+    {
+      "viewport": 1024,
+      "documentWidth": 1024,
+      "h1Count": 1,
+      "headingFits": true,
+      "categoryCount": 3,
+      "mobileHeadingFits": true,
+      "primaryLink": "/collection.html",
+      "storyLink": "/about.html",
+      "distinctProducts": true,
+      "newsletter": true,
+      "pass": true
+    },
+    {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "h1Count": 1,
+      "headingFits": true,
+      "categoryCount": 3,
+      "mobileHeadingFits": true,
+      "primaryLink": "/collection.html",
+      "storyLink": "/about.html",
+      "distinctProducts": true,
+      "newsletter": true,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

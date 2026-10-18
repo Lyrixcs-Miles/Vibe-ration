@@ -2,7 +2,7 @@
   <div class="page-width vr-hero__grid vr-hero__grid--image">
     <div class="vr-hero__copy">
       {% if section.settings.eyebrow != blank %}<p class="vr-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
-      <h1>{{ section.settings.heading | escape }}{% if section.settings.heading_emphasis != blank %}<span class="vr-hero__emphasis">{{ section.settings.heading_emphasis | escape }}</span>{% endif %}</h1>
+      <h1>{{ section.settings.heading | escape }}{% if section.settings.heading_emphasis != blank %} <span class="vr-hero__emphasis">{{ section.settings.heading_emphasis | escape }}</span>{% endif %}</h1>
       <div class="rte vr-lead">{{ section.settings.text }}</div>
       <div class="vr-actions">
         {% if section.settings.button_label != blank %}<a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }}</a>{% endif %}

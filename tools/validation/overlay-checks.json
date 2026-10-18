@@ -1,0 +1,163 @@
+{
+  "scope": "Overlay presentation and Escape close; search results and cart/filter updates require Shopify",
+  "checks": [
+    {
+      "type": "empty-query search dialog",
+      "route": "index",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "cart drawer",
+      "route": "index",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "index",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "cart drawer",
+      "route": "index",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "collection",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "collection",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "product",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "cart drawer",
+      "route": "product",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "product",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "cart drawer",
+      "route": "product",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "cart",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "cart drawer",
+      "route": "cart",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "cart",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "cart drawer",
+      "route": "cart",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "about",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "about",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "help",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "help",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "contact",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "contact",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "404",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "404",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "search",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "empty-query search dialog",
+      "route": "search",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "type": "filter drawer",
+      "route": "collection",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "type": "filter drawer",
+      "route": "collection",
+      "width": 640,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

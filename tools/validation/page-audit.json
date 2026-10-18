@@ -1,0 +1,369 @@
+{
+  "checkedAt": "2026-10-18T09:16:20.017Z",
+  "scope": "Local preview links, field labels, markup and scrolled mobile navigation",
+  "pages": [
+    {
+      "route": "index",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/collection.html",
+        "/about.html",
+        "/collection.html",
+        "/collection.html",
+        "/collection.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/about.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/collection.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Make room for you."
+    },
+    {
+      "route": "collection",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/help.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Collection: Explore the collection"
+    },
+    {
+      "route": "product",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/",
+        "/collection.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/help.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Everyday essential"
+    },
+    {
+      "route": "cart",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/",
+        "/collection.html",
+        "/product.html",
+        "/product.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Your cart"
+    },
+    {
+      "route": "about",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/",
+        "/collection.html",
+        "/contact.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Good things begin with you."
+    },
+    {
+      "route": "help",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "A good place to start."
+    },
+    {
+      "route": "contact",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/",
+        "/help.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Let’s talk."
+    },
+    {
+      "route": "404",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/collection.html",
+        "/help.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "This page slipped away."
+    },
+    {
+      "route": "search",
+      "duplicateIds": [],
+      "unlabeledFields": [],
+      "invalidAnchors": [],
+      "links": [
+        "/",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/cart.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/product.html",
+        "/collection.html",
+        "/about.html",
+        "/help.html",
+        "/contact.html",
+        "/help.html",
+        "/",
+        "/help.html"
+      ],
+      "unrenderedText": false,
+      "h1": "Search results"
+    }
+  ],
+  "links": [
+    {
+      "href": "/",
+      "status": 200
+    },
+    {
+      "href": "/collection.html",
+      "status": 200
+    },
+    {
+      "href": "/about.html",
+      "status": 200
+    },
+    {
+      "href": "/help.html",
+      "status": 200
+    },
+    {
+      "href": "/cart.html",
+      "status": 200
+    },
+    {
+      "href": "/product.html",
+      "status": 200
+    },
+    {
+      "href": "/contact.html",
+      "status": 200
+    }
+  ],
+  "stickyMenus": [
+    {
+      "route": "index",
+      "width": 390,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "index",
+      "width": 820,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 390,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "product",
+      "width": 820,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 390,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "help",
+      "width": 820,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 390,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    },
+    {
+      "route": "contact",
+      "width": 820,
+      "drawerTop": 106,
+      "drawerBottom": 900,
+      "coversPage": true,
+      "scrollLocked": true,
+      "restored": true,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

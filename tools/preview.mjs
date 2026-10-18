@@ -76,6 +76,7 @@ const context={settings:{...data},shop:{name:'Vibe-ration',url:'http://localhost
 context.settings.type_body_font = {family:'system-ui',fallback_families:'sans-serif',style:'normal',weight:400,'system?':true};
 context.settings.type_header_font = {family:'Georgia',fallback_families:'serif',style:'normal',weight:400,'system?':true};
 context.pages = Object.fromEntries(['about','help','contact'].map(name=>[name,{url:`/${name}.html`,title:name}]));
+for(const menu of Object.values(menus))for(const link of menu.links)link.handle=link.title.toLowerCase().replaceAll(' ','-');
 context.recommendations.products_count = context.recommendations.products.length;
 for (const product of products) product.object_type = 'product';
 collection.filters = [{type:'list',label:'Availability',param_name:'filter.v.availability',active_values:[],values:[{label:'In stock',value:'1',count:7,param_name:'filter.v.availability',active:false,url_to_add:'/collection.html?filter.v.availability=1'},{label:'Out of stock',value:'0',count:1,param_name:'filter.v.availability',active:false,url_to_add:'/collection.html?filter.v.availability=0'}],url_to_remove:'/collection.html'}];
@@ -126,10 +127,10 @@ for(const [name,file] of pages){
   engine.options.globals = ctx;
   let html=await engine.parseAndRender(layout,{...ctx,content_for_layout:content});
   html=html.replace(/<script type="module">[\s\S]*?<\/script>/g,'');
-  html=html.replace('<head>',`<head><script>window.Shopify={designMode:false};window.StandardEvents={createViewEventElement:(Base=HTMLElement)=>class extends Base{connectedCallback(){}},PageViewEvent:Event};</script>`);
+  html=html.replace('<head>',`<head><script>window.Shopify={designMode:false};window.StandardEvents={createViewEventElement:(Base=HTMLElement)=>class extends Base{connectedCallback(){} dispatchViewEvent(){}},PageViewEvent:Event};</script>`);
   html=html.replace('</head>',`<style>${paletteCss}\n[class*="color-scheme-"] { color: rgba(var(--color-foreground), .85); }</style></head>`);
   html=html.replace('<body ', '<body data-local-preview="true" ');
-  html=html.replace('</body>',`<script>document.addEventListener('submit',e=>{e.preventDefault();alert('Design preview only. Forms and checkout will be tested after the Shopify store is connected.');},true);</script></body>`);
+  html=html.replace('</body>',`<script>document.addEventListener('submit',e=>{e.preventDefault();e.stopImmediatePropagation();alert('Design preview only. Forms and checkout will be tested after the Shopify store is connected.');},true);</script></body>`);
   fs.writeFileSync(path.join(output,name+'.html'),html);
 }
 fs.writeFileSync(path.join(output,'photo.svg'),`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000"><rect width="800" height="1000" fill="#efe9e3"/><text x="400" y="510" fill="#6f6671" text-anchor="middle" font-family="Arial" font-size="24" letter-spacing="5">PHOTO</text></svg>`);

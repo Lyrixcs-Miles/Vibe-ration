@@ -1,0 +1,24 @@
+{
+  "scope": "Preview submission guards; actual store submission remains untested",
+  "checks": [
+    {
+      "route": "product",
+      "noticeShown": true
+    },
+    {
+      "route": "contact",
+      "noticeShown": true
+    },
+    {
+      "route": "index",
+      "noticeShown": true
+    },
+    {
+      "route": "cart",
+      "noticeShown": true
+    }
+  ],
+  "requests": [],
+  "errors": [],
+  "pass": true
+}

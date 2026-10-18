@@ -5,7 +5,7 @@
       {% assign category = block.settings.collection %}
       {% assign category_image = block.settings.image | default: category.featured_image %}
       <a class="vr-category" href="{{ category.url | default: routes.collections_url }}" {{ block.shopify_attributes }}>
-        <div class="vr-category__media">{% if category_image != blank %}{{ category_image | image_url: width: 900 | image_tag: widths: '300, 450, 600, 900', sizes: '(min-width: 640px) 33vw, 50vw', loading: 'lazy' }}{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>
+        <div class="vr-category__media">{% if category_image != blank %}{{ category_image | image_url: width: 900 | image_tag: widths: '300, 450, 600, 900', sizes: '(min-width: 640px) 33vw, 50vw', loading: 'lazy' }}{% elsif settings.vr_mockup_images %}{% assign vr_mockup_file = 'vr-mockup-' | append: block.settings.mockup_image | append: '.jpg' %}{% assign vr_mockup_title = block.settings.mockup_image | replace: '-', '_' | prepend: 'vr.mockups.' %}<img class="vr-mockup-category" src="{{ vr_mockup_file | asset_url }}" alt="{{ vr_mockup_title | t }}" width="1536" height="1024" loading="lazy">{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>
         <div class="vr-category__copy"><span class="vr-category__number" aria-hidden="true">{{ forloop.index | prepend: '0' }}</span><h3>{{ block.settings.title | default: category.title | escape }}</h3><p>{{ block.settings.description | escape }}</p><span class="vr-category__arrow" aria-hidden="true">↗</span></div>
       </a>
     {% endfor %}
@@ -40,6 +40,7 @@
       "type": "category",
       "name": "Category",
       "settings": [
+        {"type":"select","id":"mockup_image","label":"Mockup image","default":"category-for-you","options":[{"value":"category-for-you","label":"Rose pebble vibrator"},{"value":"category-for-together","label":"Couples vibrating ring"},{"value":"category-care","label":"Personal lubricant"}]},
         {
           "type": "collection",
           "id": "collection",

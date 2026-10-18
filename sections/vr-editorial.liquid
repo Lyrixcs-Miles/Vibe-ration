@@ -1,6 +1,6 @@
 <section class="vr-editorial color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width vr-editorial__grid{% if section.settings.reverse %} vr-editorial__grid--reverse{% endif %}">
-    <div class="vr-editorial__media">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1400 | image_tag: widths: '400, 700, 1000, 1400', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy' }}{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>
+    <div class="vr-editorial__media">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1400 | image_tag: widths: '400, 700, 1000, 1400', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy' }}{% elsif settings.vr_mockup_images %}<img src="{{ 'vr-mockup-editorial.jpg' | asset_url }}" alt="{{ 'vr.mockups.editorial_alt' | t }}" width="1402" height="1122" loading="lazy">{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>
     <div class="vr-editorial__copy"><p class="vr-eyebrow vr-eyebrow--quiet">{{ section.settings.eyebrow | escape }}</p><h2>{{ section.settings.heading | escape }}</h2><div class="rte">{{ section.settings.text }}</div>{% if section.settings.button_label != blank and section.settings.button_link != blank %}<a class="vr-text-link" href="{{ section.settings.button_link }}">{{ section.settings.button_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}</div>
   </div>
 </section>

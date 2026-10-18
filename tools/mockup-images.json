@@ -1,0 +1,119 @@
+[
+  {
+    "key": "hero-products",
+    "file": "assets/vr-mockup-hero-products.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: square hero photograph for Vibe-ration, an adult sex-toy store. Recognisable modern sex toys displayed as premium retail products: one deep plum curved silicone vibrator with a gold base, one dusty rose rabbit vibrator, one small rose-gold bullet vibrator and one plum couples ring. All smooth non-anatomical industrial designs. Arrange a tasteful still life on two low cream travertine plinths with a little folded ivory linen against a warm stone studio background. Composition square, all products visible and centred in the middle 70 percent, generous clear margins for responsive crops. Soft warm window light, premium beauty-campaign photography, tactile realistic silicone, grounded shadows. No people, body parts, nudity or sexual activity. No text, logos or watermark.",
+    "original": "tools/mockup-source/vr-mockup-hero-products.png",
+    "width": 1254,
+    "height": 1254
+  },
+  {
+    "key": "editorial",
+    "file": "assets/vr-mockup-editorial.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: photorealistic-natural. Asset type: landscape editorial photograph for an adult sex-toy store named Vibe-ration. A calm premium still life on a cream travertine bedside table: one recognisable deep plum curved silicone vibrator with a discreet gold base lying on folded ivory linen, a dusty rose silk storage pouch, and a small unlit cream ceramic candle. Soft warm afternoon window light, tactile material detail, quiet confident adult-wellness aesthetic. Landscape 5:4 framing with all objects centred and generous breathing room, no bed occupants, no people, body parts, nudity or sexual activity. No text, logos, labels or watermark. Products are unbranded conceptual mockups.",
+    "original": "tools/mockup-source/vr-mockup-editorial.png",
+    "width": 1402,
+    "height": 1122
+  },
+  {
+    "key": "rose-pebble",
+    "file": "assets/vr-mockup-rose-pebble.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Create one premium photorealistic catalogue photograph for a tasteful adult wellness shop. Portrait 4:5 composition. Single product centred with generous 15 percent margins. Seamless warm cream studio backdrop and matching stone surface, soft diffused window light, realistic material texture and a gentle grounded shadow. Quiet luxurious beauty-product styling. No people, body parts, nudity, sexual activity, anatomical shapes, text, logos or watermarks. Conceptual unbranded product, not a real brand. A compact rounded rose silicone pebble-style personal massager, ergonomic non-anatomical oval teardrop form, subtle brushed gold detail at its base, one small recessed power button. Three-quarter view.",
+    "original": "tools/mockup-source/vr-mockup-rose-pebble.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "plum-wand",
+    "file": "assets/vr-mockup-plum-wand.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Create one premium photorealistic catalogue photograph for a tasteful adult wellness shop. Portrait 4:5 composition. Single product centred with generous 15 percent margins. Seamless warm cream studio backdrop and matching stone surface, soft diffused window light, realistic material texture and a gentle grounded shadow. Quiet luxurious beauty-product styling. No people, body parts, nudity, sexual activity, anatomical shapes, text, logos or watermarks. Conceptual unbranded product, not a real brand. A deep plum compact electric personal massage wand with a rounded bulb head, slim gently tapered handle and a subtle small rose-gold band. Non-anatomical industrial design, stand diagonally on its side, full product visible.",
+    "original": "tools/mockup-source/vr-mockup-plum-wand.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "massage-candle",
+    "file": "assets/vr-mockup-massage-candle.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Create one premium photorealistic catalogue photograph for a tasteful adult wellness shop. Portrait 4:5 composition. Single product centred with generous 15 percent margins. Seamless warm cream studio backdrop and matching stone surface, soft diffused window light, realistic material texture and a gentle grounded shadow. Quiet luxurious beauty-product styling. No people, body parts, nudity, sexual activity, anatomical shapes, text, logos or watermarks. Conceptual unbranded product, not a real brand. A small ivory ceramic massage candle with a pouring lip, unlit natural wax and a cotton wick, accompanied by its matching round ceramic lid. A small folded linen cloth beneath its base. Elegant close product still life.",
+    "original": "tools/mockup-source/vr-mockup-massage-candle.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "rose-bullet",
+    "file": "assets/vr-mockup-rose-bullet.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: one commercial catalogue photograph of an adult sex toy for Vibe-ration, a sex-toy store. Portrait 4:5 composition, full product centred within generous margins. Seamless warm cream studio backdrop and matte travertine-coloured surface, soft diffused daylight, realistic silicone texture and grounded shadows, restrained premium beauty photography. Unbranded conceptual product. No people, body parts, nudity or sexual activity. No text, logos, lettering or watermark. A rose-gold and dusty rose compact bullet vibrator, smooth small capsule shape with a round power button on the base, placed diagonally next to its small unbranded cream storage pouch. Full product entirely visible.",
+    "original": "tools/mockup-source/vr-mockup-rose-bullet.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "curved-vibrator",
+    "file": "assets/vr-mockup-curved-vibrator.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: one commercial catalogue photograph of an adult sex toy for Vibe-ration, a sex-toy store. Portrait 4:5 composition, full product centred within generous margins. Seamless warm cream studio backdrop and matte travertine-coloured surface, soft diffused daylight, realistic silicone texture and grounded shadows, restrained premium beauty photography. Unbranded conceptual product. No people, body parts, nudity or sexual activity. No text, logos, lettering or watermark. A deep plum curved silicone vibrator sex toy with a simple smooth non-anatomical sculptural design, rounded tip, gently curved shaft and a small gold base with two discreet buttons, laid diagonally on the cream surface. Recognisable modern vibrator product, not abstract decor.",
+    "original": "tools/mockup-source/vr-mockup-curved-vibrator.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "rose-rabbit",
+    "file": "assets/vr-mockup-rose-rabbit.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: one commercial catalogue photograph of an adult sex toy for Vibe-ration, a sex-toy store. Portrait 4:5 composition, full product centred within generous margins. Seamless warm cream studio backdrop and matte travertine-coloured surface, soft diffused daylight, realistic silicone texture and grounded shadows, restrained premium beauty photography. Unbranded conceptual product. No people, body parts, nudity or sexual activity. No text, logos, lettering or watermark. A dusty rose dual-stimulation rabbit vibrator sex toy, smooth curved silicone main shaft with a short rounded branching external stimulator, a gently tapered handle and two discreet buttons, laid diagonally. Recognisable retail vibrator product with a clean non-anatomical industrial design.",
+    "original": "tools/mockup-source/vr-mockup-rose-rabbit.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "couples-ring",
+    "file": "assets/vr-mockup-couples-ring.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. One premium photorealistic retail catalogue photograph of a couples vibrating ring sex toy, smooth deep plum silicone flexible ring with a small rounded vibration module, non-anatomical industrial design. Portrait 4:5, single unbranded product centred with generous margins on a warm cream seamless background and stone surface. Soft daylight, realistic silicone texture, gentle shadows. No people, body parts, sexual activity, nudity, text, logos or watermark.",
+    "original": "tools/mockup-source/vr-mockup-couples-ring.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "personal-lubricant",
+    "file": "assets/vr-mockup-personal-lubricant.jpg",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. One premium photorealistic retail catalogue photograph of an unbranded personal lubricant bottle for an adult sex-toy store: a frosted ivory cylindrical bottle with a deep plum pump cap and a narrow dusty rose band around the bottom. Portrait 4:5, full bottle centred with generous margins, warm cream seamless background and matching stone surface, soft daylight and grounded shadows. Completely blank bottle without any text or claims, no labels, logos or watermark, no people or body parts.",
+    "original": "tools/mockup-source/vr-mockup-personal-lubricant.png",
+    "width": 1122,
+    "height": 1402
+  },
+  {
+    "key": "category-for-you",
+    "file": "assets/vr-mockup-category-for-you.jpg",
+    "original": "tools/mockup-source/vr-mockup-category-for-you.png",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: a wide landscape category photograph for Vibe-ration adult sex-toy store. Landscape 3:2 canvas. Warm cream seamless studio background and a low cream travertine surface, soft diffused window light, premium realistic beauty-campaign photography, tactile product textures, gentle grounded shadows. Keep the whole products fully visible in the central 55 percent of the composition, with ample space on every side so both landscape and square crops work. Unbranded retail concepts. No people, body parts, nudity or sexual activity. No text, labels, logos or watermarks. Show one dusty rose silicone pebble vibrator standing upright with a small rose-gold bullet vibrator resting beside it on the low plinth. A clean personal vibrator product arrangement.",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "key": "category-for-together",
+    "file": "assets/vr-mockup-category-for-together.jpg",
+    "original": "tools/mockup-source/vr-mockup-category-for-together.png",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: a wide landscape category photograph for Vibe-ration adult sex-toy store. Landscape 3:2 canvas. Warm cream seamless studio background and a low cream travertine surface, soft diffused window light, premium realistic beauty-campaign photography, tactile product textures, gentle grounded shadows. Keep the whole products fully visible in the central 55 percent of the composition, with ample space on every side so both landscape and square crops work. Unbranded retail concepts. No people, body parts, nudity or sexual activity. No text, labels, logos or watermarks. Show a deep plum silicone couples vibrating ring with its small rounded vibration module, accompanied by a small ivory ceramic massage candle with lid. Objects next to each other on the low plinth, both full visible.",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "key": "category-care",
+    "file": "assets/vr-mockup-category-care.jpg",
+    "original": "tools/mockup-source/vr-mockup-category-care.png",
+    "generator": "built-in image_gen",
+    "prompt": "Use case: product-mockup. Asset type: a wide landscape category photograph for Vibe-ration adult sex-toy store. Landscape 3:2 canvas. Warm cream seamless studio background and a low cream travertine surface, soft diffused window light, premium realistic beauty-campaign photography, tactile product textures, gentle grounded shadows. Keep the whole products fully visible in the central 55 percent of the composition, with ample space on every side so both landscape and square crops work. Unbranded retail concepts. No people, body parts, nudity or sexual activity. No text, labels, logos or watermarks. Show a frosted ivory personal lubricant bottle with a deep plum pump cap and narrow dusty rose base band, beside a folded small cream cotton cloth. Full unlabelled bottle visible with clear cap.",
+    "width": 1536,
+    "height": 1024
+  }
+]

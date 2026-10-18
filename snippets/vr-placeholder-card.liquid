@@ -2,4 +2,11 @@
   Renders a non-purchasable design placeholder.
   @param {number} index - Placeholder position
 {% enddoc %}
-<div class="vr-placeholder-card"><div class="vr-placeholder-card__media"><span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span></div><div class="vr-placeholder-card__info"><h3>{{ 'vr.general.sample_product' | t: number: index }}</h3><p>{{ 'vr.general.coming_soon' | t }}</p><p class="vr-placeholder-card__price">{{ 'vr.general.price_pending' | t }}</p><button class="button button--secondary" disabled>{{ 'vr.general.coming_soon' | t }}</button></div></div>
+{% liquid
+  assign vr_mockup_keys = 'rose-pebble,plum-wand,rose-rabbit,rose-bullet,curved-vibrator,couples-ring,massage-candle,personal-lubricant' | split: ','
+  assign vr_mockup_position = index | minus: 1 | modulo: 8
+  assign vr_mockup_key = vr_mockup_keys[vr_mockup_position]
+  assign vr_mockup_file = 'vr-mockup-' | append: vr_mockup_key | append: '.jpg'
+  assign vr_mockup_title = vr_mockup_key | replace: '-', '_' | prepend: 'vr.mockups.'
+%}
+<div class="vr-placeholder-card"><div class="vr-placeholder-card__media">{% if settings.vr_mockup_images %}<img src="{{ vr_mockup_file | asset_url }}" alt="{{ vr_mockup_title | t }}" width="1122" height="1402" loading="lazy">{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div><div class="vr-placeholder-card__info"><h3>{% if settings.vr_mockup_images %}{{ vr_mockup_title | t }}{% else %}{{ 'vr.general.sample_product' | t: number: index }}{% endif %}</h3><p>{{ 'vr.general.coming_soon' | t }}</p><p class="vr-placeholder-card__price">{{ 'vr.general.price_pending' | t }}</p><button class="button button--secondary" disabled>{{ 'vr.general.coming_soon' | t }}</button></div></div>

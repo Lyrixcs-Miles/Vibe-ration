@@ -10,7 +10,7 @@
       </div>
       {% if section.settings.note != blank %}<p class="vr-hero__note">{{ section.settings.note | escape }}</p>{% endif %}
     </div>
-    <div class="vr-hero__visual"><div class="vr-hero__media">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1200, 1600', sizes: '(min-width: 1180px) 540px, (min-width: 990px) 46vw, calc(100vw - 40px)', loading: 'eager', fetchpriority: 'high' }}{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>{% if section.settings.caption != blank %}<div class="vr-hero__caption"><span>{{ section.settings.caption | escape }}</span><span aria-hidden="true">↗</span></div>{% endif %}</div>
+    <div class="vr-hero__visual"><div class="vr-hero__media">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1200, 1600', sizes: '(min-width: 1180px) 540px, (min-width: 990px) 46vw, calc(100vw - 40px)', loading: 'eager', fetchpriority: 'high' }}{% elsif settings.vr_mockup_images %}<img src="{{ 'vr-mockup-hero-products.jpg' | asset_url }}" alt="{{ 'vr.mockups.hero_alt' | t }}" width="1254" height="1254" loading="eager" fetchpriority="high">{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>{% if section.settings.caption != blank %}<div class="vr-hero__caption"><span>{{ section.settings.caption | escape }}</span><span aria-hidden="true">↗</span></div>{% endif %}</div>
   </div>
 </section>
 {% schema %}

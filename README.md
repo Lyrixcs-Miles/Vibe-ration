@@ -2,7 +2,7 @@
 
 A local Shopify theme based on Dawn 15.5.0, following the v2 design reference: cream and stone surfaces, plum buttons, a rose accent, Georgia headings and system body text.
 
-The homepage redesign in v1.2.0 uses a split hero with an editable second heading line, an image frame with caption, a compact trust row, numbered category cards, arrivals, an editorial brand story, weekly finds, a two-column desktop FAQ and an inline desktop newsletter signup. `assets/vr-home.css` loads only on the homepage. Photography remains neutral placeholders until real images are supplied. Run `node tools/check-home.mjs` against the local server for focused homepage checks.
+The homepage redesign in v1.2.0 uses a split hero with an editable second heading line, an image frame with caption, a compact trust row, numbered category cards, arrivals, an editorial brand story, weekly finds, a two-column desktop FAQ and an inline desktop newsletter signup. `assets/vr-home.css` loads only on the homepage. Generated concept photography was added in v1.3.0 for adult sex-toy store design review. Run `node tools/check-home.mjs` against the local server for focused homepage checks.
 
 The homepage, product, collection, cart, About, Help, Contact, search and 404 designs are implemented. Shopify commerce remains native. The wordmark, category labels and editorial copy are provisional; product photography and real catalogue content are still required.
 
@@ -27,6 +27,7 @@ node tools/check-menu-layering.mjs
 node tools/audit-pages.mjs
 node tools/check-preview-forms.mjs
 node tools/check-overlays.mjs
+node tools/check-mockups.mjs
 shopify.cmd theme check --path .
 ```
 
@@ -38,10 +39,18 @@ The browser script uses installed Microsoft Edge. Reports and screenshots are in
 - **Homepage:** VR Hero, VR Categories, VR Weekly deals, Dawn Featured collection, VR Trust row, Dawn Newsletter, Dawn Rich text and VR FAQ.
 - **Product cards:** Dawn's native card, with 4:5 media, availability, sale percentage or New/Best seller tags, and native quick add. Products with options use Dawn's selection modal.
 - **Other pages:** assign `page.about`, `page.help` and `page.contact` to their respective Admin pages.
-- **Images:** use section image pickers and product media. Neutral Photo placeholders remain until real images exist.
+- **Images:** use section image pickers and product media. AI mockup fallbacks are available for design review; real selected images take priority.
 - **Navigation:** native Dawn header/footer menus. Populate `main-menu` and `footer` in Admin.
 
 The newsletter currently promises updates, without an unconfigured discount. Trust copy avoids unconfirmed shipping, returns or packaging claims.
+
+## Mockup photography (v1.3.0)
+
+Thirteen images were generated with the built-in image-generation tool: a hero still life, an editorial photograph, three landscape category compositions and eight product shots. Final JPEGs are in `assets/vr-mockup-*.jpg`; prompts, dimensions and file mappings are in `tools/mockup-images.json`. Full-resolution PNG originals are retained locally under `tools/mockup-source/` and excluded from Git.
+
+The catalogue contains conceptual vibrators, a massage wand, a couples ring, a massage candle and personal lubricant. These are mockup images and sample products, not actual stock. No Shopify products were created. The local preview includes eight matching product-detail variations, with simulated purchases blocked by the preview guard.
+
+**Theme settings → Vibe-ration design → Show AI mockup imagery** controls section and empty-catalogue card fallbacks. Choose real section images and product photography, then disable mockup fallbacks before launch. The local preview catalogue continues to use sample data. Age confirmation remains enabled for the confirmed adult-store context.
 
 ## Age confirmation and promotions
 

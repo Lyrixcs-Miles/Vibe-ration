@@ -191,7 +191,8 @@
     "vr_accent": "#c8415f",
     "vr_accent_hover": "#a82f4b",
     "vr_age_gate": true,
-    "vr_wordmark": "Vibe-ration"
+    "vr_wordmark": "Vibe-ration",
+    "vr_mockup_images": true
   },
   "presets": {
     "Vibe-ration": {
@@ -386,7 +387,8 @@
       "vr_accent": "#c8415f",
       "vr_accent_hover": "#a82f4b",
       "vr_age_gate": true,
-      "vr_wordmark": "Vibe-ration"
+      "vr_wordmark": "Vibe-ration",
+      "vr_mockup_images": true
     }
   }
 }

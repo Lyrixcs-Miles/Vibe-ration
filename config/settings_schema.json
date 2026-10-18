@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Vibe-ration",
-    "theme_version": "1.2.0",
+    "theme_version": "1.3.0",
     "theme_author": "Lyrixcs Miles",
     "theme_documentation_url": "https://github.com/Lyrixcs-Miles/Vibe-ration",
     "theme_support_url": "https://github.com/Lyrixcs-Miles/Vibe-ration/issues"
@@ -1479,6 +1479,13 @@
         "id": "vr_wordmark",
         "label": "Provisional wordmark",
         "default": "Vibe-ration"
+      },
+      {
+        "type": "checkbox",
+        "id": "vr_mockup_images",
+        "label": "Show AI mockup imagery",
+        "default": true,
+        "info": "Concept images for design review. Real section images take priority. Disable and replace before launch; these are not actual stock."
       }
     ]
   }

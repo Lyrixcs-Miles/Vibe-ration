@@ -49,7 +49,7 @@ engine.registerFilter('money_without_currency',cents=>(Number(cents??0)/100).toF
 engine.registerFilter('item_count_for_variant',()=>0);
 engine.registerFilter('payment_terms',()=> '');
 engine.registerFilter('image_url',(image,...args)=>typeof image==='string'?image:image?.src??'/photo.svg');
-engine.registerFilter('image_tag',(src,...args)=>{const opts=flatten(args);return `<img src="${escape(src)}" alt="${escape(opts.alt??'')}" width="800" height="1000"${opts.class?` class="${escape(opts.class)}"`:''} loading="${opts.loading??'lazy'}">`;});
+engine.registerFilter('image_tag',(src,...args)=>{const opts=flatten(args);const key=String(src).match(/vr-mockup-(.+)\.jpg/)?.[1]?.replaceAll('-','_');const alt=opts.alt??translations.vr.mockups?.[key]??'';return `<img src="${escape(src)}" alt="${escape(alt)}" width="800" height="1000"${opts.class?` class="${escape(opts.class)}"`:''} loading="${opts.loading??'lazy'}">`;});
 engine.registerFilter('placeholder_svg_tag',(_name,cls)=>`<svg class="${escape(cls??'placeholder-svg')}" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Photo placeholder"><rect width="800" height="1000" fill="#efe9e3"/><text x="400" y="510" fill="#6f6671" text-anchor="middle" font-family="Arial" font-size="24" letter-spacing="5">PHOTO</text></svg>`);
 for (const filter of ['font_face','font_url','font_modify','structured_data','standard_event_data','payment_type_svg_tag','payment_button','default_errors']) engine.registerFilter(filter,()=> '');
 engine.registerFilter('color_brightness',()=>200);
@@ -58,12 +58,15 @@ engine.registerFilter('color_darken',v=>v);
 engine.registerFilter('color_to_rgb',()=> 'rgb(46,26,51)');
 engine.registerFilter('link_to',(text,link)=>`<a href="${escape(link)}">${text}</a>`);
 
-const photo={src:'/photo.svg',alt:'Product photograph placeholder',width:800,height:1000,aspect_ratio:.8,media_type:'image'};
+const mockupCatalog=['rose-pebble','plum-wand','rose-rabbit','rose-bullet','curved-vibrator','couples-ring','massage-candle','personal-lubricant'];
+const mockupPhoto=key=>({src:`/assets/vr-mockup-${key}.jpg`,alt:translations.vr.mockups[key.replaceAll('-','_')]+' (AI mockup)',width:1122,height:1402,aspect_ratio:.8,media_type:'image'});
+const photo=mockupPhoto(mockupCatalog[0]);
 const products=Array.from({length:8},(_,i)=>{
+  const photo=mockupPhoto(mockupCatalog[i]);
   const id=i+1, price=(i+1)*15000;
   const available=i!==3;
-  const variant={id:100+id,title:'Default Title',available,price,compare_at_price:i%3===0?price+5000:null,featured_media:{...photo,id},quantity_rule:{min:1,increment:1,max:null},inventory_management:'shopify',inventory_policy:'deny',inventory_quantity:available?12:0,quantity_price_breaks:[]};
-  return {id,title:['Everyday essential','A moment for you','Something to share','Your next favourite','A little discovery','Everyday comfort','Thoughtful essentials','Private moments'][i],handle:'sample-'+id,url:'/product.html',vendor:'Vibe-ration',description:'<p>A sample product for reviewing the design. Product details, specifications and photography will be supplied before launch.</p>',price,price_min:price,price_max:price,price_varies:false,compare_at_price:variant.compare_at_price,compare_at_price_varies:false,available,featured_media:{...photo,id},featured_image:photo,media:[{...photo,id,position:1,preview_image:photo}],images:[photo],variants:[variant],variants_count:1,selected_or_first_available_variant:variant,selected_variant:variant,has_only_default_variant:true,options:['Title'],options_with_values:[],tags:i===1?['best-seller']:i===2?['new']:[],metafields:{reviews:{}},requires_selling_plan:false,selling_plan_groups:[], 'quantity_price_breaks_configured?':false};
+  const variant={id:100+id,title:'Default Title',available,price,compare_at_price:i%3===0?price+5000:null,featured_media:{...photo,id,preview_image:photo},quantity_rule:{min:1,increment:1,max:null},inventory_management:'shopify',inventory_policy:'deny',inventory_quantity:available?12:0,quantity_price_breaks:[]};
+  return {id,title:translations.vr.mockups[mockupCatalog[i].replaceAll('-','_')],handle:'sample-'+id,url:i===0?'/product.html':`/product-${mockupCatalog[i]}.html`,vendor:'Vibe-ration',description:'<p>AI-generated product mockup for design review. Product specifications, prices and photography will be confirmed with the actual catalogue before launch.</p>',price,price_min:price,price_max:price,price_varies:false,compare_at_price:variant.compare_at_price,compare_at_price_varies:false,available,featured_media:{...photo,id},featured_image:photo,media:[{...photo,id,position:1,preview_image:photo}],images:[photo],variants:[variant],variants_count:1,selected_or_first_available_variant:variant,selected_variant:variant,has_only_default_variant:true,options:['Title'],options_with_values:[],tags:i===1?['best-seller']:i===2?['new']:[],metafields:{reviews:{}},requires_selling_plan:false,selling_plan_groups:[], 'quantity_price_breaks_configured?':false};
 });
 const collection={id:1,title:'Explore the collection',description:'<p>Considered essentials. Take a moment to find your favourites.</p>',url:'/collection.html',products,products_count:products.length,all_products_count:products.length,filters:[],sort_options:[{value:'manual',name:'Featured'},{value:'price-ascending',name:'Price, low to high'}],sort_by:'manual',default_sort_by:'manual'};
 const navigation=[{title:'Shop all',url:'/collection.html',links:[]},{title:'About us',url:'/about.html',links:[]},{title:'Help',url:'/help.html',links:[]}];
@@ -110,6 +113,7 @@ async function renderSection(id,config,ctx) {
 }
 async function renderGroup(file,ctx){const group=JSON.parse(read(file));let html='';for(const id of group.order) html+=await renderSection(id,group.sections[id],{...ctx,preview_section_group:group.type});return html;}
 const pages=[['index','index'],['collection','collection'],['product','product'],['cart','cart'],['about','page.about'],['help','page.help'],['contact','page.contact'],['404','404'],['search','search']];
+for(const key of mockupCatalog.slice(1))pages.push([`product-${key}`,'product']);
 const paletteCss=Object.entries(data.color_schemes).map(([id,{settings:s}])=>{
   const rgb=hex=>hex.replace('#','').match(/../g).map(x=>parseInt(x,16)).join(',');
   return `${id==='scheme-1'?':root, ':''}.color-${id}{--color-background:${rgb(s.background)};--gradient-background:${s.background};--color-foreground:${rgb(s.text)};--color-button:${rgb(s.button)};--color-button-text:${rgb(s.button_label)};--color-secondary-button:${rgb(s.background)};--color-secondary-button-text:${rgb(s.secondary_button_label)};--color-link:${rgb(s.secondary_button_label)};--color-badge-foreground:${rgb(s.text)};--color-badge-background:${rgb(s.background)};--color-shadow:36,29,38;--color-background-contrast:228,220,212;}`;
@@ -118,6 +122,10 @@ const paletteCss=Object.entries(data.color_schemes).map(([id,{settings:s}])=>{
 for(const [name,file] of pages){
   const template=JSON.parse(read(`templates/${file}.json`));
   const ctx={...context,template:{name:file.split('.')[0],suffix:file.split('.')[1]??''},request:{...context.request,page_type:file.split('.')[0],path:name==='index'?'/':`/${name}.html`},page:{title:name[0].toUpperCase()+name.slice(1),content:''}};
+  if(file==='product') {
+    ctx.product=products.find(product=>product.url===`/${name}.html`)??products[0];
+    ctx.recommendations={performed:true,products_count:4,products:[...products.slice(4),...products.slice(0,4)].filter(product=>product.id!==ctx.product.id).slice(0,4)};
+  }
   let content='';
   for(const id of template.order) content+=await renderSection(id,template.sections[id],ctx);
   let layout=prepare(read('layout/theme.liquid'));
@@ -142,7 +150,7 @@ if(process.argv.includes('--serve')) {
     let file=url.pathname.startsWith('/assets/')?path.join(theme,url.pathname):path.join(output,url.pathname==='/'?'index.html':url.pathname);
     if(!file.startsWith(theme+path.sep)&&!file.startsWith(output+path.sep)){res.writeHead(403);res.end();return;}
     if(!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end('Not available in local design preview');return;}
-    const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml'}[path.extname(file)]??'application/octet-stream';
+    const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png'}[path.extname(file)]??'application/octet-stream';
     res.writeHead(200,{'Content-Type':mime});fs.createReadStream(file).pipe(res);
   }).listen(4173,'127.0.0.1',()=>console.log('Local design preview: http://127.0.0.1:4173'));
 }

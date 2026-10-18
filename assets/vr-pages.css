@@ -9,8 +9,9 @@
 .vr-template-page .vr-page-intro .vr-lead { max-width: 600px; }
 .vr-editorial { padding: 80px 0; }
 .vr-editorial__grid { display: grid; gap: 32px; align-items: center; }
-.vr-editorial__media { aspect-ratio: 5 / 4; display: grid; place-items: center; background: var(--vr-stone); min-width: 0; }
+.vr-editorial__media { position: relative; aspect-ratio: 5 / 4; display: grid; place-items: center; background: var(--vr-stone); min-width: 0; overflow: hidden; }
 .vr-editorial__media img { width: 100%; height: 100%; object-fit: cover; }
+.vr-editorial__media > img { position: absolute; inset: 0; }
 .vr-editorial__copy { max-width: 480px; min-width: 0; }
 .vr-editorial__copy h2 { margin: 0 0 24px; font-size: clamp(30px,3.2vw,42px); }
 .vr-editorial__copy .rte { font-size: 16px; color: var(--vr-muted); }

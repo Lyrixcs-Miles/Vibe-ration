@@ -29,21 +29,24 @@
           "type": "category",
           "settings": {
             "title": "For you",
-            "description": "Make time for yourself."
+            "description": "Make time for yourself.",
+            "mockup_image": "category-for-you"
           }
         },
         "two": {
           "type": "category",
           "settings": {
             "title": "For together",
-            "description": "Discover something new."
+            "description": "Discover something new.",
+            "mockup_image": "category-for-together"
           }
         },
         "three": {
           "type": "category",
           "settings": {
             "title": "Everyday care",
-            "description": "The little essentials."
+            "description": "The little essentials.",
+            "mockup_image": "category-care"
           }
         }
       },

@@ -12,6 +12,8 @@
 .vr-hero__note { margin: 24px 0 0; color: var(--vr-muted); font-size: 12px; }
 .vr-hero__visual { padding: 12px; background: var(--vr-cream); border: 1px solid #dfd5ce; min-width: 0; }
 .vr-template-index .vr-hero__media { aspect-ratio: 1.1; display: grid; place-items: center; background: #e5ddd5; overflow: hidden; }
+.vr-template-index .vr-hero__media, .vr-template-index .vr-editorial__media { position: relative; }
+.vr-template-index .vr-hero__media > img, .vr-template-index .vr-editorial__media > img { position: absolute; inset: 0; }
 .vr-hero__caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 8px 6px; font: 18px/1.4 var(--font-heading-family); color: var(--vr-plum); }
 .vr-template-index .vr-trust { padding: 28px 0; border-top: 0; }
 .vr-template-index .vr-trust__grid { gap: 24px; }
@@ -92,7 +94,7 @@
   .vr-template-index .vr-hero .vr-actions { flex-direction: column; align-items: stretch; }
   .vr-template-index .vr-hero .button { width: 100%; }
   .vr-hero__note { margin-top: 20px; }
-  .vr-template-index .vr-hero__media { aspect-ratio: 1.5; }
+  .vr-template-index .vr-hero__media { aspect-ratio: 1.1; }
   .vr-hero__caption { padding: 14px 4px 4px; font-size: 17px; }
   .vr-template-index .vr-section-pad { padding: 48px 0; }
   .vr-template-index .vr-section-head { flex-direction: column; align-items: stretch; gap: 18px; margin-bottom: 24px; }

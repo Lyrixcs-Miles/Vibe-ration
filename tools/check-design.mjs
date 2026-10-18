@@ -15,6 +15,7 @@ for(const route of ['index','collection','product','cart','about','help','contac
   for(const width of [360,390,768,820,1024,1440]) {
     await page.setViewportSize({width,height:1000});
     await page.goto(`http://127.0.0.1:4173/${route}.html`,{waitUntil:'networkidle'});
+    await page.evaluate(async()=>{const images=[...document.images];for(const image of images)image.loading='eager';await Promise.all(images.map(image=>image.decode().catch(()=>{})));});
     const result = await page.evaluate(()=>({viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('main h1').length,bodyH1:document.querySelectorAll('h1').length,brokenImages:[...document.images].filter(img=>img.complete&&img.naturalWidth===0).map(img=>img.src),overflow:[...document.querySelectorAll('main *')].filter(el=>{const r=el.getBoundingClientRect();return r.width>0&&(r.right>innerWidth+1||r.left < -1)&&getComputedStyle(el).position!=='absolute';}).slice(0,12).map(el=>({tag:el.tagName,class:el.className}))}));
     checks.push({route,width,...result,pass:result.documentWidth===width&&result.h1===1&&result.brokenImages.length===0});
     if([360,768,1440].includes(width)) await page.screenshot({path:path.join(reports,`${route}-${width}.png`),fullPage:true});

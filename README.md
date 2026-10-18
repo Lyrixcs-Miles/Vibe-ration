@@ -2,6 +2,8 @@
 
 A local Shopify theme based on Dawn 15.5.0, following the v2 design reference: cream and stone surfaces, plum buttons, a rose accent, Georgia headings and system body text.
 
+The homepage redesign in v1.2.0 uses a split hero with an editable second heading line, an image frame with caption, a compact trust row, numbered category cards, arrivals, an editorial brand story, weekly finds, a two-column desktop FAQ and an inline desktop newsletter signup. `assets/vr-home.css` loads only on the homepage. Photography remains neutral placeholders until real images are supplied. Run `node tools/check-home.mjs` against the local server for focused homepage checks.
+
 The homepage, product, collection, cart, About, Help, Contact, search and 404 designs are implemented. Shopify commerce remains native. The wordmark, category labels and editorial copy are provisional; product photography and real catalogue content are still required.
 
 The secondary pages now have distinct layouts: an editorial About page with values, topic navigation in Help, guidance beside the Contact form, collection filters in a desktop sidebar, a product details panel with native disclosures, a separate cart order summary, and redesigned search and 404 pages. These styles live in `assets/vr-pages.css` and load outside the homepage. New editorial, values, contact-details and page-callout sections are editable in the theme editor.

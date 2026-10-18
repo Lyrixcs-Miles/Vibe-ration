@@ -64,7 +64,7 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'vr-base.css' | asset_url | stylesheet_tag }}
-    {% unless template.name == 'index' %}{{ 'vr-pages.css' | asset_url | stylesheet_tag }}{% endunless %}
+    {% if template.name == 'index' %}{{ 'vr-home.css' | asset_url | stylesheet_tag }}{% else %}{{ 'vr-pages.css' | asset_url | stylesheet_tag }}{% endif %}
     {% style %}:root { --vr-accent: {{ settings.vr_accent }}; --vr-accent-hover: {{ settings.vr_accent_hover }}; }{% endstyle %}
     <script src="{{ 'vr-design.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}

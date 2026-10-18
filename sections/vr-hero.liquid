@@ -1,15 +1,16 @@
 <section class="vr-hero color-{{ section.settings.color_scheme }} gradient">
-  <div class="page-width vr-hero__grid{% if section.settings.image != blank %} vr-hero__grid--image{% endif %}">
+  <div class="page-width vr-hero__grid vr-hero__grid--image">
     <div class="vr-hero__copy">
       {% if section.settings.eyebrow != blank %}<p class="vr-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
-      <h1>{{ section.settings.heading | escape }}</h1>
+      <h1>{{ section.settings.heading | escape }}{% if section.settings.heading_emphasis != blank %}<span class="vr-hero__emphasis">{{ section.settings.heading_emphasis | escape }}</span>{% endif %}</h1>
       <div class="rte vr-lead">{{ section.settings.text }}</div>
       <div class="vr-actions">
         {% if section.settings.button_label != blank %}<a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }}</a>{% endif %}
         {% if section.settings.secondary_label != blank %}<a class="button button--secondary" href="{{ section.settings.secondary_link | default: routes.collections_url }}">{{ section.settings.secondary_label | escape }}</a>{% endif %}
       </div>
+      {% if section.settings.note != blank %}<p class="vr-hero__note">{{ section.settings.note | escape }}</p>{% endif %}
     </div>
-    {% if section.settings.image != blank %}<div class="vr-hero__media">{{ section.settings.image | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1200, 1600', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'eager', fetchpriority: 'high' }}</div>{% endif %}
+    <div class="vr-hero__visual"><div class="vr-hero__media">{% if section.settings.image != blank %}{{ section.settings.image | image_url: width: 1600 | image_tag: widths: '400, 600, 800, 1200, 1600', sizes: '(min-width: 1180px) 540px, (min-width: 990px) 46vw, calc(100vw - 40px)', loading: 'eager', fetchpriority: 'high' }}{% else %}<span class="vr-photo-label">{{ 'vr.general.photo' | t }}</span>{% endif %}</div>{% if section.settings.caption != blank %}<div class="vr-hero__caption"><span>{{ section.settings.caption | escape }}</span><span aria-hidden="true">↗</span></div>{% endif %}</div>
   </div>
 </section>
 {% schema %}
@@ -18,6 +19,9 @@
   "tag": "div",
   "class": "vr-section",
   "settings": [
+    {"type":"text","id":"heading_emphasis","label":"Second heading line"},
+    {"type":"text","id":"note","label":"Small note below buttons"},
+    {"type":"text","id":"caption","label":"Image caption"},
     {
       "type": "text",
       "id": "eyebrow",

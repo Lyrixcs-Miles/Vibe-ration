@@ -101,6 +101,8 @@ async function renderSection(id,config,ctx) {
     return {id:key,type:block.type,settings:resourceSettings(bs?.settings,block.settings),shopify_attributes:`data-preview-block="${key}"`};
   });
   const section={id,settings:resourceSettings(schema.settings,config.settings),blocks,index:1,location:'template'};
+  if(id==='deals') section.settings.collection={...collection,title:'Weekly finds',products:products.slice(4),products_count:4,all_products_count:4};
+  if(id==='arrivals') section.settings.collection={...collection,title:'Fresh discoveries',products:products.slice(0,4),products_count:4,all_products_count:4};
   engine.options.globals = {...ctx,section};
   return `<div id="shopify-section-${id}" class="shopify-section ${schema.class??''}">${await engine.parseAndRender(prepare(source),{...ctx,section})}</div>`;
 }

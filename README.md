@@ -1,5 +1,7 @@
 # Vibe-ration on Dawn
 
+**Connected-store handoff (21 October 2026):** the store currently uses Velvet Noir, while this root directory is the earlier Dawn build. See [the current store documentation](docs/STORE-HANDOFF.md) and [the retained 18+ popup patch](docs/velvet-age-entry/README.md) before deploying. The Christmas design has been removed from the current preview.
+
 A local Shopify theme based on Dawn 15.5.0, following the v2 design reference: cream and stone surfaces, plum buttons, a rose accent, Georgia headings and system body text.
 
 The homepage redesign in v1.2.0 uses a split hero with an editable second heading line, an image frame with caption, a compact trust row, numbered category cards, arrivals, an editorial brand story, weekly finds, a two-column desktop FAQ and an inline desktop newsletter signup. `assets/vr-home.css` loads only on the homepage. Generated concept photography was added in v1.3.0 for adult sex-toy store design review. Run `node tools/check-home.mjs` against the local server for focused homepage checks.

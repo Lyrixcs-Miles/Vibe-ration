@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-21",
+  "themeId": "gid://shopify/OnlineStoreTheme/167729856569",
+  "name": "Velvet Noir - 18+ entry",
+  "role": "UNPUBLISHED",
+  "files": [
+    {
+      "filename": "assets/vr-age-gate.css",
+      "matches": true
+    },
+    {
+      "filename": "assets/vr-age-gate.js",
+      "matches": true
+    },
+    {
+      "filename": "config/settings_data.json",
+      "matches": true
+    },
+    {
+      "filename": "config/settings_schema.json",
+      "matches": true
+    },
+    {
+      "filename": "layout/theme.liquid",
+      "matches": true
+    },
+    {
+      "filename": "locales/en.default.json",
+      "matches": true
+    },
+    {
+      "filename": "snippets/vr-age-gate.liquid",
+      "matches": true
+    },
+    {
+      "filename": "templates/index.liquid",
+      "matches": true
+    }
+  ],
+  "christmasRemoved": true,
+  "popupEnabled": true
+}

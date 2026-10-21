@@ -1,0 +1,337 @@
+{
+  "shop": {
+    "name": "My Store",
+    "myshopifyDomain": "ivh0uz-ej.myshopify.com",
+    "currencyCode": "ZAR"
+  },
+  "total": {
+    "count": 77
+  },
+  "active": {
+    "count": 77
+  },
+  "drafts": {
+    "count": 0
+  },
+  "imported": {
+    "count": 35
+  },
+  "temporary": {
+    "count": 35
+  },
+  "collections": {
+    "nodes": [
+      {
+        "id": "gid://shopify/Collection/493668204601",
+        "title": "Home page",
+        "handle": "frontpage",
+        "productsCount": {
+          "count": 1
+        },
+        "ruleSet": null
+      },
+      {
+        "id": "gid://shopify/Collection/493669449785",
+        "title": "Toys",
+        "handle": "toys",
+        "productsCount": {
+          "count": 77
+        },
+        "ruleSet": {
+          "appliedDisjunctively": true,
+          "rules": [
+            {
+              "column": "TAG",
+              "relation": "EQUALS",
+              "condition": "toy"
+            },
+            {
+              "column": "TAG",
+              "relation": "EQUALS",
+              "condition": "toy-catalogue"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493670563897",
+        "title": "For Couples",
+        "handle": "for-couples",
+        "productsCount": {
+          "count": 12
+        },
+        "ruleSet": {
+          "appliedDisjunctively": true,
+          "rules": [
+            {
+              "column": "TAG",
+              "relation": "EQUALS",
+              "condition": "couples"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Bondage"
+            },
+            {
+              "column": "TITLE",
+              "relation": "CONTAINS",
+              "condition": "Remote"
+            },
+            {
+              "column": "TITLE",
+              "relation": "CONTAINS",
+              "condition": "Wireless"
+            },
+            {
+              "column": "TITLE",
+              "relation": "CONTAINS",
+              "condition": "App-Controlled"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493670694969",
+        "title": "Cosplay & Roleplay",
+        "handle": "cosplay-roleplay",
+        "productsCount": {
+          "count": 8
+        },
+        "ruleSet": {
+          "appliedDisjunctively": true,
+          "rules": [
+            {
+              "column": "TAG",
+              "relation": "EQUALS",
+              "condition": "cosplay"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Bondage"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493697925177",
+        "title": "Hers",
+        "handle": "hers",
+        "productsCount": {
+          "count": 28
+        },
+        "ruleSet": null
+      },
+      {
+        "id": "gid://shopify/Collection/493886111801",
+        "title": "Vibrators",
+        "handle": "vibrators",
+        "productsCount": {
+          "count": 28
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Vibrators"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886144569",
+        "title": "Wands & Massagers",
+        "handle": "wands-massagers",
+        "productsCount": {
+          "count": 4
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Wands"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886177337",
+        "title": "Dildos",
+        "handle": "dildos",
+        "productsCount": {
+          "count": 4
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Dildos"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886210105",
+        "title": "Anal Toys",
+        "handle": "anal-toys",
+        "productsCount": {
+          "count": 4
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Anal Toys"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886242873",
+        "title": "Masturbators & Strokers",
+        "handle": "masturbators-strokers",
+        "productsCount": {
+          "count": 9
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Masturbators"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886275641",
+        "title": "Bondage & Kink",
+        "handle": "bondage-kink",
+        "productsCount": {
+          "count": 8
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Bondage"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886308409",
+        "title": "For Her",
+        "handle": "for-her",
+        "productsCount": {
+          "count": 37
+        },
+        "ruleSet": {
+          "appliedDisjunctively": true,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Vibrators"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Wands"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Dildos"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Wellness"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886341177",
+        "title": "For Him",
+        "handle": "for-him",
+        "productsCount": {
+          "count": 16
+        },
+        "ruleSet": {
+          "appliedDisjunctively": true,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Masturbators"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Sleeves & Rings"
+            },
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Pumps"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886373945",
+        "title": "Lilo Collection",
+        "handle": "lilo-collection",
+        "productsCount": {
+          "count": 14
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "VENDOR",
+              "relation": "EQUALS",
+              "condition": "Lilo"
+            }
+          ]
+        }
+      },
+      {
+        "id": "gid://shopify/Collection/493886406713",
+        "title": "Party & Novelty",
+        "handle": "party-novelty",
+        "productsCount": {
+          "count": 4
+        },
+        "ruleSet": {
+          "appliedDisjunctively": false,
+          "rules": [
+            {
+              "column": "TYPE",
+              "relation": "EQUALS",
+              "condition": "Novelty"
+            }
+          ]
+        }
+      }
+    ],
+    "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "eyJsYXN0X2lkIjo0OTM4ODY0MDY3MTMsImxhc3RfdmFsdWUiOiI0OTM4ODY0MDY3MTMifQ=="
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "baselineErrors": 1619,
+  "currentErrors": 1853,
+  "addedFindingsByCheck": {
+    "MatchingTranslations": 272
+  },
+  "addedNonTranslationFindings": [],
+  "explanation": "Theme Check reports inherited errors in this partial Velvet Noir snapshot. New findings concern English-only popup translation parity. The Shopify skill validator passed the eight changed files with inherited warnings."
+}

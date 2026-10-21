@@ -1,0 +1,19 @@
+{
+  "current": {
+    "color_palette": {
+      "surface": "#0F0C0E",
+      "on_surface": "#EFE6DC",
+      "surface_2": "#1D1419",
+      "accent": "#C9925E",
+      "interactive": "#EFE6DC"
+    },
+    "type_primary_font": "work_sans_n4",
+    "type_heading_font": "cormorant_n5",
+    "type_scale_paragraph_size": "md",
+    "type_scale_heading_size": "lg",
+    "border_radius_buttons": "sharp",
+    "border_radius_cards": "sharp",
+    "border_radius_forms": "sharp",
+    "vr_age_gate_enabled": true
+  }
+}

@@ -1,0 +1,27 @@
+{% doc %}
+  Festive homepage banner, enabled through the Festive season theme setting.
+{% enddoc %}
+<section class="vr-festive-hero" aria-labelledby="vr-festive-heading">
+  <div class="vr-festive-hero__inner">
+    <div class="vr-festive-copy">
+      <p class="vr-seasonal-eyebrow">{{ settings.vr_festive_eyebrow | escape }}</p>
+      <h2 id="vr-festive-heading">{{ settings.vr_festive_heading | escape }}</h2>
+      <p class="vr-festive-description">{{ settings.vr_festive_text | escape }}</p>
+      <div class="vr-festive-actions">
+        <a class="vr-seasonal-button" href="{{ routes.all_products_collection_url }}">{{ 'vr_festive.shop' | t }}</a>
+        <a class="vr-seasonal-link" href="{{ collections['for-couples'].url | default: routes.all_products_collection_url }}">{{ 'vr_festive.couples' | t }} <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="vr-festive-note">{{ 'vr_festive.note' | t }}</p>
+    </div>
+    <div class="vr-festive-art" aria-hidden="true">
+      <span class="vr-festive-ring"></span>
+      <span class="vr-bauble vr-bauble--red"></span>
+      <span class="vr-bauble vr-bauble--gold"></span>
+      <span class="vr-bauble vr-bauble--green"></span>
+      <span class="vr-festive-spark vr-festive-spark--one">✦</span>
+      <span class="vr-festive-spark vr-festive-spark--two">✧</span>
+      <span class="vr-festive-spark vr-festive-spark--three">✦</span>
+      <span class="vr-festive-art__label">{{ 'vr_festive.art_label' | t }}</span>
+    </div>
+  </div>
+</section>

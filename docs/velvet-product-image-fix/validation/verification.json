@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-21",
+  "count": 27,
+  "firstImageChecks": [
+    {
+      "index": 1,
+      "first": true
+    },
+    {
+      "index": 37,
+      "first": true
+    },
+    {
+      "index": 45,
+      "first": true
+    },
+    {
+      "index": 34,
+      "first": true
+    },
+    {
+      "index": 50,
+      "first": true
+    },
+    {
+      "index": 66,
+      "first": true
+    },
+    {
+      "index": 70,
+      "first": true
+    },
+    {
+      "index": 75,
+      "first": true
+    },
+    {
+      "index": 4,
+      "first": true
+    },
+    {
+      "index": 5,
+      "first": true
+    },
+    {
+      "index": 16,
+      "first": true
+    },
+    {
+      "index": 29,
+      "first": true
+    },
+    {
+      "index": 64,
+      "first": true
+    },
+    {
+      "index": 85,
+      "first": true
+    },
+    {
+      "index": 92,
+      "first": true
+    },
+    {
+      "index": 93,
+      "first": true
+    },
+    {
+      "index": 94,
+      "first": true
+    },
+    {
+      "index": 98,
+      "first": true
+    },
+    {
+      "index": 99,
+      "first": true
+    },
+    {
+      "index": 112,
+      "first": true
+    },
+    {
+      "index": 116,
+      "first": true
+    },
+    {
+      "index": 124,
+      "first": true
+    },
+    {
+      "index": 127,
+      "first": true
+    },
+    {
+      "index": 129,
+      "first": true
+    },
+    {
+      "index": 132,
+      "first": true
+    },
+    {
+      "index": 137,
+      "first": true
+    },
+    {
+      "index": 3,
+      "first": true
+    }
+  ],
+  "allNew35Active": true,
+  "allNew35Prices": "299.00",
+  "originalGalleryPreserved": true,
+  "draftThemeId": "167683915833",
+  "publishedThemeId": "167604748345",
+  "homepageTest": "Local reproduction with real product images, at 1440px and 390px. Password protection prevents unauthenticated storefront visual verification."
+}

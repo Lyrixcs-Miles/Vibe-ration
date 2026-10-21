@@ -1,0 +1,20 @@
+.vr-age-eyebrow { margin: 0; font: 500 11px/1.5 var(--font-body, Arial, sans-serif); letter-spacing: .24em; text-transform: uppercase; color: #d8bb83; }
+.vr-age-button { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 13px 25px; border: 1px solid #d8bb83; border-radius: 3px; background: #d8bb83; color: #211219; font: 600 13px/1.5 var(--font-body, Arial, sans-serif); text-decoration: none; cursor: pointer; transition: background-color 150ms ease; }
+.vr-age-button:hover { background: #edcf98; color: #211219; }
+.vr-age-button--outline { background: transparent; color: #eee1d5; border-color: #70505b; }
+.vr-age-button--outline:hover { background: #3d2631; color: #fff; }
+.vr-age-button:focus-visible { outline: 3px solid #fff0c8; outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) { .vr-age-button { transition: none; } }
+html.vr-age-pending { overflow: hidden; }
+html.vr-age-pending body { visibility: hidden; }
+html.vr-age-pending #vr-age-gate, html.vr-age-pending #vr-age-gate * { visibility: visible; }
+.vr-age-gate { box-sizing: border-box; width: min(510px, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: clamp(26px, 5vw, 46px); border: 1px solid #967251; border-radius: 8px; background: radial-gradient(ellipse at top, #3b202c, #1b1219 70%); color: #f2e8dd; box-shadow: 0 30px 100px #0008; text-align: center; overflow: auto; }
+.vr-age-gate::backdrop { background: #08060bed; backdrop-filter: blur(6px); }
+.vr-age-panel[hidden] { display: none; }
+.vr-age-badge { display: inline-grid; place-items: center; width: 68px; height: 68px; margin: 28px 0 10px; border: 1px solid #9b7a51; border-radius: 50%; color: #e4c68b; font: 26px Georgia, serif; }
+.vr-age-panel h2 { margin: 16px 0; font: 400 38px/1.1 var(--font-heading, Georgia, serif); letter-spacing: -.025em; }
+.vr-age-panel > p:not(.vr-age-eyebrow) { max-width: 340px; margin: 0 auto 28px; color: #d1bdbf; font-size: 14px; line-height: 1.7; }
+.vr-age-actions { display: grid; gap: 12px; }
+.vr-age-nojs { position: fixed; inset: 0; z-index: 2147483647; display: grid; place-content: center; gap: 20px; padding: 32px; background: #1b1219; color: #f2e8dd; text-align: center; }
+body:has(.vr-age-nojs) > :not(noscript) { visibility: hidden; }
+@media (max-width: 767px) { .vr-age-panel h2 { font-size: 32px; } }

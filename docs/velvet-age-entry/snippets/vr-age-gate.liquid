@@ -1,0 +1,22 @@
+{% doc %}
+  Adult-entry confirmation. Acceptance lasts for the current browser tab.
+{% enddoc %}
+<dialog id="vr-age-gate" class="vr-age-gate" aria-labelledby="vr-age-title" aria-describedby="vr-age-description">
+  <div class="vr-age-panel" data-age-question>
+    <p class="vr-age-eyebrow">{{ shop.name | escape }}</p>
+    <span class="vr-age-badge" aria-hidden="true">18+</span>
+    <h2 id="vr-age-title">{{ 'vr_age.title' | t }}</h2>
+    <p id="vr-age-description">{{ 'vr_age.description' | t }}</p>
+    <div class="vr-age-actions">
+      <button type="button" class="vr-age-button" data-age-accept>{{ 'vr_age.accept' | t }}</button>
+      <button type="button" class="vr-age-button vr-age-button--outline" data-age-decline>{{ 'vr_age.decline' | t }}</button>
+    </div>
+  </div>
+  <div class="vr-age-panel" data-age-denied hidden>
+    <span class="vr-age-badge" aria-hidden="true">18+</span>
+    <h2 tabindex="-1" data-age-denied-title>{{ 'vr_age.denied_title' | t }}</h2>
+    <p>{{ 'vr_age.denied_description' | t }}</p>
+    <a class="vr-age-button" href="https://www.google.com/" rel="noreferrer">{{ 'vr_age.leave' | t }}</a>
+  </div>
+</dialog>
+<noscript><div class="vr-age-nojs"><strong>{{ 'vr_age.title' | t }}</strong><p>{{ 'vr_age.nojs' | t }}</p><a href="https://www.google.com/" rel="noreferrer">{{ 'vr_age.leave' | t }}</a></div></noscript>

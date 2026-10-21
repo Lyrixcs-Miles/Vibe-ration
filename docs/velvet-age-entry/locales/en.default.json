@@ -1,0 +1,300 @@
+{
+  "404": {
+    "title": "404",
+    "title_accessible": "404 — Page not found",
+    "not_found": "Page not found.",
+    "back_to_shopping": "Explore the collection",
+    "suggestions_heading": "A different way forward.",
+    "recovery_body": "This page couldn’t be found. There’s still plenty to discover."
+  },
+  "general": {
+    "skip_to_content": "Skip to content",
+    "play_video": "Play video",
+    "video_player": "Video player",
+    "captions": "Captions",
+    "clear": "Clear",
+    "back": "Back",
+    "close": "Close",
+    "dismiss": "Dismiss",
+    "drawer": "Drawer",
+    "placeholder_image": "Placeholder image",
+    "account": "Account",
+    "search": "Search",
+    "pagination": {
+      "label": "Pagination",
+      "previous_page": "Previous page",
+      "next_page": "Next page",
+      "page": "Page {{ number }}",
+      "current_page": "Page {{ number }}, current page"
+    },
+    "meta": {
+      "tagged": "tagged \"{{ tags }}\"",
+      "page": "Page {{ number }}"
+    }
+  },
+  "accessibility": {
+    "results_updated": "Results updated",
+    "variant_updated": "Selection updated",
+    "update_error": "An error occurred. Please try again."
+  },
+  "blog": {
+    "articles_heading": "Articles",
+    "article_metadata_html": "<time datetime=\"{{ datetime }}\">{{ date }}</time> · {{ author }}",
+    "article_metadata_no_author_html": "<time datetime=\"{{ datetime }}\">{{ date }}</time>",
+    "comment_form_body": "Comment",
+    "comment_form_email": "Email",
+    "comment_form_name": "Name",
+    "comment_form_submit": "Post",
+    "comment_form_title": "Add a comment",
+    "comments_count": {
+      "one": "1 comment",
+      "other": "{{ count }} comments"
+    },
+    "no_articles": "No articles yet."
+  },
+  "cart": {
+    "checkout": "Checkout",
+    "title": "Cart",
+    "remove": "Remove: {{ title }}",
+    "empty": "Your cart is empty.",
+    "empty_description": "Looks like you haven't added anything to your cart yet.",
+    "icon_label": {
+      "one": "Cart (1 item)",
+      "other": "Cart ({{ count }} items)"
+    },
+    "item_count": {
+      "one": "1 item in cart",
+      "other": "{{ count }} items in cart"
+    },
+    "item_removed": "Item removed from cart",
+    "updated": "Cart updated",
+    "note_label": "Order notes",
+    "note_placeholder": "Add special instructions for your order",
+    "taxes_and_shipping_at_checkout": "Taxes and shipping calculated at checkout",
+    "discount_list": "Applied discounts",
+    "discount_savings": "(-{{ amount }})",
+    "discount_code": "Discount code",
+    "discount_title": "Discount: {{ title }}",
+    "update_error": "Could not update cart. Please try again.",
+    "refresh_error": "Cart updated, but the display may be out of date. Refresh the page to see the latest cart.",
+    "continue_shopping": "Continue shopping",
+    "checkout_description": "Proceeds to secure checkout",
+    "discount_placeholder": "Enter code",
+    "discount_apply": "Apply",
+    "note_accordion_label": "Special instructions",
+    "total_label": "Estimated total"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "message": "Message",
+    "submit": "Send message",
+    "success": "Thank you for reaching out. We'll be in touch soon."
+  },
+  "collections": {
+    "all_collections": "All collections",
+    "browse_heading": "Browse collections",
+    "products_heading": "Products",
+    "placeholder_title": "Collection title",
+    "no_collections": "No collections found.",
+    "no_products": "No products found.",
+    "products_count": {
+      "one": "1 product",
+      "other": "{{ count }} products"
+    },
+    "filter": "Filter",
+    "filters": "Filters",
+    "active_filters": "Active filters",
+    "clear_all": "Clear all",
+    "remove_filter": "Remove {{ filter }}",
+    "show_results": "Show results",
+    "value_unavailable": "Unavailable",
+    "price_min": "Min price",
+    "price_max": "Max price",
+    "price_to": "to",
+    "sort_by": "Sort by",
+    "filtering": {
+      "show_more": "Show more"
+    },
+    "view_all": "View all"
+  },
+  "header": {
+    "menu": "Menu",
+    "mobile_navigation": "Mobile navigation",
+    "navigation": "Main navigation",
+    "show_submenu": "Show submenu for {{ title }}",
+    "announcement": "Discreet, unmarked packaging on every order"
+  },
+  "footer": {
+    "quick_links": "Quick links",
+    "tagline": "Stay curious.",
+    "statement": "Beautifully made intimate objects for every body. Discreetly delivered.",
+    "policies": "Policies"
+  },
+  "gift_card": {
+    "add_to_apple_wallet": "Add to Apple Wallet",
+    "card": "Gift card",
+    "expired": "This gift card has expired",
+    "expires_on": "Expires on {{ expires_on }}",
+    "use_at_checkout": "Use this gift card at checkout",
+    "a_gift_for_you": "A gift for you",
+    "available": "{{ amount }} available",
+    "a_little_something": "A little something for you",
+    "card_label": "{{ shop }} gift card",
+    "copy_code": "Copy code",
+    "copied": "Code copied",
+    "copy_error": "Couldn’t copy automatically. Copy the code manually.",
+    "disabled": "This gift card is no longer valid",
+    "start_shopping": "Start shopping"
+  },
+  "page": {
+    "content_heading": "Page content"
+  },
+  "password": {
+    "title": "This shop is private",
+    "eyebrow": "Opening soon",
+    "launch_description": "Get an early look at what's next.",
+    "enter": "Enter",
+    "enter_with_password": "Enter with password",
+    "enter_store": "Enter store",
+    "show": "Show",
+    "hide": "Hide",
+    "error": "Incorrect password. Please try again.",
+    "field_label": "Password",
+    "placeholder": "Enter password",
+    "get_updates": "Get opening updates",
+    "updates_description": "Be the first to know when we open.",
+    "updates_submit": "Notify me",
+    "updates_success": "Thanks for subscribing."
+  },
+  "product": {
+    "details": "Product details",
+    "placeholder_title": "Product title",
+    "quantity": "Quantity",
+    "quantity_decrease": "Decrease quantity: {{ title }}",
+    "quantity_increase": "Increase quantity: {{ title }}",
+    "quantity_input": "Quantity for {{ title }}",
+    "add_to_cart": "Add to cart",
+    "added_to_cart": "Added to cart",
+    "sold_out": "Sold out",
+    "description": "Description",
+    "view_image": "View image: {{ title }}",
+    "image_zoom": "Expanded product image",
+    "discreet_shipping": "Discreet, unmarked packaging",
+    "body_safe": "Body-safe materials",
+    "buy_bar": "Quick add to cart",
+    "recommendations_title": "You may also like"
+  },
+  "products": {
+    "price": {
+      "price": "Price",
+      "price_range_html": "{{ min }} – {{ max }}",
+      "price_range_label": "Price range",
+      "regular_price": "Regular price",
+      "sale_price": "Sale price",
+      "savings": "Save {{ amount }}"
+    },
+    "quantity": {
+      "decrease": "Decrease quantity",
+      "increase": "Increase quantity",
+      "input_label": "Quantity"
+    }
+  },
+  "filters": {
+    "active_count": {
+      "one": "1 active filter",
+      "other": "{{ count }} active filters"
+    }
+  },
+  "forms": {
+    "required": "required",
+    "form_errors_title": "Please fix the following errors:"
+  },
+  "search": {
+    "title": "Search",
+    "label": "Search",
+    "placeholder": "Search",
+    "products_heading": "Products",
+    "results_heading": "Search results",
+    "view_all_results": "View all results",
+    "results_count_announcement": {
+      "one": "1 result available",
+      "other": "{{ count }} results available"
+    },
+    "no_results_announcement": "No results found for {{ terms }}",
+    "results_for": "{{ count }} results found for {{ terms }}",
+    "no_results": "No results found for {{ terms }}",
+    "live_results_announcement": {
+      "one": "{{ count }} result found for {{ terms }}",
+      "other": "{{ count }} results found for {{ terms }}"
+    },
+    "live_no_results_announcement": "No results found for {{ terms }}"
+  },
+  "localization": {
+    "form_label": "Region and language",
+    "language": "Language",
+    "country_region_currency": "Country/region and currency",
+    "update_language": "Update"
+  },
+  "home": {
+    "hero": {
+      "title": "Pleasure, beautifully made.",
+      "subtitle": "Body-safe toys and playful roleplay pieces for every body, shipped discreetly.",
+      "cta": "Shop bestsellers",
+      "cta_secondary": "Browse all",
+      "note": "Ships in plain, unmarked packaging",
+      "image_alt": "A woman in a glossy black cat mask, bodysuit and opera gloves crouching against a violet backdrop",
+      "spotlight_label": "Featured",
+      "spotlight_cta": "Shop now"
+    },
+    "categories": {
+      "title": "Shop by category",
+      "toys": "Toys",
+      "cosplay": "Cosplay & roleplay",
+      "couples": "For couples",
+      "all": "Shop all",
+      "toys_alt": "A hand reaching for a bronze wand on a crimson velvet plinth",
+      "cosplay_alt": "A black lace masquerade mask and leather crop on plum velvet by candlelight",
+      "couples_alt": "A couple in a close embrace on a bed, bare-shouldered under a plum satin sheet",
+      "all_alt": "A hand lighting a candle beside a silk ribbon and crystal glasses"
+    },
+    "story": {
+      "overline": "Our story",
+      "title": "Made to be left out on the nightstand.",
+      "body": "We design intimate objects the way others design jewellery: weighty, tactile and beautiful. No neon, no embarrassment, just lovely things for the most private parts of your life.",
+      "link": "Discover the collection",
+      "image_wide_alt": "A woman in a black vinyl corset dress, opera gloves and lace mask against a violet backdrop",
+      "image_tall_alt": "A woman with a platinum bob in glossy bunny ears and gloves looking over her shoulder"
+    },
+    "featured": {
+      "overline": "Most desired",
+      "title": "Bestsellers"
+    },
+    "promise": {
+      "title": "Shopping with us",
+      "one_title": "Discreet, always",
+      "one_body": "Plain, unmarked packaging and quiet delivery.",
+      "two_title": "Body-safe by design",
+      "two_body": "Materials chosen for comfort and safety first.",
+      "three_title": "For every body",
+      "three_body": "Made for all genders, orientations and stages of life."
+    },
+    "closing": {
+      "title": "Put on a show.",
+      "body": "Costumes, masks and roleplay pieces for nights you want to be someone else. Shipped discreetly.",
+      "cta": "Shop cosplay",
+      "image_alt": "A pole dancer in a glossy black bodysuit and platform heels, silhouetted in violet light"
+    }
+  },
+  "vr_age": {
+    "title": "Are you 18 or older?",
+    "description": "This store contains adult products. Please confirm that you are 18 or older to enter.",
+    "accept": "Yes, I am 18 or older",
+    "decline": "I am under 18",
+    "denied_title": "For adults only",
+    "denied_description": "You must be 18 or older to browse this store. Please leave this site.",
+    "leave": "Leave this site",
+    "nojs": "Enable JavaScript to confirm your age and enter this store."
+  }
+}

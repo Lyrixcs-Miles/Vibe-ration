@@ -1,13 +1,13 @@
 /* Product photography needs to fit the tile without cropping. */
-#product-grid {
+:is(#product-grid, #vr-home-products) {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 16px;
   row-gap: 28px;
 }
 
-#product-grid > li { min-width: 0; }
+:is(#product-grid, #vr-home-products) > li { min-width: 0; }
 
-#product-grid article > a:first-child {
+:is(#product-grid, #vr-home-products) article > a:first-child {
   display: grid;
   place-items: center;
   aspect-ratio: 1;
@@ -20,7 +20,7 @@
   transition: background-color 160ms ease, border-color 160ms ease;
 }
 
-#product-grid article > a:first-child img {
+:is(#product-grid, #vr-home-products) article > a:first-child img {
   display: block;
   width: 100%;
   height: 100%;
@@ -31,19 +31,19 @@
   transform: none;
 }
 
-#product-grid article {
+:is(#product-grid, #vr-home-products) article {
   height: 100%;
   gap: 18px;
   padding-bottom: 16px;
   border-bottom: 1px solid rgb(237 228 218 / 15%);
 }
 
-#product-grid article > a:first-child + div {
+:is(#product-grid, #vr-home-products) article > a:first-child + div {
   gap: 9px;
   padding-inline: 2px;
 }
 
-#product-grid h3 {
+:is(#product-grid, #vr-home-products) h3 {
   min-height: 2.9em;
   margin: 0;
   font-size: 16px;
@@ -53,7 +53,7 @@
   text-wrap: pretty;
 }
 
-#product-grid article > a:first-child + div > :last-child {
+:is(#product-grid, #vr-home-products) article > a:first-child + div > :last-child {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
@@ -62,20 +62,20 @@
   font-variant-numeric: tabular-nums;
 }
 
-#product-grid article:focus-within > a:first-child {
+:is(#product-grid, #vr-home-products) article:focus-within > a:first-child {
   outline: 2px solid #d6b8a4;
   outline-offset: 4px;
 }
 
 @media (hover: hover) {
-  #product-grid article:hover > a:first-child {
+  :is(#product-grid, #vr-home-products) article:hover > a:first-child {
     background: #42333e;
     border-color: #765868;
   }
 }
 
 @media (min-width: 1024px) {
-  #product-grid {
+  :is(#product-grid, #vr-home-products) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 28px;
     row-gap: 36px;
@@ -83,12 +83,12 @@
 }
 
 @media (max-width: 639px) {
-  #product-grid { column-gap: 14px; }
-  #product-grid article { gap: 13px; }
-  #product-grid h3 { font-size: 14px; }
-  #product-grid article > a:first-child + div > :last-child { font-size: 15px; }
+  :is(#product-grid, #vr-home-products) { column-gap: 14px; }
+  :is(#product-grid, #vr-home-products) article { gap: 13px; }
+  :is(#product-grid, #vr-home-products) h3 { font-size: 14px; }
+  :is(#product-grid, #vr-home-products) article > a:first-child + div > :last-child { font-size: 15px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #product-grid article > a:first-child { transition: none; }
+  :is(#product-grid, #vr-home-products) article > a:first-child { transition: none; }
 }

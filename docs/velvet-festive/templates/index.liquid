@@ -1,0 +1,319 @@
+﻿{%- comment -%} Visually-hidden page heading keeps the homepage's h1 contract while its regions provide the visible composition. {%- endcomment -%}
+<h1 class="sr-only">{{ shop.name }}</h1>
+
+{% if settings.vr_festive_enabled %}
+  {% render 'vr-festive-hero' %}
+{% else %}
+{%- comment -%} Hero: full-bleed still life with copy bottom-start and a featured-product spotlight bottom-end. {%- endcomment -%}
+{%
+  block 'container',
+  class: 'relative isolate flex min-h-[82svh] items-end overflow-hidden',
+  attributes: 'aria-labelledby="home-hero-heading"'
+%}
+  {%- assign hero_alt = 'home.hero.image_alt' | t -%}
+  {% block 'image',
+    fallback_src: 'https://cdn.shopify.com/s/files/1/0834/0917/4585/files/hero-cat-costume.png?v=1792335506',
+    fallback_width: 1264,
+    fallback_height: 848,
+    alt: hero_alt,
+    sizes: '100vw',
+    class: 'absolute inset-0 -z-20 object-[72%_top]',
+    attributes: 'loading="eager" fetchpriority="high"'
+  %}{% endblock %}
+
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-linear-to-t from-surface via-overlay-subtle to-transparent"></div>
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-overlay-strong via-transparent to-transparent max-md:hidden"></div>
+
+  <div class="relative mx-auto flex w-full max-w-page flex-col gap-10 px-margin pb-12 pt-40 md:flex-row md:items-end md:justify-between md:pb-16">
+    <div class="flex max-w-xl flex-col items-start gap-5">
+      {% block 'text', tag: 'h2', variant: 'type-display', class: 'max-md:text-[3rem]', attributes: 'id="home-hero-heading"' %}
+        {{- 'home.hero.title' | t -}}
+      {% endblock %}
+
+      {% block 'text', variant: 'type-body-lg', class: 'max-w-md text-on-surface/85' %}
+        {{- 'home.hero.subtitle' | t -}}
+      {% endblock %}
+
+      <div class="mt-2 flex flex-wrap items-center gap-3">
+        {% block 'button', url: routes.all_products_collection_url, variant: 'button-primary', class: 'h-12 px-8 text-sm tracking-[0.12em] uppercase rounded-button' %}
+          {{- 'home.hero.cta' | t -}}
+        {% endblock %}
+        {% block 'button', url: routes.all_products_collection_url, variant: 'button-outline', class: 'h-12 px-8 text-sm tracking-[0.12em] uppercase rounded-button border' %}
+          {{- 'home.hero.cta_secondary' | t -}}
+        {% endblock %}
+      </div>
+    </div>
+
+    {%- comment -%} Spotlight shows a sample while the catalog is empty, then the store's first product. {%- endcomment -%}
+    {%- if shop.products_count == 0 -%}
+      {% block 'card', block.name: 't:blocks.product_card', url: routes.all_products_collection_url, aria_label: 'Velvet Wand Massager', class: 'flex w-full max-w-sm items-center gap-4 border border-border bg-surface/80 p-3 backdrop-blur-md md:w-auto', border_radius: 'rounded-card' %}
+        <a href="{{ routes.all_products_collection_url | escape }}" class="block w-24 shrink-0 overflow-hidden bg-surface-secondary" aria-label="Velvet Wand Massager">
+          <img src="https://cdn.shopify.com/s/files/1/0834/0917/4585/files/sample-velvet-wand.png?v=1792335307&width=300" alt="Velvet Wand Massager" width="848" height="1264" loading="eager" class="aspect-[3/4] size-full object-cover">
+        </a>
+        <div class="flex min-w-0 flex-col gap-1 pe-2">
+          {% block 'text', variant: 'type-overline', class: 'text-accent' %}{{ 'home.hero.spotlight_label' | t }}{% endblock %}
+          {% block 'text', variant: 'type-heading-sm', tag: 'h3' %}Velvet Wand Massager{% endblock %}
+          {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 189500 | money }}{% endblock %}
+          <span class="type-body-sm mt-1 underline underline-offset-2">{{ 'home.hero.spotlight_cta' | t }}</span>
+        </div>
+      {% endblock %}
+    {%- else -%}
+      {%- assign spotlight = collections.all.products.first -%}
+      {% block 'card', block.name: 't:blocks.product_card', url: spotlight.url, aria_label: spotlight.title, class: 'flex w-full max-w-sm items-center gap-4 border border-border bg-surface/80 p-3 backdrop-blur-md md:w-auto', border_radius: 'rounded-card' %}
+        <a href="{{ spotlight.url | escape }}" class="block w-24 shrink-0 overflow-hidden bg-surface-secondary" aria-label="{{ spotlight.title | escape }}">
+          {% block 'image', fallback_image: spotlight.featured_image, aspect_ratio: 'aspect-[3/4]', sizes: '96px', widths: '96,192,288', alt: spotlight.title, attributes: 'loading="eager"' %}{% endblock %}
+        </a>
+        <div class="flex min-w-0 flex-col gap-1 pe-2">
+          {% block 'text', variant: 'type-overline', class: 'text-accent' %}{{ 'home.hero.spotlight_label' | t }}{% endblock %}
+          {% block 'text', variant: 'type-heading-sm', tag: 'h3' %}{{ spotlight.title | escape }}{% endblock %}
+          {% block 'price', price: spotlight.price, price_min: spotlight.price_min, price_max: spotlight.price_max, class: 'text-sm self-start' %}{% endblock %}
+          <span class="type-body-sm mt-1 underline underline-offset-2">{{ 'home.hero.spotlight_cta' | t }}</span>
+        </div>
+      {% endblock %}
+    {%- endif -%}
+  </div>
+{% endblock %}
+
+{% endif %}
+{%- comment -%} Trust strip: three short commitments directly under the hero. {%- endcomment -%}
+{% block 'container', tag: 'div', class: 'border-y border-border' %}
+  <ul role="list" class="mx-auto grid w-full max-w-page grid-cols-1 px-margin sm:grid-cols-3">
+    <li class="flex flex-col gap-1 py-5 max-sm:border-b max-sm:border-border sm:pe-6">
+      {% block 'text', variant: 'type-body-sm', tag: 'h2', class: 'font-medium' %}{{ 'home.promise.one_title' | t }}{% endblock %}
+      {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 'home.promise.one_body' | t }}{% endblock %}
+    </li>
+    <li class="flex flex-col gap-1 py-5 max-sm:border-b max-sm:border-border sm:border-s sm:border-border sm:px-6">
+      {% block 'text', variant: 'type-body-sm', tag: 'h2', class: 'font-medium' %}{{ 'home.promise.two_title' | t }}{% endblock %}
+      {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 'home.promise.two_body' | t }}{% endblock %}
+    </li>
+    <li class="flex flex-col gap-1 py-5 sm:border-s sm:border-border sm:ps-6">
+      {% block 'text', variant: 'type-body-sm', tag: 'h2', class: 'font-medium' %}{{ 'home.promise.three_title' | t }}{% endblock %}
+      {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 'home.promise.three_body' | t }}{% endblock %}
+    </li>
+  </ul>
+{% endblock %}
+
+{%- comment -%} Categories: four portrait tiles; each title is a link block whose stretched ::after makes the whole tile clickable. {%- endcomment -%}
+{% block 'container', class: 'w-full max-w-page mx-auto px-margin pt-20 md:pt-28', attributes: 'aria-labelledby="home-categories-heading"' %}
+  {% block 'text', tag: 'h2', variant: 'type-heading-xl', class: 'mb-10 max-md:text-[2.5rem]', attributes: 'id="home-categories-heading"' %}{{ 'home.categories.title' | t }}{% endblock %}
+
+  <ul role="list" class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+    <li class="group relative overflow-hidden bg-surface-secondary">
+      {%- assign cat_alt = 'home.categories.toys_alt' | t -%}
+      {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0926/4031/3366/files/e85b37a97acc11d576e5593ffe35af99.png?v=13777995', fallback_width: 1000, fallback_height: 571, class: 'object-[42%_center]', aspect_ratio: 'aspect-[3/4]', alt: cat_alt, sizes: '(min-width: 1024px) 25vw, 50vw', attributes: 'loading="lazy"' %}{% endblock %}
+      <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-overlay-strong via-transparent to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 md:p-5">
+        {%- assign cat_url = collections['toys'].url | default: routes.all_products_collection_url -%}
+        {% block 'link', url: cat_url, class: 'type-heading-md max-md:text-xl no-underline hover:text-on-surface after:absolute after:inset-0 after:content-[""]' %}{{ 'home.categories.toys' | t }}{% endblock %}
+      </div>
+    </li>
+    <li class="group relative overflow-hidden bg-surface-secondary">
+      {%- assign cat_alt = 'home.categories.couples_alt' | t -%}
+      {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0834/0917/4585/files/couples-tile-embrace.png?v=1792338236', fallback_width: 848, fallback_height: 1264, class: 'object-[50%_30%]', aspect_ratio: 'aspect-[3/4]', alt: cat_alt, sizes: '(min-width: 1024px) 25vw, 50vw', attributes: 'loading="lazy"' %}{% endblock %}
+      <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-overlay-strong via-transparent to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 md:p-5">
+        {%- assign cat_url = collections['for-couples'].url | default: routes.all_products_collection_url -%}
+        {% block 'link', url: cat_url, class: 'type-heading-md max-md:text-xl no-underline hover:text-on-surface after:absolute after:inset-0 after:content-[""]' %}{{ 'home.categories.couples' | t }}{% endblock %}
+      </div>
+    </li>
+    <li class="group relative overflow-hidden bg-surface-secondary">
+      {%- assign cat_alt = 'home.categories.cosplay_alt' | t -%}
+      {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0834/0917/4585/files/cosplay-roleplay-tile.png?v=1792334160', fallback_width: 848, fallback_height: 1264, aspect_ratio: 'aspect-[3/4]', alt: cat_alt, sizes: '(min-width: 1024px) 25vw, 50vw', attributes: 'loading="lazy"' %}{% endblock %}
+      <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-overlay-strong via-transparent to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 md:p-5">
+        {%- assign cat_url = collections['cosplay-roleplay'].url | default: routes.all_products_collection_url -%}
+        {% block 'link', url: cat_url, class: 'type-heading-md max-md:text-xl no-underline hover:text-on-surface after:absolute after:inset-0 after:content-[""]' %}{{ 'home.categories.cosplay' | t }}{% endblock %}
+      </div>
+    </li>
+    <li class="group relative overflow-hidden bg-surface-secondary">
+      {%- assign cat_alt = 'home.categories.all_alt' | t -%}
+      {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0926/5994/1398/files/d88485e549c8a98f1176e1125bc40b19.png?v=13967671', fallback_width: 1000, fallback_height: 571, class: 'object-[52%_center]', aspect_ratio: 'aspect-[3/4]', alt: cat_alt, sizes: '(min-width: 1024px) 25vw, 50vw', attributes: 'loading="lazy"' %}{% endblock %}
+      <div class="pointer-events-none absolute inset-0 bg-linear-to-t from-overlay-strong via-transparent to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-4 md:p-5">
+        {%- assign cat_url = routes.all_products_collection_url -%}
+        {% block 'link', url: cat_url, class: 'type-heading-md max-md:text-xl no-underline hover:text-on-surface after:absolute after:inset-0 after:content-[""]' %}{{ 'home.categories.all' | t }}{% endblock %}
+      </div>
+    </li>
+  </ul>
+{% endblock %}
+
+{%- comment -%} The caller owns this collection source: the shell's settings cannot reach its pre-rendered body. Change this expression to swap the whole region; the shell's collection setting binds to it so the editor picker rewrites the handle here. {%- endcomment -%}
+{%- liquid
+  assign featured_collection = collection | default: collections.all
+  assign featured_product_count = featured_product_count | default: 4 | plus: 0
+  assign featured_eager_count = 0 | plus: 0
+  assign featured_show_view_all = true
+
+  if featured_product_count < 1
+    assign featured_product_count = 4
+  elsif featured_product_count > 12
+    assign featured_product_count = 12
+  endif
+
+  if featured_eager_count < 0
+    assign featured_eager_count = 0
+  elsif featured_eager_count > 4
+    assign featured_eager_count = 4
+  endif
+
+  assign featured_url = featured_collection.url | default: routes.all_products_collection_url
+  assign featured_product_sizes = '(min-width: 1280px) 297px, (min-width: 1024px) calc((100vw - 92px) / 4), (min-width: 768px) calc((100vw - 84px) / 2), calc(100vw - 32px)'
+-%}
+
+{%- comment -%} This bespoke shell owns its section/background/padding; do not double-wrap it in container. {%- endcomment -%}
+{% block 'featured-collection', collection: featured_collection %}
+  <div class="flex items-end justify-between gap-4 mb-10 max-w-page mx-auto px-margin pt-20 md:pt-28">
+    <div class="flex min-w-0 flex-col gap-3">
+      {% block 'text', variant: 'type-overline', class: 'text-accent' %}{{ 'home.featured.overline' | t }}{% endblock %}
+      {% block 'text', tag: 'h2', variant: 'type-heading-xl', class: 'max-md:text-[2.5rem]' %}{{ 'home.featured.title' | t }}{% endblock %}
+    </div>
+    {%- if featured_show_view_all and featured_url != blank -%}
+      {% block 'link', url: featured_url, class: 'shrink-0' %}{{ 'collections.view_all' | t }}{% endblock %}
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Match the collection page's cap, gutters, column gaps, and contained paint. {%- endcomment -%}
+  <div class="w-full max-w-page mx-auto px-margin contain-paint">
+    {%- if shop.products_count == 0 -%}
+      {%- comment -%} Sample cards show only while the catalog is empty; the real grid below takes over once a product exists. {%- endcomment -%}
+      <ul role="list" class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-10 stagger-fade-in">
+        <li>
+          {% block 'card', block.name: 't:blocks.product_card', url: routes.all_products_collection_url, aria_label: 'Noir Pulse Stimulator', border_radius: 'rounded-card' %}
+            <a href="{{ routes.all_products_collection_url | escape }}" class="relative block overflow-hidden rounded-[inherit] bg-surface-secondary" aria-label="Noir Pulse Stimulator">
+              <img src="https://cdn.shopify.com/s/files/1/0834/0917/4585/files/sample-noir-pulse.png?v=1792335307&width=600" alt="Noir Pulse Stimulator" width="848" height="1264" loading="lazy" class="aspect-[3/4] size-full object-cover">
+            </a>
+            <div class="flex flex-col gap-1 pt-2">
+              {% block 'text', variant: 'type-body-sm', tag: 'h3', class: 'font-medium text-on-surface line-clamp-2' %}Noir Pulse Stimulator{% endblock %}
+              {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 129500 | money }}{% endblock %}
+            </div>
+          {% endblock %}
+        </li>
+        <li>
+          {% block 'card', block.name: 't:blocks.product_card', url: routes.all_products_collection_url, aria_label: 'Duet Couples Vibrator', border_radius: 'rounded-card' %}
+            <a href="{{ routes.all_products_collection_url | escape }}" class="relative block overflow-hidden rounded-[inherit] bg-surface-secondary" aria-label="Duet Couples Vibrator">
+              <img src="https://cdn.shopify.com/s/files/1/0834/0917/4585/files/sample-duet-couples.png?v=1792335307&width=600" alt="Duet Couples Vibrator" width="848" height="1264" loading="lazy" class="aspect-[3/4] size-full object-cover">
+            </a>
+            <div class="flex flex-col gap-1 pt-2">
+              {% block 'text', variant: 'type-body-sm', tag: 'h3', class: 'font-medium text-on-surface line-clamp-2' %}Duet Couples Vibrator{% endblock %}
+              {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 169500 | money }}{% endblock %}
+            </div>
+          {% endblock %}
+        </li>
+        <li>
+          {% block 'card', block.name: 't:blocks.product_card', url: routes.all_products_collection_url, aria_label: 'Noir Lace Satin Blindfold', border_radius: 'rounded-card' %}
+            <a href="{{ routes.all_products_collection_url | escape }}" class="relative block overflow-hidden rounded-[inherit] bg-surface-secondary" aria-label="Noir Lace Satin Blindfold">
+              <img src="https://cdn.shopify.com/s/files/1/0834/0917/4585/files/sample-satin-blindfold.png?v=1792335166&width=600" alt="Noir Lace Satin Blindfold" width="848" height="1264" loading="lazy" class="aspect-[3/4] size-full object-cover">
+            </a>
+            <div class="flex flex-col gap-1 pt-2">
+              {% block 'text', variant: 'type-body-sm', tag: 'h3', class: 'font-medium text-on-surface line-clamp-2' %}Noir Lace Satin Blindfold{% endblock %}
+              {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 49500 | money }}{% endblock %}
+            </div>
+          {% endblock %}
+        </li>
+        <li>
+          {% block 'card', block.name: 't:blocks.product_card', url: routes.all_products_collection_url, aria_label: 'Midnight Lace Gloves and Choker Set', border_radius: 'rounded-card' %}
+            <a href="{{ routes.all_products_collection_url | escape }}" class="relative block overflow-hidden rounded-[inherit] bg-surface-secondary" aria-label="Midnight Lace Gloves and Choker Set">
+              <img src="https://cdn.shopify.com/s/files/1/0834/0917/4585/files/sample-lace-gloves-choker.png?v=1792335166&width=600" alt="Midnight Lace Gloves and Choker Set" width="848" height="1264" loading="lazy" class="aspect-[3/4] size-full object-cover">
+            </a>
+            <div class="flex flex-col gap-1 pt-2">
+              {% block 'text', variant: 'type-body-sm', tag: 'h3', class: 'font-medium text-on-surface line-clamp-2' %}Midnight Lace Gloves and Choker Set{% endblock %}
+              {% block 'text', variant: 'type-body-sm', class: 'text-on-surface-secondary' %}{{ 79500 | money }}{% endblock %}
+            </div>
+          {% endblock %}
+        </li>
+      </ul>
+    {%- elsif featured_collection != blank and featured_collection.products_count > 0 -%}
+      {%- comment -%} Only reviewed photography belongs on the homepage. Imports never enter this selection automatically. {%- endcomment -%}
+      {%- assign approved_home_handles = 'so-pure-toy-cleaner-spray,satisfyer-pro-2,lilo-emily-g-spot-rabbit-vibrator,lilo-large-wand' | split: ',' -%}
+      <ul id="vr-home-products" role="list" class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-10 stagger-fade-in">
+        {% for approved_handle in approved_home_handles %}
+          {%- assign product = all_products[approved_handle] -%}
+          {%- if product == blank or product.featured_image == blank -%}{%- continue -%}{%- endif -%}
+          <li>
+            {%- comment -%} The hero owns homepage LCP; other callers may eagerly load one first row (0â€“4), with high priority only for slot one. {%- endcomment -%}
+            {%- if forloop.index <= featured_eager_count -%}{%- assign lazy_load = false -%}{%- else -%}{%- assign lazy_load = true -%}{%- endif -%}
+            {%- if forloop.first and featured_eager_count > 0 -%}{%- assign fetch_priority = 'high' -%}{%- elsif forloop.index <= featured_eager_count -%}{%- assign fetch_priority = 'low' -%}{%- else -%}{%- assign fetch_priority = 'auto' -%}{%- endif -%}
+            {%- # theme-check-disable-next-line UnknownFilter %}
+            <s-view-event class="block" view-event-trigger="intersect" view-event-payload="{{ product | standard_event_data: 'view', context: 'collection' | escape }}">
+              {%- liquid
+                assign card_variant = product.selected_or_first_available_variant
+                if lazy_load
+                  assign card_loading = 'lazy'
+                else
+                  assign card_loading = 'eager'
+                endif
+                assign card_image_attributes = 'loading="' | append: card_loading | append: '" fetchpriority="' | append: fetch_priority | append: '"'
+              -%}
+              {% block 'card', block.name: 't:blocks.product_card', url: product.url, aria_label: product.title, border_radius: 'rounded-card' %}
+                <a href="{{ product.url | escape }}" class="relative block overflow-hidden rounded-[inherit] bg-surface-secondary" aria-label="{{ product.title | escape }}">
+                  {% block 'image', fallback_image: product.featured_image, aspect_ratio: 'aspect-[3/4]', sizes: featured_product_sizes, attributes: card_image_attributes, alt: product.title, seed: forloop.index %}{% endblock %}
+                </a>
+                <div class="flex flex-col gap-1 pt-2">
+                  {% block 'text', variant: 'type-body-sm', tag: 'h3', class: 'font-medium text-on-surface line-clamp-2' %}{{ product.title | escape }}{% endblock %}
+                  {%- comment -%} Text alignment inherits from the shell; the flex price needs its own logical self alignment. {%- endcomment -%}
+                  {% block 'price', price: card_variant.price, compare_at_price: card_variant.compare_at_price, price_min: product.price_min, price_max: product.price_max, class: 'text-sm self-start group-[.text-center]/card:self-center group-[.text-end]/card:self-end' %}{% endblock %}
+                </div>
+              {% endblock %}
+            </s-view-event>
+          </li>
+        {% endfor %}
+      </ul>
+    {%- else -%}
+      {%- comment -%} Placeholder cards remain selectable even before the collection has products. {%- endcomment -%}
+      <ul role="list" class="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-10 stagger-fade-in">
+        {% for placeholder_index in (1..featured_product_count) %}
+          <li>
+            {%- assign placeholder_title = 'product.placeholder_title' | t -%}
+            {% block 'card', block.name: 't:blocks.product_card', url: routes.root_url, aria_label: placeholder_title, border_radius: 'rounded-card' %}
+              <a href="{{ routes.root_url | escape }}" class="relative block overflow-hidden rounded-[inherit]" aria-label="{{ placeholder_title | escape }}">
+                {% block 'image', aspect_ratio: 'aspect-[3/4]', sizes: featured_product_sizes, alt: placeholder_title, seed: placeholder_index %}{% endblock %}
+              </a>
+              <div class="flex flex-col gap-1 pt-2">
+                {% block 'text', variant: 'type-body-sm', tag: 'h3', class: 'font-medium text-on-surface line-clamp-2' %}{{ placeholder_title | escape }}{% endblock %}
+              </div>
+            {% endblock %}
+          </li>
+        {% endfor %}
+      </ul>
+    {%- endif -%}
+  </div>
+{% endblock %}
+
+
+{%- comment -%} Story: statement column beside an overlapping two-image collage. {%- endcomment -%}
+{% block 'container', class: 'w-full max-w-page mx-auto px-margin py-24 md:py-32' %}
+  <div class="grid grid-cols-1 items-center gap-14 md:grid-cols-12 md:gap-10">
+    <div class="flex flex-col items-start gap-5 md:col-span-5">
+      {% block 'text', variant: 'type-overline', class: 'text-accent' %}{{ 'home.story.overline' | t }}{% endblock %}
+      {% block 'text', tag: 'h2', variant: 'type-heading-xl', class: 'max-md:text-[2.5rem]' %}{{ 'home.story.title' | t }}{% endblock %}
+      {% block 'text', variant: 'type-body', class: 'max-w-md text-on-surface-secondary' %}{{ 'home.story.body' | t }}{% endblock %}
+      {% block 'link', url: routes.all_products_collection_url, class: 'mt-1' %}{{ 'home.story.link' | t }}{% endblock %}
+    </div>
+
+    <div class="relative md:col-span-7 md:col-start-6 md:pb-20">
+      <div class="overflow-hidden">
+        {%- assign story_wide_alt = 'home.story.image_wide_alt' | t -%}
+        {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0834/0917/4585/files/story-wide-corset.png?v=1792338039', fallback_width: 1264, fallback_height: 848, aspect_ratio: 'aspect-video', alt: story_wide_alt, sizes: '(min-width: 768px) 58vw, 100vw', attributes: 'loading="lazy"' %}{% endblock %}
+      </div>
+      <div class="relative -mt-16 ms-auto w-2/5 border-8 border-surface md:absolute md:bottom-0 md:-start-16 md:mt-0 md:w-1/3">
+        {%- assign story_tall_alt = 'home.story.image_tall_alt' | t -%}
+        {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0834/0917/4585/files/story-tall-bunny.png?v=1792338039', fallback_width: 848, fallback_height: 1264, aspect_ratio: 'aspect-[3/4]', class: 'object-[50%_20%]', alt: story_tall_alt, sizes: '(min-width: 768px) 20vw, 40vw', attributes: 'loading="lazy"' %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{%- comment -%} Gift banner: contained image band with copy and CTA at the start edge. {%- endcomment -%}
+{% block 'container', class: 'w-full max-w-page mx-auto px-margin pb-24 md:pb-32', attributes: 'aria-labelledby="home-closing-heading"' %}
+  <div class="relative isolate flex min-h-[420px] items-end overflow-hidden md:min-h-[480px] md:items-center">
+    {%- assign closing_alt = 'home.closing.image_alt' | t -%}
+    {% block 'image', fallback_src: 'https://cdn.shopify.com/s/files/1/0834/0917/4585/files/closing-pole-dancer.png?v=1792338170', fallback_width: 1264, fallback_height: 848, alt: closing_alt, sizes: '(min-width: 1280px) 1200px, 100vw', class: 'absolute inset-0 -z-20 object-[75%_center]', attributes: 'loading="lazy"' %}{% endblock %}
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-linear-to-t from-overlay-strong to-transparent md:bg-linear-to-r md:from-overlay-strong md:via-overlay-subtle md:to-transparent"></div>
+    <div class="flex max-w-md flex-col items-start gap-4 p-6 md:p-12">
+      {% block 'text', tag: 'h2', variant: 'type-heading-xl', class: 'max-md:text-[2.25rem]', attributes: 'id="home-closing-heading"' %}{{ 'home.closing.title' | t }}{% endblock %}
+      {% block 'text', variant: 'type-body', class: 'text-on-surface/85' %}{{ 'home.closing.body' | t }}{% endblock %}
+      {%- assign closing_url = collections['cosplay-roleplay'].url | default: routes.all_products_collection_url -%}
+      {% block 'button', url: closing_url, variant: 'button-primary', class: 'mt-2 h-12 px-8 text-sm tracking-[0.12em] uppercase rounded-button' %}{{ 'home.closing.cta' | t }}{% endblock %}
+    </div>
+  </div>
+{% endblock %}

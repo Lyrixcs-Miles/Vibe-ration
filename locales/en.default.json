@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "general": {
     "password_page": {
@@ -574,15 +565,15 @@
       "breadcrumbs": "Breadcrumbs",
       "home": "Home",
       "shop": "Shop all",
-      "collection_eyebrow": "Make room for something good",
+      "collection_eyebrow": "The collection / 18+",
       "collection_count": "{{ count }} considered finds",
       "summary": "Your order",
       "help_topics": "Explore help topics",
       "error_number": "404",
       "error_eyebrow": "A little off course",
-      "error_heading": "This page slipped away.",
-      "error_text": "The link may have changed, or the page may no longer be here. Let’s find you something good.",
-      "error_shop": "Back to the collection",
+      "error_heading": "A little off the beaten path.",
+      "error_text": "This page has wandered off. Your next good discovery is still waiting.",
+      "error_shop": "Find your vibe",
       "error_help": "Visit the help centre",
       "contact_note": "Please do not include payment-card details in your message."
     },
@@ -600,6 +591,11 @@
       "category_for_you": "Rose personal vibrators on a cream plinth",
       "category_for_together": "Couples vibrating ring and massage candle",
       "category_care": "Personal lubricant and care cloth"
+    },
+    "brand": {
+      "curiosity": "Curiosity looks good on you",
+      "rules": "Good vibes. Your rules.",
+      "pleasure": "A little more pleasure"
     }
   }
 }

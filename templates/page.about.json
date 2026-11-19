@@ -1,20 +1,11 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "intro": {
       "type": "vr-page-intro",
       "settings": {
-        "eyebrow": "The Vibe-ration approach",
-        "heading": "Good things begin with you.",
-        "text": "<p>A little curiosity. A little confidence. A space to discover what feels right for you.</p>",
+        "eyebrow": "About Vibe-ration",
+        "heading": "Nothing to hide.",
+        "text": "<p>An adult store. An open mind. Space to explore what works for you.</p>",
         "color_scheme": "scheme-3"
       }
     },
@@ -22,8 +13,8 @@
       "type": "vr-editorial",
       "settings": {
         "eyebrow": "A more considered kind of store",
-        "heading": "Less pressure. More possibility.",
-        "text": "<p>Choosing something for yourself should feel comfortable. We’re making room for that: a welcoming place to browse, ask questions and explore at your own pace.</p><p>From everyday care to a moment of discovery, it starts with what matters to you.</p>",
+        "heading": "Your pleasure. Your business.",
+        "text": "<p>We sell sex toys and intimate essentials. We believe browsing them should feel as straightforward as buying anything else for yourself.</p><p>Start with a vibrator. Explore something together. Ask a question. There is no script to follow.</p>",
         "button_label": "Find your next favourite",
         "button_link": "shopify://collections/all",
         "color_scheme": "scheme-1"
@@ -33,7 +24,7 @@
       "type": "vr-values",
       "settings": {
         "eyebrow": "Our starting point",
-        "heading": "Thoughtful, in the little things.",
+        "heading": "What matters here.",
         "color_scheme": "scheme-2"
       },
       "blocks": {

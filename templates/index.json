@@ -1,55 +1,52 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero": {
       "type": "vr-hero",
       "settings": {
-        "heading_emphasis": "for you.",
-        "note": "Take your time. Make it your own.",
-        "caption": "A moment, just for you.",
-        "eyebrow": "Private moments. Personal choices.",
-        "heading": "Make room",
-        "text": "<p>Considered essentials for your private moments. A little comfort, a little curiosity, and space to find what feels right.</p>",
-        "button_label": "Find your favourites",
+        "eyebrow": "Sex toys. Zero small talk.",
+        "heading": "Pleasure.",
+        "text": "<p>Vibrators, couples toys and intimate essentials. Find what turns your curiosity on.</p>",
+        "button_label": "Shop sex toys",
         "button_link": "shopify://collections/all",
-        "secondary_label": "Meet Vibe-ration",
-        "secondary_link": "shopify://pages/about",
-        "color_scheme": "scheme-3"
+        "secondary_label": "",
+        "secondary_link": "shopify://collections/all",
+        "color_scheme": "scheme-3",
+        "heading_emphasis": "Unfiltered.",
+        "note": "For adults. Explore at your own pace.",
+        "caption": "Vibrators, couples toys & intimate essentials"
       }
     },
     "categories": {
       "type": "vr-categories",
+      "settings": {
+        "eyebrow": "Browse by mood",
+        "heading": "Find what suits you",
+        "color_scheme": "scheme-1",
+        "description": "For yourself. For someone else. For whatever comes next."
+      },
       "blocks": {
         "one": {
           "type": "category",
           "settings": {
-            "mockup_image": "category-for-you",
-            "title": "For you",
-            "description": "Make time for yourself."
+            "title": "Solo",
+            "description": "Make time for yourself.",
+            "mockup_image": "category-for-you"
           }
         },
         "two": {
           "type": "category",
           "settings": {
-            "mockup_image": "category-for-together",
-            "title": "For together",
-            "description": "Discover something new."
+            "title": "Together",
+            "description": "Discover something new.",
+            "mockup_image": "category-for-together"
           }
         },
         "three": {
           "type": "category",
           "settings": {
-            "mockup_image": "category-care",
-            "title": "Everyday care",
-            "description": "The little essentials."
+            "title": "Essentials",
+            "description": "The little essentials.",
+            "mockup_image": "category-care"
           }
         }
       },
@@ -57,20 +54,14 @@
         "one",
         "two",
         "three"
-      ],
-      "settings": {
-        "description": "For a quiet moment, a shared discovery, or a little everyday care.",
-        "eyebrow": "Start with a little curiosity",
-        "heading": "Find your kind of good.",
-        "color_scheme": "scheme-1"
-      }
+      ]
     },
     "deals": {
       "type": "vr-deals",
       "settings": {
-        "eyebrow": "Worth a closer look",
-        "heading": "This week’s good finds.",
-        "text": "<p>A considered selection for your next moment of discovery.</p>",
+        "eyebrow": "Beyond the usual",
+        "heading": "Beyond the everyday",
+        "text": "<p>Curved vibrators, couples rings and intimate care.</p>",
         "products_to_show": 4,
         "color_scheme": "scheme-1"
       }
@@ -78,25 +69,28 @@
     "arrivals": {
       "type": "featured-collection",
       "settings": {
-        "products_to_show": 4,
-        "title": "Your next favourite.",
+        "title": "Explore the collection",
         "heading_size": "h1",
-        "description": "<p>New discoveries to make a little room for.</p>",
-        "description_style": "body",
+        "products_to_show": 4,
         "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-2",
         "show_view_all": true,
         "view_all_style": "outline",
-        "color_scheme": "scheme-2",
         "image_ratio": "portrait",
         "show_secondary_image": true,
         "quick_add": "standard",
-        "columns_mobile": "2",
         "padding_top": 64,
-        "padding_bottom": 64
+        "padding_bottom": 64,
+        "description": "<p>Vibrators and intimate essentials, all in one place.</p>",
+        "description_style": "body"
       }
     },
     "trust": {
       "type": "vr-trust",
+      "settings": {
+        "color_scheme": "scheme-2"
+      },
       "blocks": {
         "one": {
           "type": "promise",
@@ -136,10 +130,7 @@
         "two",
         "three",
         "four"
-      ],
-      "settings": {
-        "color_scheme": "scheme-2"
-      }
+      ]
     },
     "newsletter": {
       "type": "newsletter",
@@ -147,19 +138,18 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "A little good in your inbox.",
+            "heading": "Worth opening.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>New discoveries and occasional offers. Unsubscribe any time.</p>"
+            "text": "<p>New arrivals and occasional offers. A little less noise in your inbox.</p>"
           }
         },
         "form": {
-          "type": "email_form",
-          "settings": {}
+          "type": "email_form"
         }
       },
       "block_order": [
@@ -177,9 +167,9 @@
     "about": {
       "type": "vr-editorial",
       "settings": {
-        "eyebrow": "A more considered kind of store",
-        "heading": "Less pressure. More possibility.",
-        "text": "<p>A welcoming space to explore at your own pace. Discover your preferences, ask your questions, and find what feels comfortable for you.</p><p>Good things begin with a little curiosity.</p>",
+        "eyebrow": "Pleasure belongs in the conversation",
+        "heading": "Less hush-hush. More you.",
+        "text": "<p>We think exploring what feels good should feel good, too. No awkwardness. No pressure. Just room to be curious.</p><p>Whether you know your favourites or you are finding your feet, you are in the right place.</p>",
         "reverse": true,
         "button_label": "Get to know Vibe-ration",
         "button_link": "shopify://pages/about",
@@ -226,19 +216,16 @@
       ],
       "settings": {
         "eyebrow": "Before you discover",
-        "heading": "A little clarity.",
+        "heading": "Curious? Good.",
         "color_scheme": "scheme-2"
       }
     }
   },
   "order": [
     "hero",
-    "trust",
-    "categories",
     "arrivals",
-    "about",
+    "categories",
     "deals",
-    "faq",
     "newsletter"
   ]
 }

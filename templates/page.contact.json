@@ -1,19 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "intro": {
       "type": "vr-page-intro",
       "settings": {
-        "eyebrow": "Get in touch",
-        "heading": "Let’s talk.",
+        "eyebrow": "Contact Vibe-ration",
+        "heading": "Talk to us.",
         "text": "<p>A question about something you’ve seen, or a little help with an order? We’d love to hear from you.</p>",
         "color_scheme": "scheme-3"
       }

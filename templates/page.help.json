@@ -1,19 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "intro": {
       "type": "vr-page-intro",
       "settings": {
-        "eyebrow": "A little guidance",
-        "heading": "A good place to start.",
+        "eyebrow": "Help / Orders / Delivery",
+        "heading": "Straight answers.",
         "text": "<p>From your first question to your next order. Find the details you need, all in one place.</p>",
         "color_scheme": "scheme-3"
       }

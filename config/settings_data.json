@@ -1,69 +1,60 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
     "logo_width": 90,
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#faf7f4",
+          "background": "#141113",
           "background_gradient": "",
-          "text": "#241d26",
-          "button": "#2e1a33",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#241d26",
-          "shadow": "#241d26"
+          "text": "#efe6e0",
+          "button": "#c18d96",
+          "button_label": "#141113",
+          "secondary_button_label": "#efe6e0",
+          "shadow": "#000000"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#141113",
           "background_gradient": "",
-          "text": "#241d26",
-          "button": "#2e1a33",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#241d26",
-          "shadow": "#241d26"
+          "text": "#efe6e0",
+          "button": "#c18d96",
+          "button_label": "#141113",
+          "secondary_button_label": "#efe6e0",
+          "shadow": "#000000"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#efe9e3",
+          "background": "#241b20",
           "background_gradient": "",
-          "text": "#241d26",
-          "button": "#2e1a33",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#241d26",
-          "shadow": "#241d26"
+          "text": "#efe6e0",
+          "button": "#c18d96",
+          "button_label": "#141113",
+          "secondary_button_label": "#efe6e0",
+          "shadow": "#000000"
         }
       },
       "scheme-4": {
         "settings": {
-          "background": "#2e1a33",
+          "background": "#141113",
           "background_gradient": "",
-          "text": "#faf7f4",
-          "button": "#faf7f4",
-          "button_label": "#2e1a33",
-          "secondary_button_label": "#faf7f4",
-          "shadow": "#241d26"
+          "text": "#efe6e0",
+          "button": "#c18d96",
+          "button_label": "#141113",
+          "secondary_button_label": "#efe6e0",
+          "shadow": "#000000"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#c8415f",
+          "background": "#141113",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#ffffff",
-          "button_label": "#c8415f",
-          "secondary_button_label": "#ffffff",
-          "shadow": "#241d26"
+          "text": "#efe6e0",
+          "button": "#c18d96",
+          "button_label": "#141113",
+          "secondary_button_label": "#efe6e0",
+          "shadow": "#000000"
         }
       }
     },
@@ -162,8 +153,8 @@
     "badge_corner_radius": 0,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-4",
-    "brand_headline": "",
-    "brand_description": "<p></p>",
+    "brand_headline": "Vibe-ration",
+    "brand_description": "<p>Sex toys and intimate essentials. 18+</p>",
     "brand_image_width": 100,
     "social_twitter_link": "",
     "social_facebook_link": "",
@@ -209,57 +200,57 @@
       "color_schemes": {
         "scheme-1": {
           "settings": {
-            "background": "#faf7f4",
+            "background": "#141113",
             "background_gradient": "",
-            "text": "#241d26",
-            "button": "#2e1a33",
-            "button_label": "#ffffff",
-            "secondary_button_label": "#241d26",
-            "shadow": "#241d26"
+            "text": "#efe6e0",
+            "button": "#c18d96",
+            "button_label": "#141113",
+            "secondary_button_label": "#efe6e0",
+            "shadow": "#000000"
           }
         },
         "scheme-2": {
           "settings": {
-            "background": "#ffffff",
+            "background": "#141113",
             "background_gradient": "",
-            "text": "#241d26",
-            "button": "#2e1a33",
-            "button_label": "#ffffff",
-            "secondary_button_label": "#241d26",
-            "shadow": "#241d26"
+            "text": "#efe6e0",
+            "button": "#c18d96",
+            "button_label": "#141113",
+            "secondary_button_label": "#efe6e0",
+            "shadow": "#000000"
           }
         },
         "scheme-3": {
           "settings": {
-            "background": "#efe9e3",
+            "background": "#241b20",
             "background_gradient": "",
-            "text": "#241d26",
-            "button": "#2e1a33",
-            "button_label": "#ffffff",
-            "secondary_button_label": "#241d26",
-            "shadow": "#241d26"
+            "text": "#efe6e0",
+            "button": "#c18d96",
+            "button_label": "#141113",
+            "secondary_button_label": "#efe6e0",
+            "shadow": "#000000"
           }
         },
         "scheme-4": {
           "settings": {
-            "background": "#2e1a33",
+            "background": "#141113",
             "background_gradient": "",
-            "text": "#faf7f4",
-            "button": "#faf7f4",
-            "button_label": "#2e1a33",
-            "secondary_button_label": "#faf7f4",
-            "shadow": "#241d26"
+            "text": "#efe6e0",
+            "button": "#c18d96",
+            "button_label": "#141113",
+            "secondary_button_label": "#efe6e0",
+            "shadow": "#000000"
           }
         },
         "scheme-5": {
           "settings": {
-            "background": "#c8415f",
+            "background": "#141113",
             "background_gradient": "",
-            "text": "#ffffff",
-            "button": "#ffffff",
-            "button_label": "#c8415f",
-            "secondary_button_label": "#ffffff",
-            "shadow": "#241d26"
+            "text": "#efe6e0",
+            "button": "#c18d96",
+            "button_label": "#141113",
+            "secondary_button_label": "#efe6e0",
+            "shadow": "#000000"
           }
         }
       },
@@ -358,8 +349,8 @@
       "badge_corner_radius": 0,
       "sale_badge_color_scheme": "scheme-5",
       "sold_out_badge_color_scheme": "scheme-4",
-      "brand_headline": "",
-      "brand_description": "<p></p>",
+      "brand_headline": "Vibe-ration",
+      "brand_description": "<p>Sex toys and intimate essentials. 18+</p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

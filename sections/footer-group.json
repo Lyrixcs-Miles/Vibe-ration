@@ -9,20 +9,20 @@
           "type": "text",
           "settings": {
             "heading": "Vibe-ration",
-            "subtext": "<p>Considered essentials for your private moments.</p>"
+            "subtext": "<p>Sex toys and intimate essentials.<br>Explore on your own terms. 18+</p>"
           }
         },
         "shop": {
           "type": "link_list",
           "settings": {
-            "heading": "Explore",
+            "heading": "Shop",
             "menu": "main-menu"
           }
         },
         "help": {
           "type": "link_list",
           "settings": {
-            "heading": "Here to help",
+            "heading": "Information",
             "menu": "footer"
           }
         }
